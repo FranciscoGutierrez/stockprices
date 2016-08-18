@@ -5,11 +5,10 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "meteor-node-stubs": "~0.2.0"
   },
   "description": "",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.html",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FranciscoGutierrez/stockprices.git"
