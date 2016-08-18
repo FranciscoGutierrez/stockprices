@@ -1,25 +1,28 @@
 <head>
   <title>stockprices</title>
+  <link rel="import" href="bower_components/paper-slider/paper-slider.html">
+  <style is="custom-style">
+  paper-slider.slider-green  { --paper-slider-knob-color: #00a185; --paper-slider-active-color: #00bd9c; }
+  paper-slider.slider-purple { --paper-slider-knob-color: #9c56b8; --paper-slider-active-color: #8f3faf; }
+  paper-slider.slider-orange { --paper-slider-knob-color: #e87e04; --paper-slider-active-color: #d55500; }
+  paper-slider.slider-blue   { --paper-slider-knob-color: #2e97de; --paper-slider-active-color: #217fbb; }
+  </style>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  {{> info}}
+  {{> slider title="World Economy"    color="slider-green"}}
+  {{> slider title="Worldwide News"   color="slider-purple"}}
+  {{> slider title="Market Sentiment" color="slider-orange"}}
+  {{> slider title="Employment Rate"  color="slider-blue"}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
-
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
+<template name="slider">
+  <div class="slider">
+    <div class="slider-title">{{title}}</div>
+    <paper-slider min="0" max="100" value="100" class="{{color}}"></paper-slider>
+    <div class="slider-bottom">
+      <div class="text-left" >Bad</div>
+      <div class="text-right">Good</div>
+    </div>
+  </div>
 </template>

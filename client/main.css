@@ -1,1 +1,37 @@
 /* CSS declarations go here */
+.slider {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-top: 10px;
+}
+
+.slider paper-slider {
+  width: 100%;
+  margin-bottom: -10px;
+  margin-top: -10px;
+}
+
+.slider-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-title {
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  color: #424242;
+}
+
+.slider-bottom {
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  color: #a1a1a1;
+}
+
+.paper-slider {
+  margin-left:  0 !important;
+  margin-right: 0 !important;
+}

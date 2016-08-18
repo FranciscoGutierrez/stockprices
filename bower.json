@@ -1,0 +1,20 @@
+{
+  "name": "stockprices",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "FranciscoGutierrez <fsalvador23@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/FranciscoGutierrez/stockprices",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-elements": "PolymerElements/paper-elements#^1.0.7"
+  }
+}
