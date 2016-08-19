@@ -1,0 +1,47 @@
+.question {
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  height: 200px;
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.question-number {
+  font-family: "Roboto", sans-serif;
+  font-size: 28px;
+  font-weight: 100;
+  color: #a7a7ae;
+  margin: 10px 10px 0 10px;
+}
+
+.question-head {
+  font-weight: 500;
+  font-size: 18px;
+  color: #a7a7ae;
+  margin-top: 20px;
+}
+
+.question-body {
+  font-weight: 300;
+  font-size: 26px;
+  color: #424242;
+}
+
+.question .answers {
+  display: flex;
+  color: #424242;
+  margin-top: 10px;
+}
+
+.answers-column {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.answers-column paper-checkbox {
+  margin-top: 10px;
+}

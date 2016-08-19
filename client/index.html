@@ -1,0 +1,28 @@
+<head>
+  <title>stockprices</title>
+  <link rel="import" href="bower_components/paper-slider/paper-slider.html">
+  <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+  <link rel="stylesheet" href="bower_components/animate.css/animate.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,700" rel="stylesheet">
+  <style is="custom-style">
+  paper-slider.slider-green  { --paper-slider-knob-color: #00a185; --paper-slider-active-color: #00bd9c; }
+  paper-slider.slider-purple { --paper-slider-knob-color: #9c56b8; --paper-slider-active-color: #8f3faf; }
+  paper-slider.slider-orange { --paper-slider-knob-color: #e87e04; --paper-slider-active-color: #d55500; }
+  paper-slider.slider-blue   { --paper-slider-knob-color: #2e97de; --paper-slider-active-color: #217fbb; }
+  </style>
+</head>
+
+<body>
+  <div class="content-left">
+  {{> slider title="Market Advice"          color="slider-green"}}
+  {{> slider title="Worldwide News"         color="slider-purple"}}
+  {{> slider title="Social Media Sentiment" color="slider-orange"}}
+  {{> slider title="Stock Index"            color="slider-blue"}}
+  </div>
+  <div class="content-right">
+    <div class="visualisations"></div>
+    <div class="questions">
+      {{> question number="1" head="The Worlwide News are bad," body="Where do you put your money?"}}
+    </div>
+  </div>
+</body>

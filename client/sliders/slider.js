@@ -1,7 +1,6 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
-
-import './main.html';
+import '../index.html';
 
 Template.slider.onCreated(function sliderOnCreated() {
   // slider starts at 100.
@@ -17,7 +16,7 @@ Template.slider.helpers({
 
 Template.slider.events({
   'mouseenter paper-slider'(event, instance) {
-    // start catching events when the mouseenters, (hackish)
+    // start catching events when the mouseenters, (hackish?)
     instance.$("paper-slider").on("immediate-value-changed", function() {
       instance.slider.set($(this).prop("immediateValue"));
     });

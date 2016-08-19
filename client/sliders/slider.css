@@ -1,16 +1,17 @@
 /* CSS declarations go here */
 
 .slider {
+  font-family: 'Raleway', sans-serif;
   display: flex;
   flex-direction: column;
   width: 300px;
-  margin-top: 10px;
+  margin-top: 25px;
 }
 
 .slider paper-slider {
   width: 100%;
   margin-bottom: -10px;
-  margin-top:    -10px;
+  margin-top:    -5px;
   margin-left:   -15px;
 }
 
@@ -20,14 +21,13 @@
 }
 
 .slider .slider-title {
-  font-family: Roboto, Arial, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   font-size: 18px;
   color: #424242;
 }
 
 .slider-bottom {
-  font-family: Roboto, Arial, sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 11px;
   color: #a1a1a1;
@@ -35,9 +35,8 @@
 }
 
 .slider-head {
-  font-family: Roboto, Arial, sans-serif;
   display: flex;
-  font-weight: 100;
+  font-weight: 300;
   font-size: 18px;
   color: #424242;
   justify-content: space-between;
@@ -46,4 +45,10 @@
 
 .slider .slider-value {
   color: #a1a1a1;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+}
+
+.slider .slider-value span {
+  font-size: 12px;
 }
