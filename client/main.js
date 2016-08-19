@@ -3,20 +3,23 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
 
-Template.slider.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+Template.slider.onCreated(function sliderOnCreated() {
+  // slider starts at 100.
+  this.slider = new ReactiveVar(100);
 });
 
 Template.slider.helpers({
-  counter() {
-    return Template.instance().counter.get();
+  value() {
+    // when the slider updates, set the value reactively.
+    return Template.instance().slider.get();
   },
 });
 
 Template.slider.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
+  'mouseenter paper-slider'(event, instance) {
+    // start catching events when the mouseenters, (hackish)
+    instance.$("paper-slider").on("immediate-value-changed", function() {
+      instance.slider.set($(this).prop("immediateValue"));
+    });
   },
 });

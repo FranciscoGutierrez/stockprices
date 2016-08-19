@@ -18,7 +18,10 @@
 
 <template name="slider">
   <div class="slider">
-    <div class="slider-title">{{title}}</div>
+    <div class="slider-head">
+      <div class="slider-title">{{title}}</div>
+      <div class="slider-value">{{value}}</div>
+    </div>
     <paper-slider min="0" max="100" value="100" class="{{color}}"></paper-slider>
     <div class="slider-bottom">
       <div class="text-left" >Bad</div>
