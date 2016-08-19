@@ -4,7 +4,7 @@
   font-family: 'Raleway', sans-serif;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 270px;
   margin-top: 25px;
 }
 
@@ -31,7 +31,7 @@
   font-weight: 400;
   font-size: 11px;
   color: #a1a1a1;
-  width: 270px;
+  width: 240px;
 }
 
 .slider-head {
@@ -40,7 +40,7 @@
   font-size: 18px;
   color: #424242;
   justify-content: space-between;
-  width: 273px;
+  width: 243px;
 }
 
 .slider .slider-value {
