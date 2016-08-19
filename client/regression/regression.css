@@ -1,0 +1,17 @@
+.regression {
+  height: 170px;
+  width:  150px;
+}
+
+.regression .regression-title {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  color: #424242;
+  font-weight: 500;
+}
+
+.regression .regression-chart {
+  height: 150px;
+  width:  150px;
+  background: #fafafa;
+}

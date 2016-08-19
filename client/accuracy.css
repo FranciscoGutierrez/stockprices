@@ -1,0 +1,36 @@
+.accuracy {
+  margin-top: 25px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  width: 240px;
+}
+
+.accuracy .ldot {
+  width:  40px;
+  height: 10px;
+  text-align: center;
+  margin: 1px;
+  display: flex;
+}
+
+.ua1 { background: #ececec; }
+.ua2 { background: #e5e5e5; }
+.ua3 { background: #d2d2d2; }
+.ua4 { background: #bababa; }
+.ua5 { background: #9e9e9e; }
+.ua6 { background: #717171; }
+
+.accuracy .accuracy-title {
+  color: #424242;
+  margin-bottom: 5px;
+}
+
+.accuracy-bottom {
+  font-family: Roboto, sans-serif;
+  display: flex;
+  font-weight: 400;
+  font-size: 11px;
+  color: #a1a1a1;
+  justify-content: space-between;
+}
