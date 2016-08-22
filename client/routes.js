@@ -7,16 +7,15 @@ Router.configure({
 });
 
 Router.route('/:_id', {
-  
+
   data: function () {
     var courses;
     var option = Router.current().params._id;
-    Meteor.subscribe("cities", function(){
+    Meteor.subscribe("stocks", function(){
       $(".loading-screen").fadeOut(function(){
         $(this).remove();
 
         Meteor.subscribe("answers");
-
         Session.setDefault("strength-t",100);
         Session.setDefault("strength-p",100);
         Session.setDefault("strength-s",100);
@@ -73,7 +72,6 @@ Router.route('/:_id', {
             window.history.pushState('forward', null, './'+option);
           }
         });
-
 
       });
     });
