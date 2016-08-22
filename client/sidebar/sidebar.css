@@ -1,0 +1,9 @@
+.sidebar-debug {
+  color: #e74c3c;
+  position: absolute;
+  bottom: 0;
+  font-family: Roboto;
+  font-size: 12px;
+  text-align: right;
+  width: 90%;
+}

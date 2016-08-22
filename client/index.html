@@ -3,6 +3,7 @@
   <link rel="icon" sizes="16x16 32x32" href="/favicon.ico?v=2">
   <link rel="import" href="bower_components/paper-slider/paper-slider.html">
   <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+  <link rel="import" href="bower_components/paper-spinner/paper-spinner.html">
   <link rel="stylesheet" href="bower_components/animate.css/animate.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,700" rel="stylesheet">
   <style is="custom-style">
@@ -14,12 +15,13 @@
 </head>
 
 <body>
+  <!-- <div class="welcome-screen">
+    <div class="loading-screen">
+      <paper-spinner active></paper-spinner>
+    </div>
+  </div> -->
   <div class="content-left">
-    {{> slider title="Market Advice"          color="slider-green"}}
-    {{> slider title="Worldwide News"         color="slider-purple"}}
-    {{> slider title="Social Media Sentiment" color="slider-orange"}}
-    {{> slider title="Stock Index"            color="slider-blue"}}
-    {{> accuracy}}
+    {{> sidebar}}
   </div>
   <div class="content-right">
     <div class="visualisations">

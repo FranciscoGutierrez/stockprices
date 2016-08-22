@@ -7,6 +7,7 @@ Router.configure({
 });
 
 Router.route('/:_id', {
+  
   data: function () {
     var courses;
     var option = Router.current().params._id;
@@ -24,6 +25,8 @@ Router.route('/:_id', {
         Session.setDefault("qnumber",0);
         Session.setDefault("slider1",100);
         Session.setDefault("slider2",100);
+        Session.setDefault("slider3",100);
+        Session.setDefault("slider4",100);
         Session.setDefault("gold1",100);
         Session.setDefault("gold2",100);
         Session.setDefault("gold3",100);
