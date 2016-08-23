@@ -1,10 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 
-Cities = new Meteor.Collection('cities');
+Stocks = new Meteor.Collection('stocks');
 Answers = new Meteor.Collection('answers');
 
-Meteor.publish("cities", function () {
-  return Cities.find({});
+Meteor.publish("stocks", function () {
+  return Stocks.find({});
 });
 
 Meteor.publish("answers", function () {

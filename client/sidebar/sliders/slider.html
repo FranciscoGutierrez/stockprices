@@ -1,7 +1,7 @@
 <template name="slider">
   <div class="slider">
     <div class="slider-head">
-      <div class="slider-title">{{title}}</div>
+      <paper-checkbox class="traffic slider-title {{color}}">{{title}}</paper-checkbox>
       <div class="slider-value">{{value}}<span>%</span></div>
     </div>
     <paper-slider min="0" max="100" value="100" class="{{color}}"></paper-slider>

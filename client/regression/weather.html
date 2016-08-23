@@ -1,0 +1,47 @@
+<template name="weather">
+  <div class="cr-element cityrow-health grid-health">
+    {{>svggrid}}
+    <svg  width="100%" height="100%" style="overflow: hidden; position: absolute; top:0px;">
+      <line class="uline" x1="0%"  x2="100%" y1="{{pred.rq}}%" y2="{{pred.rq}}%" stroke="#B45C7E" stroke-width="1"/>
+      <line class="sline" x1="{{strength}}%" x2="{{strength}}%"  y1="0%"  y2="100%" stroke="#B45C7E" stroke-width="1"/>
+      <circle class="main-circle" cx="{{strength}}%" cy="{{pred.rq}}%" r="3" fill="#8c3d5e"/>
+    </svg>
+    <img src="http://localhost:8080/figs/newyork_q.png" width="100px" height="100px"/>
+  </div>
+</template>
+
+<template name="traffic">
+  <div class="cr-element cityrow-traffic grid-traffic">
+    {{>svggrid}}
+    <svg  width="100%" height="100%" style="overflow: hidden; position: absolute; top:0px;">
+      <line class="uline" x1="0%"  x2="100%" y1="{{pred.rq}}%" y2="{{pred.rq}}%" stroke="#B45C7E" stroke-width="1"/>
+      <line class="sline" x1="{{strength}}%" x2="{{strength}}%"  y1="0%"  y2="100%" stroke="#B45C7E" stroke-width="1"/>
+      <circle class="main-circle" cx="{{strength}}%" cy="{{pred.rq}}%" r="3" fill="#8c3d5e"/>
+    </svg>
+    <img src="http://localhost:8080/figs/newyork_q.png" width="100px" height="100px"/>
+  </div>
+</template>
+
+<template name="safety">
+  <div class="cr-element cityrow-safety grid-safety">
+    {{>svggrid}}
+    <svg  width="100%" height="100%" style="overflow: hidden; position: absolute; top:0px;">
+      <line class="uline" x1="0%"  x2="100%" y1="{{pred.rq}}%" y2="{{pred.rq}}%" stroke="#B45C7E" stroke-width="1"/>
+      <line class="sline" x1="{{strength}}%" x2="{{strength}}%"  y1="0%"  y2="100%" stroke="#B45C7E" stroke-width="1"/>
+      <circle class="main-circle" cx="{{strength}}%" cy="{{pred.rq}}%" r="3" fill="#8c3d5e"/>
+    </svg>
+    <img src="http://localhost:8080/figs/newyork_q.png" width="100px" height="100px"/>
+  </div>
+</template>
+
+<template name="pollution">
+  <div class="cr-element cityrow-polution grid-polution">
+    {{>svggrid}}
+    <svg  width="100%" height="100%" style="overflow: hidden; position: absolute; top:0px;">
+      <line class="uline" x1="0%"  x2="100%" y1="{{pred.rq}}%" y2="{{pred.rq}}%" stroke="#B45C7E" stroke-width="1"/>
+      <line class="sline" x1="{{strength}}%" x2="{{strength}}%"  y1="0%"  y2="100%" stroke="#B45C7E" stroke-width="1"/>
+      <circle class="main-circle" cx="{{strength}}%" cy="{{pred.rq}}%" r="3" fill="#8c3d5e"/>
+    </svg>
+    <img src="http://localhost:8080/figs/newyork_q.png" width="100px" height="100px"/>
+  </div>
+</template>

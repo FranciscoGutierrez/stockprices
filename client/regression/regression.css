@@ -1,17 +1,101 @@
-.regression {
-  height: 170px;
-  width:  150px;
+.lifequality-container .legend-y {
+  position: absolute;
+  transform: rotate(-90deg);
+  left: -40px;
+  top:   75px;
+  font-size:  10px;
+  font-weight: 300;
+  color: #a1a1a1;
+  cursor: default;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.regression .regression-title {
-  font-family: 'Raleway', sans-serif;
+.lifequality-container .legend-x {
+  font-size: 10px;
+  font-weight: 300;
+  color: #a1a1a1;
+  cursor: default;
+  position: absolute;
+  bottom: -23px;
+  width: 100%;
   text-align: center;
-  color: #424242;
-  font-weight: 500;
 }
 
-.regression .regression-chart {
+.lifequality-container .selected-info{
+  display: flex;
+  font-size: 11px;
+  font-weight: 300;
+  justify-content: center;
+  align-items: center;
+  transition: all 300ms ease-out;
+  height: 20px;
+}
+
+.lifequality-container .info {
+  margin: 5px;
+  min-width: 10px;
+  min-height:10px;
+  border-radius: 50%;
+  transition: all 300ms ease-out;
+}
+
+.lifequality-container .weather-info { background: #B5E000; display: none;}
+.lifequality-container .safety-info  { background: #FABE0F; display: none;}
+.lifequality-container .traffic-info { background: #0F3445; display: none;}
+.lifequality-container .airq-info    { background: #15AFBD; display: none;}
+
+.lifequality-container line, path {
+  transition: all 300ms ease-out;
+}
+
+.lifequality-container image {
   height: 150px;
   width:  150px;
-  background: #fafafa;
+}
+
+.lifequality-container {
+  font-family: sans-serif;
+  width:  150px;
+  height: 150px;
+  position: relative;
+  margin-top: 60px;
+  cursor: default;
+}
+
+.lifequality-container h1 {
+  font-weight: 100;
+  padding-left: 3%;
+  margin:  0;
+  padding: 0;
+  position: absolute;
+  top: -20px;
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+  font-weight: 300;
+  color: #424242;
+}
+
+.lifequality-container svg {
+  overflow:  visible;
+  position: absolute;
+  top:  0;
+  left: 0;
+  width:  100%;
+  height: 100%;
+}
+
+.lifequality-container img {
+  position: absolute;
+  width:  150px;
+  height: 150px;
+}
+
+.lifequality-container .svg-text {
+  margin-top:  10px;
+  margin-left: 10px;
+  font-size:   10px;
+  transition: all 500ms ease-out;
 }

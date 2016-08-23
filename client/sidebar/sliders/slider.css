@@ -21,7 +21,8 @@
 }
 
 .slider .slider-title {
-  font-weight: 300;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
   font-size: 18px;
   color: #424242;
 }

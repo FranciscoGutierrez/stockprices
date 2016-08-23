@@ -11,35 +11,40 @@
   paper-slider.slider-purple { --paper-slider-knob-color: #9c56b8; --paper-slider-active-color: #8f3faf; }
   paper-slider.slider-orange { --paper-slider-knob-color: #e87e04; --paper-slider-active-color: #d55500; }
   paper-slider.slider-blue   { --paper-slider-knob-color: #2e97de; --paper-slider-active-color: #217fbb; }
+
+  paper-checkbox.slider-green  { --paper-checkbox-checked-color: #00a185; --paper-checkbox-unchecked-color: #00bd9c; }
+  paper-checkbox.slider-purple { --paper-checkbox-checked-color: #9c56b8; --paper-checkbox-unchecked-color: #8f3faf; }
+  paper-checkbox.slider-orange { --paper-checkbox-checked-color: #e87e04; --paper-checkbox-unchecked-color: #d55500; }
+  paper-checkbox.slider-blue   { --paper-checkbox-checked-color: #2e97de; --paper-checkbox-unchecked-color: #217fbb; }
   </style>
 </head>
 
 <body>
   <!-- <div class="welcome-screen">
-    <div class="loading-screen">
-      <paper-spinner active></paper-spinner>
+  <div class="loading-screen">
+  <paper-spinner active></paper-spinner>
+</div>
+</div> -->
+<div class="content-left">
+  {{> sidebar}}
+</div>
+<div class="content-right">
+  <div class="visualisations">
+    <div class="visualisations-row" style="margin-top: -45px;">
+      {{>lifequality cityname="dis"}}
+      {{>lifequality cityname="msft"}}
+      {{>lifequality cityname="aapl"}}
     </div>
-  </div> -->
-  <div class="content-left">
-    {{> sidebar}}
-  </div>
-  <div class="content-right">
-    <div class="visualisations">
-      <div class="visualisations-row">
-        {{> regression title="Disney"}}
-        {{> regression title="Microsoft"}}
-        {{> regression title="Apple"}}
-      </div>
-      <div class="visualisations-row">
-        {{> regression title="Coca-Cola"}}
-        {{> regression title="IBM"}}
-        {{> regression title="Nike"}}
-      </div>
-    </div>
-    <div class="questions">
-      {{> question number="1" head="The Worlwide News are bad," body="Where do you put your money?"}}
+    <div class="visualisations-row" style="margin-top: -30px;">
+      {{>lifequality cityname="ko"}}
+      {{>lifequality cityname="ibm"}}
+      {{>lifequality cityname="nke"}}
     </div>
   </div>
+  <div class="questions">
+    {{> question number="1" head="The Worlwide News are bad," body="Where do you put your money?"}}
+  </div>
+</div>
 </body>
 
 <template name="dummy"></template>
