@@ -20,6 +20,7 @@ body {
   padding-left: 20px;
   height: 600px;
   position: relative;
+  border-right: 1px solid #efefef;
 }
 
 .content-right {
