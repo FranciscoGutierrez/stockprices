@@ -22,24 +22,13 @@
 
 <body>
   <div class="loading-screen">
-      <paper-spinner active></paper-spinner>
+    <paper-spinner active></paper-spinner>
   </div>
   <div class="content-left">
     {{> sidebar}}
   </div>
   <div class="content-right">
-    <div class="visualisations">
-      <div class="visualisations-row" style="margin-top: -45px;">
-        {{>lifequality cityname="dis"}}
-        {{>lifequality cityname="msft"}}
-        {{>lifequality cityname="aapl"}}
-      </div>
-      <div class="visualisations-row" style="margin-top: 0px;">
-        {{>lifequality cityname="ko"}}
-        {{>lifequality cityname="ibm"}}
-        {{>lifequality cityname="nke"}}
-      </div>
-    </div>
+    <div class="visualisations"></div>
     <div class="questions">
       {{> question number="1" head="The Worlwide News are bad," body="Where do you put your money?"}}
     </div>
@@ -47,3 +36,35 @@
 </body>
 
 <template name="dummy"></template>
+
+<template name="regression">
+  <div class="visualisations-row" style="margin-top: -45px;">
+    {{>lifequality cityname="dis"}}
+    {{>lifequality cityname="msft"}}
+    {{>lifequality cityname="aapl"}}
+  </div>
+  <div class="visualisations-row" style="margin-top: 0px;">
+    {{>lifequality cityname="ko"}}
+    {{>lifequality cityname="ibm"}}
+    {{>lifequality cityname="nke"}}
+  </div>
+</template>
+
+<template name="timeseries">
+</template>
+
+<template name="dots">
+  <div class="start-question-container"></div>
+  <div>
+    {{>dotplot cityname="seattle"}}
+    {{>dotplot cityname="angeles"}}
+  </div>
+  <div>
+    {{>dotplot cityname="denver"}}
+    {{>dotplot cityname="houston"}}
+  </div>
+  <div>
+    {{>dotplot cityname="newyork"}}
+    {{>dotplot cityname="atlanta"}}
+  </div>
+</template>

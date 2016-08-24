@@ -1,0 +1,92 @@
+<template name="dotplot">
+  <div class="dotplot-container">
+    <div class="ubar-main"></div>
+    <div class="umeter">
+      <div class="um m-2" style="color: #757575; justify-content: space-between;"><span style="color: #424242;">0</span> 10</div>
+      <div class="um m-4">20</div>
+      <div class="um m-6" style="color: #757575;">30</div>
+      <div class="um m-8">40</div>
+      <div class="um m-10" style="color: #757575;">50</div>
+      <div class="um m-12">60</div>
+      <div class="um m-14" style="color: #757575;">70</div>
+      <div class="um m-16">80</div>
+      <div class="um m-18" style="color: #757575;">90</div>
+      <div class="um m-20">100</div>
+      <div class="umeter-ticks">
+        <div class="utick" style="justify-content: space-between;"><span>.</span>.</div>
+        <div class="utick">.</div>
+        <div class="utick">.</div>
+        <div class="utick">.</div>
+        <div class="utick">.</div>
+        <div class="utick">.</div>
+        <div class="utick">.</div>
+        <div class="utick">.</div>
+        <div class="utick">.</div>
+        <div class="utick">.</div>
+      </div>
+      <div class="udots-container">
+        <div class="udots" style="left: {{prediction.a1}}px;">
+          <div class="ua1 udot" ></div>
+        </div>
+        <div class="udots" style="left: {{prediction.a2}}px;">
+          <div class="ua2 udot"></div>
+          <div class="ua2 udot"></div>
+        </div>
+        <div class="udots" style="left: {{prediction.a3}}px;">
+          <div class="ua3 udot"></div>
+          <div class="ua3 udot"></div>
+          <div class="ua3 udot"></div>
+        </div>
+        <div class="udots" style="left: {{prediction.a4}}px;">
+          <div class="ua4 udot"></div>
+          <div class="ua4 udot"></div>
+          <div class="ua4 udot"></div>
+        </div>
+        <div class="udots" style="left: {{prediction.a5}}px;">
+          <div class="ua5 udot"></div>
+          <div class="ua5 udot"></div>
+          <div class="ua5 udot"></div>
+          <div class="ua5 udot"></div>
+        </div>
+        <div class="udots" style="left: {{prediction.a6}}px;">
+          <div class="ua6 udot"></div>
+          <div class="ua6 udot"></div>
+          <div class="ua6 udot"></div>
+          <div class="ua6 udot"></div>
+          <div class="dots-value" style="left: {{prediction.a6}}px;">
+            <div style="background: white;">{{prediction.text}}</div>
+          </div>
+        </div>
+        <div class="udots" style="left: {{prediction.a7}}px;">
+          <div class="ua7 udot"></div>
+          <div class="ua7 udot"></div>
+          <div class="ua7 udot"></div>
+          <div class="ua7 udot"></div>
+        </div>
+        <div class="udots" style="left: {{prediction.a8}}px;">
+          <div class="ua8 udot"></div>
+          <div class="ua8 udot"></div>
+          <div class="ua8 udot"></div>
+        </div>
+        <div class="udots" style="left: {{prediction.a9}}px;">
+          <div class="ua9 udot"></div>
+          <div class="ua9 udot"></div>
+          <div class="ua9 udot"></div>
+        </div>
+        <div class="udots" style="left: {{prediction.a10}}px;">
+          <div class="ua10 udot"></div>
+          <div class="ua10 udot"></div>
+        </div>
+        <div class="udots" style="left: {{prediction.a11}}px;">
+          <div class="ua11 udot"></div>
+        </div>
+      </div>
+    </div>
+    <div class="dotplot-legend">Happiness</div>
+    <div class="uncertainty-sentence">
+      <p>Quality of Life is <span>{{prediction.qol}}</span>%</p>
+      <p>in <span>{{city.cityname}}</span>.</p>
+    </div>
+
+  </div>
+</template>
