@@ -6,6 +6,7 @@
   <link rel="import" href="bower_components/paper-spinner/paper-spinner.html">
   <link rel="stylesheet" href="bower_components/animate.css/animate.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,700" rel="stylesheet">
+  <script src="https://use.fontawesome.com/d54412c64e.js"></script>
   <style is="custom-style">
   paper-slider.slider-green  { --paper-slider-knob-color: #00a185; --paper-slider-active-color: #00bd9c; }
   paper-slider.slider-purple { --paper-slider-knob-color: #9c56b8; --paper-slider-active-color: #8f3faf; }
@@ -20,31 +21,29 @@
 </head>
 
 <body>
-  <!-- <div class="welcome-screen">
   <div class="loading-screen">
-  <paper-spinner active></paper-spinner>
-</div>
-</div> -->
-<div class="content-left">
-  {{> sidebar}}
-</div>
-<div class="content-right">
-  <div class="visualisations">
-    <div class="visualisations-row" style="margin-top: -45px;">
-      {{>lifequality cityname="dis"}}
-      {{>lifequality cityname="msft"}}
-      {{>lifequality cityname="aapl"}}
+      <paper-spinner active></paper-spinner>
+  </div>
+  <div class="content-left">
+    {{> sidebar}}
+  </div>
+  <div class="content-right">
+    <div class="visualisations">
+      <div class="visualisations-row" style="margin-top: -45px;">
+        {{>lifequality cityname="dis"}}
+        {{>lifequality cityname="msft"}}
+        {{>lifequality cityname="aapl"}}
+      </div>
+      <div class="visualisations-row" style="margin-top: 0px;">
+        {{>lifequality cityname="ko"}}
+        {{>lifequality cityname="ibm"}}
+        {{>lifequality cityname="nke"}}
+      </div>
     </div>
-    <div class="visualisations-row" style="margin-top: -30px;">
-      {{>lifequality cityname="ko"}}
-      {{>lifequality cityname="ibm"}}
-      {{>lifequality cityname="nke"}}
+    <div class="questions">
+      {{> question number="1" head="The Worlwide News are bad," body="Where do you put your money?"}}
     </div>
   </div>
-  <div class="questions">
-    {{> question number="1" head="The Worlwide News are bad," body="Where do you put your money?"}}
-  </div>
-</div>
 </body>
 
 <template name="dummy"></template>

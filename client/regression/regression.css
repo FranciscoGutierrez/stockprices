@@ -1,7 +1,7 @@
 .lifequality-container .legend-y {
   position: absolute;
   transform: rotate(-90deg);
-  left: -40px;
+  left: -45px;
   top:   75px;
   font-size:  10px;
   font-weight: 300;
@@ -13,7 +13,7 @@
 }
 
 .lifequality-container .legend-x {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 300;
   color: #a1a1a1;
   cursor: default;
@@ -60,8 +60,14 @@
   width:  150px;
   height: 150px;
   position: relative;
-  margin-top: 60px;
+  margin-top: 80px;
   cursor: default;
+}
+
+.lifequality-title {
+  position: absolute;
+  top: -35px;
+  width: 100%;
 }
 
 .lifequality-container h1 {
@@ -69,13 +75,49 @@
   padding-left: 3%;
   margin:  0;
   padding: 0;
-  position: absolute;
-  top: -20px;
   font-size: 16px;
   width: 100%;
-  text-align: center;
   font-weight: 300;
   color: #424242;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: 'Raleway', sans-serif;
+}
+
+.lifequality-container h1 .title-right {
+  font-family: 'Raleway', sans-serif;
+  font-size: 10px;
+  color: #a1a1a1;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.lifequality-container h1 .title-right span {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.lifequality-container h2 {
+  margin:  0;
+  padding: 0;
+  font-size: 11px;
+  color: #a1a1a1;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+}
+
+.lifequality-container h2 span {
+  font-size: 11px;
+  color: green;
+  text-transform: uppercase;
+  font-family: Roboto, sans-serif;
 }
 
 .lifequality-container svg {
@@ -98,4 +140,11 @@
   margin-left: 10px;
   font-size:   10px;
   transition: all 500ms ease-out;
+}
+
+.lifequality-container .legend-z {
+  font-size: 10px;
+  font-weight: 500;
+  color: #a1a1a1;
+  margin-left: 3px;
 }

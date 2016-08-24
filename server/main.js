@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 
 Stocks = new Meteor.Collection('stocks');
+Series = new Meteor.Collection('series');
 Answers = new Meteor.Collection('answers');
 
 Meteor.publish("stocks", function () {
@@ -9,4 +10,8 @@ Meteor.publish("stocks", function () {
 
 Meteor.publish("answers", function () {
   return Answers.find({});
+});
+
+Meteor.publish("series", function () {
+  return Series.find({});
 });

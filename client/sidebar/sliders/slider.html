@@ -1,13 +1,17 @@
 <template name="slider">
   <div class="slider">
     <div class="slider-head">
-      <paper-checkbox class="traffic slider-title {{color}}">{{title}}</paper-checkbox>
-      <div class="slider-value">{{value}}<span>%</span></div>
+      <paper-checkbox class="traffic slider-title {{color}}" checked>{{title}}</paper-checkbox>
+      {{#if show}}
+      <div class="slider-value animated fadeIn">{{value}}<span>%</span></div>
+      {{/if}}
     </div>
+    {{#if show}}
     <paper-slider min="0" max="100" value="100" class="{{color}}"></paper-slider>
-    <div class="slider-bottom">
+    <div class="slider-bottom animated fadeIn">
       <div class="text-left" >Bad</div>
       <div class="text-right">Good</div>
     </div>
+    {{/if}}
   </div>
 </template>

@@ -11,6 +11,9 @@ Template.slider.helpers({
     // when the slider updates, set the value reactively.
     return Template.instance().slider.get();
   },
+  show() {
+    return Session.get(Template.instance().data.tag+"-on");
+  }
 });
 
 Template.slider.events({
@@ -21,4 +24,14 @@ Template.slider.events({
       Session.set(instance.data.tag, instance.slider.get());
     });
   },
+  'click paper-checkbox'(event, instance) {
+    var status = Session.get(instance.data.tag+"-on");
+    Session.set(instance.data.tag, 100);
+    Template.instance().slider.set(100);
+    if(status) {
+      Session.set(instance.data.tag+"-on", false);
+    } else {
+      Session.set(instance.data.tag+"-on", true);
+    }
+  }
 });

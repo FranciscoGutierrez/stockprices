@@ -4,16 +4,32 @@ Template.lifequality.onCreated(function(){
 });
 
 Template.lifequality.helpers({
-  city() {
-    var city = Template.instance().my_city.get();
-    var name = this.cityname;
-    if(name == "dis" ) name = "Disney";
-    if(name == "msft") name = "Microsoft";
-    if(name == "aapl") name = "Apple";
-    if(name == "ko") name = "Coke";
-    if(name == "ibm") name = "IBM";
-    if(name == "nke") name = "Nike";
-    return name;
+  stock() {
+    var city  = Template.instance().my_city.get();
+    var name  = this.cityname;
+    var stock = Series.findOne({name: name}, {sort: {date: -1}});
+    var date  = 0;
+    var close = 0;
+    var diff  = 0;
+    var prcnt = 0;
+    var color = "green";
+    var arrow = "up";
+    if(stock) close = stock.close;
+    if(stock) date = stock.date;
+    var bfore = Series.findOne({name: name, date: (date-777600000)});
+    if(bfore) diff = (bfore.close - stock.close).toFixed(2);
+    if(bfore) prcnt= (((100 * bfore.close)/stock.close)-100).toFixed(2);
+    if(diff < 0){
+      color = "red";
+      arrow = "down";
+    } 
+    if(name == "dis" ) title = "Disney";
+    if(name == "msft") title = "Microsoft";
+    if(name == "aapl") title = "Apple";
+    if(name == "ko")   title = "Coca-Cola";
+    if(name == "ibm")  title = "IBM";
+    if(name == "nke")  title = "Nike";
+    return {name: name, title: title, close: close,  diff: diff, percent: prcnt, color: color, arrow:arrow};
   },
   pred() {
     var city = Template.instance().my_city.get();

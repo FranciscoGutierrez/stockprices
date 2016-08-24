@@ -1,6 +1,18 @@
 <template name="lifequality">
-  <div class="lifequality-container">
-    <h1>{{city}}</h1>
+  <div class="lifequality-container animated fadeIn">
+    <div class="lifequality-title">
+      <h1> {{stock.title}}
+      <div class="title-right">
+        <span>{{stock.close}}</span> USD
+      </div>
+      </h1>
+      <h2> NYSE: {{stock.name}}
+           <span style="color: {{stock.color}}">
+             <i class="fa fa-arrow-{{stock.arrow}}"></i>
+             {{stock.diff}} ({{stock.percent}}%)
+           </span>
+      </h2>
+    </div>
     <svg style="overflow: hidden;">
       <path class="uline animated fadeIn" d="M0  {{pred.a1}}  L150 {{pred.a2}}  L150 {{pred.ra2}}  L0  {{pred.ra1}}  Z" fill="#9e9e9e"/>
       <path class="uline animated fadeIn" d="M0  {{pred.b1}}  L150 {{pred.b2}}  L150 {{pred.rb2}}  L0  {{pred.rb1}}  Z" fill="#bababa"/>
@@ -40,7 +52,8 @@
       <text class="svg-text" x="101%" y="{{pred.y}}%"  fill="#808080">{{pred.value}}%</text>
     </svg>
     {{>svgbig}}
-    <div class="legend-y">Market Sentiment</div>
-    <div class="legend-x">Stock Price</div>
+    <div class="legend-y">Stock Price</div>
+    <div class="legend-x">Market Factors</div>
+    <div class="legend-z">Next 12 Months Forecast</div>
   </div>
 </template>
