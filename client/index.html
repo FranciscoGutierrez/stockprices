@@ -40,14 +40,14 @@
 
 <template name="regression">
   <div class="visualisations-row" style="margin-top: -45px;">
-    {{>lifequality name="dis"}}
-    {{>lifequality name="msft"}}
-    {{>lifequality name="aapl"}}
+    {{>lifequality name="dis"  title="Disney"    close="97.82" diff="1.00"  prcnt="1.02"}}
+    {{>lifequality name="msft" title="Microsoft" close="51.16" diff="0.33"  prcnt="0.35"}}
+    {{>lifequality name="aapl" title="Apple"     close="95.58" diff="0.33"  prcnt="0.35"}}
   </div>
   <div class="visualisations-row" style="margin-top: 0px;">
-    {{>lifequality name="ko"}}
-    {{>lifequality name="ibm"}}
-    {{>lifequality name="nke"}}
+    {{>lifequality name="ko"  title="Coca-Cola" close="45.33"  diff="-0.20" prcnt="-0.44"}}
+    {{>lifequality name="ibm" title="IBM"       close="151.78" diff="2.27"  prcnt="1.5"}}
+    {{>lifequality name="nke" title="Nike"      close="55.2"   diff="-0.43" prcnt="-0.78"}}
   </div>
 </template>
 

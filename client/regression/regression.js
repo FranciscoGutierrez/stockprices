@@ -5,31 +5,10 @@ Template.lifequality.onCreated(function(){
 
 Template.lifequality.helpers({
   stock() {
-    var city  = Template.instance().my_city.get();
-    var name  = this.name;
-    var stock = Series.findOne({name: name}, {sort: {date: -1}});
-    var date  = 0;
-    var close = 0;
-    var diff  = 0;
-    var prcnt = 0;
     var color = "green";
     var arrow = "up";
-    if(stock) close = stock.close;
-    if(stock) date = stock.date;
-    var bfore = Series.findOne({name: name, date: (date-777600000)});
-    if(bfore) diff = (bfore.close - stock.close).toFixed(2);
-    if(bfore) prcnt= (((100 * bfore.close)/stock.close)-100).toFixed(2);
-    if(diff < 0){
-      color = "red";
-      arrow = "down";
-    }
-    if(name == "dis" ) title = "Disney";
-    if(name == "msft") title = "Microsoft";
-    if(name == "aapl") title = "Apple";
-    if(name == "ko")   title = "Coca-Cola";
-    if(name == "ibm")  title = "IBM";
-    if(name == "nke")  title = "Nike";
-    return {name: name, title: title, close: close,  diff: diff, percent: prcnt, color: color, arrow:arrow};
+    if(this.diff < 0){ color = "red"; arrow = "down"; }
+    return {name: this.name, title: this.title, close: this.close,  diff: this.diff, percent: this.prcnt, color: color, arrow:arrow};
   },
   pred() {
     var city = Template.instance().my_city.get();
@@ -98,7 +77,7 @@ Template.lifequality.helpers({
   index() {
     var current = this.name;
     var title = "dummy.png";
-    if(Session.get("slider4on")) title = current + "_i.png";
+    if(Session.get("slider4-on")) title = current + "_i.png";
     return {name: title};
   }
 });
