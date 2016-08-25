@@ -10,6 +10,17 @@ Router.route('/:_id', {
   data: function () {
     var courses;
     var option = Router.current().params._id;
+
+    Session.setDefault("slider1",100);
+    Session.setDefault("slider2",100);
+    Session.setDefault("slider3",100);
+    Session.setDefault("slider4",100);
+    //
+    Session.setDefault("slider1-on",true);
+    Session.setDefault("slider2-on",true);
+    Session.setDefault("slider3-on",true);
+    Session.setDefault("slider4-on",true);
+    
     Meteor.subscribe("stocks", function(){
       Meteor.subscribe("series", function(){
         $(".loading-screen").fadeOut(function(){
@@ -22,15 +33,7 @@ Router.route('/:_id', {
           // Session.setDefault("strength-h",100);
           // Session.setDefault("option",option);
           // Session.setDefault("qnumber",0);
-          Session.setDefault("slider1",100);
-          Session.setDefault("slider2",100);
-          Session.setDefault("slider3",100);
-          Session.setDefault("slider4",100);
-          //
-          Session.setDefault("slider1-on",true);
-          Session.setDefault("slider2-on",true);
-          Session.setDefault("slider3-on",true);
-          Session.setDefault("slider4-on",true);
+
           // Session.setDefault("gold1",100);
           // Session.setDefault("gold2",100);
           // Session.setDefault("gold3",100);
@@ -54,9 +57,9 @@ Router.route('/:_id', {
           var isChrome = !!window.chrome && !!window.chrome.webstore;
           if(isChrome) {
             //Blaze.render(Template.welcome,$(".welcome-screen")[0]);
-            if(option == "timeseries") Blaze.render(Template.timeseries,$(".visualisations")[0]);
-            if(option == "chart")      Blaze.render(Template.regression,$(".visualisations")[0]);
-            if(option == "dots")       Blaze.render(Template.dots,$(".visualisations")[0]);
+            if(option == "series") Blaze.render(Template.timeseries, $(".visualisations")[0]);
+            if(option ==  "chart") Blaze.render(Template.regression, $(".visualisations")[0]);
+            if(option ==   "dots") Blaze.render(Template.dots, $(".visualisations")[0]);
           } else {
             $(".welcome-screen").text("This evaluation is only available in Google Chrome. 1.0 - 48 or above.");
           }

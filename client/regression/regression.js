@@ -6,7 +6,7 @@ Template.lifequality.onCreated(function(){
 Template.lifequality.helpers({
   stock() {
     var city  = Template.instance().my_city.get();
-    var name  = this.cityname;
+    var name  = this.name;
     var stock = Series.findOne({name: name}, {sort: {date: -1}});
     var date  = 0;
     var close = 0;
@@ -22,7 +22,7 @@ Template.lifequality.helpers({
     if(diff < 0){
       color = "red";
       arrow = "down";
-    } 
+    }
     if(name == "dis" ) title = "Disney";
     if(name == "msft") title = "Microsoft";
     if(name == "aapl") title = "Apple";
@@ -77,44 +77,28 @@ Template.lifequality.helpers({
        */
     };
   },
-  weather() {
-    var h = parseInt(Session.get("strength-h"));
-    var current = this.cityname;
+  advice() {
+    var current = this.name;
     var title = "dummy.png";
-    $('paper-checkbox[checked]').each(function() {
-      var name = $(this).attr('class').split(' ')[0];
-      if(name=="health") title = current+"_w.png";
-    });
+    if(Session.get("slider1-on")) title = current + "_a.png";
     return {name: title};
   },
-  safety() {
-    var s = parseInt(Session.get("strength-s"));
-    var current = this.cityname;
+  news() {
+    var current = this.name;
     var title = "dummy.png";
-    $('paper-checkbox[checked]').each(function() {
-      var name = $(this).attr('class').split(' ')[0];
-      if(name=="safety") title = current+"_s.png";
-    });
+    if(Session.get("slider2-on")) title = current + "_n.png";
     return {name: title};
   },
-  traffic() {
-    var t = parseInt(Session.get("strength-t"));
-    var current = this.cityname;
+  media() {
+    var current = this.name;
     var title = "dummy.png";
-    $('paper-checkbox[checked]').each(function() {
-      var name = $(this).attr('class').split(' ')[0];
-      if(name=="traffic") title = current+"_t.png";
-    });
+    if(Session.get("slider3-on")) title = current + "_m.png";
     return {name: title};
   },
-  airqual() {
-    var p = parseInt(Session.get("strength-p"));
-    var current = this.cityname;
+  index() {
+    var current = this.name;
     var title = "dummy.png";
-    $('paper-checkbox[checked]').each(function() {
-      var name = $(this).attr('class').split(' ')[0];
-      if(name=="polluted") title = current+"_a.png";
-    });
+    if(Session.get("slider4on")) title = current + "_i.png";
     return {name: title};
   }
 });

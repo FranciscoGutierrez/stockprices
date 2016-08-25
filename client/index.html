@@ -21,6 +21,7 @@
 </head>
 
 <body>
+  <!-- <div class="welcome-screen"></div> -->
   <div class="loading-screen">
     <paper-spinner active></paper-spinner>
   </div>
@@ -39,14 +40,14 @@
 
 <template name="regression">
   <div class="visualisations-row" style="margin-top: -45px;">
-    {{>lifequality cityname="dis"}}
-    {{>lifequality cityname="msft"}}
-    {{>lifequality cityname="aapl"}}
+    {{>lifequality name="dis"}}
+    {{>lifequality name="msft"}}
+    {{>lifequality name="aapl"}}
   </div>
   <div class="visualisations-row" style="margin-top: 0px;">
-    {{>lifequality cityname="ko"}}
-    {{>lifequality cityname="ibm"}}
-    {{>lifequality cityname="nke"}}
+    {{>lifequality name="ko"}}
+    {{>lifequality name="ibm"}}
+    {{>lifequality name="nke"}}
   </div>
 </template>
 

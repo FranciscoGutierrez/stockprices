@@ -6,7 +6,7 @@
   flex-direction: column;
   width: 270px;
   margin-top: 25px;
-  height: 56px;
+  height: 63px;
 }
 
 .slider paper-slider {
@@ -44,6 +44,7 @@
   justify-content: space-between;
   width: 243px;
   align-items: center;
+  height: 20px;
 }
 
 .slider .slider-value {
