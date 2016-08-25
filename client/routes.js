@@ -20,9 +20,9 @@ Router.route('/:_id', {
     Session.setDefault("slider2-on",true);
     Session.setDefault("slider3-on",true);
     Session.setDefault("slider4-on",true);
-    
+
     Meteor.subscribe("stocks", function(){
-      Meteor.subscribe("series", function(){
+      //Meteor.subscribe("series", function(){
         $(".loading-screen").fadeOut(function(){
           $(this).remove();
 
@@ -79,7 +79,7 @@ Router.route('/:_id', {
               });
               window.history.pushState('forward', null, './'+option);
             }
-          });
+          //});
 
         });
       });

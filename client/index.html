@@ -52,27 +52,27 @@
 </template>
 
 <template name="timeseries">
-  <div class="visualisations-row">
-    {{>series name="dis"}}
-    {{>series name="msft"}}
-    {{>series name="aapl"}}
+  <div class="visualisations-row" style="margin-top: -45px;">
+    {{>series name="dis"  title="Disney"    close="97.82" diff="1.00"  prcnt="1.02"}}
+    {{>series name="msft" title="Microsoft" close="51.16" diff="0.33"  prcnt="0.35"}}
+    {{>series name="aapl" title="Apple"     close="95.58" diff="0.33"  prcnt="0.35"}}
   </div>
-  <div class="visualisations-row">
-    {{>series name="ko"}}
-    {{>series name="ibm"}}
-    {{>series name="nke"}}
+  <div class="visualisations-row" style="margin-top: 0px;">
+    {{>series name="ko"  title="Coca-Cola" close="45.33"  diff="-0.20" prcnt="-0.44"}}
+    {{>series name="ibm" title="IBM"       close="151.78" diff="2.27"  prcnt="1.5"}}
+    {{>series name="nke" title="Nike"      close="55.2"   diff="-0.43" prcnt="-0.78"}}
   </div>
 </template>
 
 <template name="dots">
-  <div class="visualisations-row">
-    {{>dotplot name="dis"}}
-    {{>dotplot name="msft"}}
-    {{>dotplot name="aapl"}}
+  <div class="visualisations-row" style="margin-top: -45px;">
+    {{>dotplot name="dis"  title="Disney"    close="97.82" diff="1.00"  prcnt="1.02"}}
+    {{>dotplot name="msft" title="Microsoft" close="51.16" diff="0.33"  prcnt="0.35"}}
+    {{>dotplot name="aapl" title="Apple"     close="95.58" diff="0.33"  prcnt="0.35"}}
   </div>
-  <div class="visualisations-row">
-    {{>dotplot name="ko"}}
-    {{>dotplot name="ibm"}}
-    {{>dotplot name="nke"}}
+  <div class="visualisations-row" style="margin-top: 0px;">
+    {{>dotplot name="ko"  title="Coca-Cola" close="45.33"  diff="-0.20" prcnt="-0.44"}}
+    {{>dotplot name="ibm" title="IBM"       close="151.78" diff="2.27"  prcnt="1.5"}}
+    {{>dotplot name="nke" title="Nike"      close="55.2"   diff="-0.43" prcnt="-0.78"}}
   </div>
 </template>
