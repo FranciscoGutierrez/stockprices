@@ -1,10 +1,10 @@
-Template.dotplot.onCreated(function(){
+Template.series.onCreated(function(){
   var r = Template.instance().data['name'];
   this.stock = new ReactiveVar(Stocks.findOne({"name":r}));
 });
 
 
-Template.dotplot.helpers({
+Template.series.helpers({
   stock() {
     var name  = Template.instance().data['name'];
     var stock = Series.findOne({name: name}, {sort: {date: -1}});

@@ -51,20 +51,27 @@
 </template>
 
 <template name="timeseries">
+  <div class="visualisations-row">
+    {{>series name="dis"}}
+    {{>series name="msft"}}
+    {{>series name="aapl"}}
+  </div>
+  <div class="visualisations-row">
+    {{>series name="ko"}}
+    {{>series name="ibm"}}
+    {{>series name="nke"}}
+  </div>
 </template>
 
 <template name="dots">
-  <div class="start-question-container"></div>
-  <div>
-    {{>dotplot cityname="seattle"}}
-    {{>dotplot cityname="angeles"}}
+  <div class="visualisations-row">
+    {{>dotplot name="dis"}}
+    {{>dotplot name="msft"}}
+    {{>dotplot name="aapl"}}
   </div>
-  <div>
-    {{>dotplot cityname="denver"}}
-    {{>dotplot cityname="houston"}}
-  </div>
-  <div>
-    {{>dotplot cityname="newyork"}}
-    {{>dotplot cityname="atlanta"}}
+  <div class="visualisations-row">
+    {{>dotplot name="ko"}}
+    {{>dotplot name="ibm"}}
+    {{>dotplot name="nke"}}
   </div>
 </template>

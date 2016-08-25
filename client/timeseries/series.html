@@ -1,5 +1,5 @@
-<template name="dotplot">
-  <div class="dotplot-container">
+<template name="series">
+  <div class="series-container">
     <div class="dotplot-title">
       <h1> {{stock.title}}
       <div class="title-right">
@@ -15,7 +15,7 @@
     </div>
     <div class="ubar-main"></div>
     <div class="umeter">
-      <div class="um m-2" style="color: #757575; justify-content: space-between;"><span style="color: #424242;">0</span> 10</div>
+      <!-- <div class="um m-2" style="color: #757575; justify-content: space-between;"><span style="color: #424242;">0</span> 10</div>
       <div class="um m-4">20</div>
       <div class="um m-6" style="color: #757575;">30</div>
       <div class="um m-8">40</div>
@@ -24,9 +24,9 @@
       <div class="um m-14" style="color: #757575;">70</div>
       <div class="um m-16">80</div>
       <div class="um m-18" style="color: #757575;">90</div>
-      <div class="um m-20">100</div>
+      <div class="um m-20">100</div> -->
       <div class="umeter-ticks">
-        <div class="utick" style="justify-content: space-between;"><span>.</span>.</div>
+        <!-- <div class="utick" style="justify-content: space-between;"><span>.</span>.</div>
         <div class="utick">.</div>
         <div class="utick">.</div>
         <div class="utick">.</div>
@@ -35,10 +35,10 @@
         <div class="utick">.</div>
         <div class="utick">.</div>
         <div class="utick">.</div>
-        <div class="utick">.</div>
+        <div class="utick">.</div> -->
       </div>
       <div class="udots-container">
-        <div class="udots" style="left: {{prediction.a1}}px;">
+        <!-- <div class="udots" style="left: {{prediction.a1}}px;">
           <div class="ua1 udot" ></div>
         </div>
         <div class="udots" style="left: {{prediction.a2}}px;">
@@ -93,9 +93,10 @@
         <div class="udots" style="left: {{prediction.a11}}px;">
           <div class="ua11 udot"></div>
         </div>
-      </div>
+      </div> -->
     </div>
-    <div class="dotplot-legend">Stock Price,&nbsp;<span>12 Month Forecast</span></div>
+    </div>
+    <!-- <div class="dotplot-legend">Stock Price,&nbsp;<span>12 Month Forecast</span></div> -->
     <div class="uncertainty-sentence">
       <!-- <p>Market Factor is <span>{{avg}}</span>%</p> -->
       <!-- <p>in <span>{{stock.name}}</span>.</p> -->

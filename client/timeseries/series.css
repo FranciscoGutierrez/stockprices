@@ -1,6 +1,6 @@
 /* CSS declarations go here */
 
-.dotplot-container .performance-text {
+.series-container .performance-text {
   padding: 0;
   margin: 0;
   color: #424242;
@@ -10,7 +10,7 @@
   align-self: flex-end;
 }
 
-.dotplot-container .predic-text {
+.series-container .predic-text {
   padding: 0;
   margin: 0;
   color: #424242;
@@ -20,11 +20,11 @@
   text-align: end;
 }
 
-.dotplot-container .predic-text b {
+.series-container .predic-text b {
   font-weight: normal;
 }
 
-.dotplot-container .predic-text span {
+.series-container .predic-text span {
   padding: 0;
   margin: 0;
   margin-top: 8px;
@@ -35,7 +35,7 @@
   opacity: 0.5;
 }
 
-.dotplot-container .udots-container {
+.series-container .udots-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -47,14 +47,14 @@
   transition: all 200ms ease-out;
 }
 
-.dotplot-container .uparrow {
+.series-container .uparrow {
   position: absolute;
   color: rgb(66, 66, 66);
   bottom: -24px;
   margin-left: 19px;
 }
 
-.dotplot-container .chance-text {
+.series-container .chance-text {
   padding: 0;
   margin: 0;
   color: #424242;
@@ -63,7 +63,7 @@
   line-height: 1.1;
 }
 
-.dotplot-container .chance-sub {
+.series-container .chance-sub {
   padding: 0;
   margin: 0;
   margin-top: 8px;
@@ -73,7 +73,7 @@
   line-height: 1.4;
 }
 
-.dotplot-container .legend-sub {
+.series-container .legend-sub {
   padding: 0;
   margin: 0;
   color: #9E9E9E;
@@ -338,7 +338,7 @@ text {
   border-bottom: 2px solid #bd5f85;
 }
 
-.courses-title {
+.series-container .courses-title {
   background: #fcfcfc;
 }
 
@@ -351,31 +351,31 @@ text {
   font-weight: 300;
 }
 
-.dotplot-container .uncertainty-sentence p {
+.series-container .uncertainty-sentence p {
   margin: 0 0 0px;
   font-size: 14px;
 }
 
-.uncertainty-sentence span {
+.series-container .uncertainty-sentence span {
   color: #424242;
   font-size: 14px;
   font-weight: 500;
   font-family: Roboto, sans-serif;
 }
 
-.dotplot-container .uncertainty-sentence b {
+.series-container .uncertainty-sentence b {
   font-size: 20px;
   color: #424242;
   font-weight: 500;
 }
 
-.dotplot-container .overall-details {
+.series-container .overall-details {
   display: flex;
   width: 100%;
   justify-content: space-around;
 }
 
-.dotplot-container .detail  {
+.series-container .detail  {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -383,29 +383,29 @@ text {
   color: #424242;
 }
 
-.dotplot-container .detail-top {
+.series-container .detail-top {
   font-size: 20px;
   font-weight: 500;
 }
 
-.dotplot-container .detail-text {
+.series-container .detail-text {
   font-size: 16px;
   color: #757575;
   font-weight: 300;
 }
 
-.dotplot-container .umeter {
+.series-container .umeter {
   width: 200px;
   height: 3px;
   background: white;
-  border-top: 1px solid black;
+  border-top: 1px solid #a1a1a1;
   display: flex;
   height: 10px;
   position: relative;
   font-family: Roboto, sans-serif;
 }
 
-.dotplot-container .umeter .um {
+.series-container .umeter .um {
   font-size: 9px;
   color: #424242;
   width: 30px;
@@ -416,18 +416,18 @@ text {
   padding-top: 3px;
 }
 
-.dotplot-container .ubar-main {
+.series-container .ubar-main {
   display: flex;
   transition: all 200ms ease-out;
-  border-left: 1px solid #424242;
-  border-right: 1px solid #424242;
+  /*border-left: 1px solid #424242;
+  border-right: 1px solid #424242;*/
   height: 2px;
 }
 /*.ubar-left { transition: all 200ms ease-out; }
 .ubar-right { transition: all 200ms ease-out; }*/
 
 
-.dotplot-container .umeter-ticks {
+.series-container .umeter-ticks {
   display: flex;
   position: absolute;
   left: 0;
@@ -436,7 +436,7 @@ text {
   width: 200px;
 }
 
-.dotplot-container .utick {
+.series-container .utick {
   width: 30px;
   width: 30px;
   color: #757575;
@@ -448,7 +448,7 @@ text {
 
 
 
-.dotplot-container {
+.series-container {
   width: 200px;
   margin-top: 100px;
   cursor: default;
@@ -456,7 +456,7 @@ text {
   font-family: "Raleway",sans-serif;
 }
 
-.dotplot-container .dots-value {
+.series-container .dots-value {
   display: flex;
   flex-direction: column;
   /* position: absolute; */
@@ -471,7 +471,7 @@ text {
   justify-content: center;
 }
 
-.dotplot-container .dotplot-legend {
+.series-container .dotplot-legend {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -482,19 +482,19 @@ text {
   color: #424242;
 }
 
-.dotplot-container .dotplot-legend span {
+.series-container .dotplot-legend span {
   font-size: 11px;
   color: #a1a1a1;
   padding-top: 1px;
 }
 
-.dotplot-container .dotplot-title {
+.series-container .dotplot-title {
   position: absolute;
   top: -88px;
   width: 100%;
 }
 
-.dotplot-container .dotplot-title h1 {
+.series-container .dotplot-title h1 {
   font-weight: 100;
   padding-left: 3%;
   margin:  0;
@@ -509,7 +509,7 @@ text {
   font-family: 'Raleway', sans-serif;
 }
 
-.dotplot-container .dotplot-title h1 .title-right {
+.series-container .dotplot-title h1 .title-right {
   font-family: 'Raleway', sans-serif;
   font-size: 10px;
   color: #a1a1a1;
@@ -517,7 +517,7 @@ text {
   font-weight: 700;
 }
 
-.dotplot-container .dotplot-title h1 .title-right span {
+.series-container .dotplot-title h1 .title-right span {
   font-family: Roboto, sans-serif;
   font-size: 14px;
   color: black;
@@ -525,7 +525,7 @@ text {
   font-weight: 500;
 }
 
-.dotplot-container .dotplot-title h2 {
+.series-container .dotplot-title h2 {
   margin:  0;
   padding: 0;
   font-size: 11px;
@@ -537,7 +537,7 @@ text {
   font-family: 'Raleway', sans-serif;
 }
 
-.dotplot-container .dotplot-title h2 span {
+.series-container .dotplot-title h2 span {
   font-size: 11px;
   color: green;
   text-transform: uppercase;
