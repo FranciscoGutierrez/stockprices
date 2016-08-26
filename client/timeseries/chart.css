@@ -1,0 +1,31 @@
+.highcharts-title {
+  display: none;
+}
+
+.highcharts-container {
+  width:  100px;
+  height: 100px;
+  overflow: visible !important;
+}
+
+.highcharts-container svg {
+  overflow: visible !important;
+}
+
+.chart {
+  width:  100px;
+  height: 100px;
+  overflow: visible !important;
+}
+
+.highcharts-legend { display: none; }
+.highcharts-axis   { display: none; }
+/*.highcharts-tooltip{ display: none; }*/
+.highcharts-yaxis-title { display: none; }
+.highcharts-xaxis-labels{ display: none; }
+.highcharts-container svg text   { display:  none; }
+.highcharts-container svg g text { display:  block; }
+.highcharts-background { display: none; }
+/*.highcharts-tracker { stroke: #a1a1a1; }*/
+
+.highcharts-yaxis-labels { font-size: 10px;}

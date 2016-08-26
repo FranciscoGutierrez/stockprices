@@ -1,20 +1,21 @@
 {
   "name": "stockprices",
-  "private": true,
-  "scripts": {
-    "start": "meteor run"
-  },
-  "dependencies": {
-  },
-  "description": "",
   "version": "1.0.0",
-  "main": "index.html",
+  "description": "All probability is conditional. Truths are known because of the conditions assumed given the evidence in observations.",
+  "main": "index.js",
+  "dependencies": {
+    "highcharts": "^4.2.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FranciscoGutierrez/stockprices.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/FranciscoGutierrez/stockprices/issues"
   },

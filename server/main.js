@@ -12,6 +12,6 @@ Meteor.publish("answers", function () {
   return Answers.find({});
 });
 
-Meteor.publish("series", function () {
-  return Series.find({});
+Meteor.publish("series", function (name) {
+  return Series.find({ name: name});
 });
