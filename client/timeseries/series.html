@@ -13,6 +13,15 @@
         </span>
       </h2>
     </div>
-    <div id="chart-{{stock.name}}" class="chart">{{createChart}}</div>
+    <div class="series-viz">
+      <div class="series-viz-content">
+        <h1>Historical</h1>
+        <div id="chart-{{stock.name}}" class="chart">{{createChart}}</div>
+      </div>
+      <div class="series-viz-content">
+        <h1 style="text-align: right;">Forecast</h1>
+      </div>
+    </div>
+
   </div>
 </template>

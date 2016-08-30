@@ -29,7 +29,8 @@ Template.series.helpers({
         },
         yAxis: {
           offset: -15,
-          minPadding: 0
+          minPadding: 0,
+          tickLength: 0
         },
         colors: ['#a1a1a1'],
         series: [{

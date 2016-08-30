@@ -18,7 +18,7 @@
   color: #a1a1a1;
   cursor: default;
   position: absolute;
-  bottom: -23px;
+  bottom: -30px;
   width: 100%;
   text-align: center;
 }
@@ -123,7 +123,7 @@
 .lifequality-container svg {
   overflow:  visible;
   position: absolute;
-  top:  0;
+  top:  4px;
   left: 0;
   width:  100%;
   height: 100%;
@@ -138,7 +138,7 @@
 .lifequality-container .svg-text {
   margin-top:  10px;
   margin-left: 10px;
-  font-size:   10px;
+  font-size:   11px;
   transition: all 500ms ease-out;
 }
 
@@ -146,5 +146,5 @@
   font-size: 10px;
   font-weight: 500;
   color: #b1b1b1;
-  margin-left: 3px;
+  margin-bottom: 3px;
 }

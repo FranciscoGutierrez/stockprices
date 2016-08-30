@@ -182,13 +182,32 @@
   opacity: 0.45;
 }
 
-
-
 .series-container {
   width:  200px;
+  height: 200px;
   cursor: default;
   position: relative;
   font-family: "Raleway",sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.series-viz {
+  display: flex;
+}
+
+.series-viz-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.series-viz-content h1 {
+  padding: 0;
+  margin: 3px 0 3px 0;
+  font-size: 11px;
+  font-family: sans-serif;
+  color: #a1a1a1;
 }
 
 .series-container .dots-value {
