@@ -129,6 +129,7 @@ image {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  width: 30px;
 }
 
 .uline {
@@ -436,7 +437,7 @@ text {
   transition: all 400ms ease-out;
   align-items: center;
   justify-content: center;
-  width: 27px;
+  width: 30px;
 }
 
 .dotplot-container .dotplot-legend {
