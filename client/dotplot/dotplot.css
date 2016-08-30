@@ -128,6 +128,7 @@ image {
   height: 60px;
   display: flex;
   flex-direction: column-reverse;
+  align-items: center;
 }
 
 .uline {
@@ -403,18 +404,9 @@ text {
   height: 10px;
   position: relative;
   font-family: Roboto, sans-serif;
+  justify-content: space-between;
 }
 
-.dotplot-container .umeter .um {
-  font-size: 9px;
-  color: #424242;
-  width: 30px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 15px;
-  padding-top: 3px;
-}
 
 .dotplot-container .ubar-main {
   display: flex;
@@ -425,28 +417,6 @@ text {
 }
 /*.ubar-left { transition: all 200ms ease-out; }
 .ubar-right { transition: all 200ms ease-out; }*/
-
-
-.dotplot-container .umeter-ticks {
-  display: flex;
-  position: absolute;
-  left: 0;
-  justify-content: space-around;
-  top: -20px;
-  width: 200px;
-}
-
-.dotplot-container .utick {
-  width: 30px;
-  width: 30px;
-  color: #757575;
-  font-size: 20px;
-  justify-content: flex-end;
-  display: flex;
-  opacity: 0.45;
-}
-
-
 
 .dotplot-container {
   width: 200px;
@@ -459,16 +429,14 @@ text {
 .dotplot-container .dots-value {
   display: flex;
   flex-direction: column;
-  /* position: absolute; */
   font-size: 10px;
   font-weight: 500;
   top: -1px;
-  /* background: white; */
-  /* padding: 0 5px; */
   border-radius: 50%;
   transition: all 400ms ease-out;
   align-items: center;
   justify-content: center;
+  width: 27px;
 }
 
 .dotplot-container .dotplot-legend {
@@ -543,3 +511,53 @@ text {
   text-transform: uppercase;
   font-family: Roboto, sans-serif;
 }
+
+
+.umeter .um {
+  font-size: 9px;
+  color: #424242;
+  width: 30px;
+  height: 15px;
+  padding-top: 3px;
+  text-align: center;
+}
+
+.umeter .q1{ position: absolute; left: 185px;}
+.umeter .q2{ position: absolute; left: 135px;}
+.umeter .q3{ position: absolute; left:  85px;}
+.umeter .q4{ position: absolute; left:  35px;}
+.umeter .q5{ position: absolute; left: -15px;}
+
+.dotplot-container .umeter-ticks {
+  display: flex;
+  position: absolute;
+  left: 0;
+  justify-content: space-between;
+  top: -20px;
+  width: 200px;
+}
+
+.dotplot-container .utick {
+  width: 5px;
+  color: #757575;
+  font-size: 20px;
+  justify-content: flex-end;
+  display: flex;
+  opacity: 0.45;
+  position: absolute;
+}
+
+.umeter .q1{ position: absolute; left: 185px;}
+.umeter .q2{ position: absolute; left: 135px;}
+.umeter .q3{ position: absolute; left:  85px;}
+.umeter .q4{ position: absolute; left:  35px;}
+.umeter .q5{ position: absolute; left: -15px;}
+
+.umeter .tick1{ left: 23px;}
+.umeter .tick2{ left: 48px;}
+.umeter .tick3{ left: 73px;}
+.umeter .tick4{ left: 98px;}
+.umeter .tick5{ left: 123px;}
+.umeter .tick6{ left: 148px;}
+.umeter .tick7{ left: 173px;}
+.umeter .tick8{ left: 198px;}

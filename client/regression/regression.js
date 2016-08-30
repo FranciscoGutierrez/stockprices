@@ -59,7 +59,7 @@ Template.lifequality.helpers({
     var q3 = (stock.max/2).toFixed(2);
     var q4 = (stock.max*0.25).toFixed(2);
     var q5 = 0;
-    console.log(stock.max)
+
     y = 100 - (((advice + news + media + index)/n)*100);
     v = (stock.max * (1 - (y/100))).toFixed(2);
 
@@ -68,7 +68,7 @@ Template.lifequality.helpers({
     if(v < 0) v = 0;
     if(y > 100) y = 100;
     if(c > 100) c = 100;
-    
+
     return {
       value: v, // Actual predicted value;
       y: y, // Uses percentages

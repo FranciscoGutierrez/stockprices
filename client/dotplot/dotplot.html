@@ -14,44 +14,36 @@
       </h2>
     </div>
     <div class="ubar-main"></div>
-    <div id="lineChart"></div>
     <div class="umeter">
-      <div class="um m-2" style="color: #757575; justify-content: space-between;"><span style="color: #424242;">0</span> 10</div>
-      <div class="um m-4">20</div>
-      <div class="um m-6" style="color: #757575;">30</div>
-      <div class="um m-8">40</div>
-      <div class="um m-10" style="color: #757575;">50</div>
-      <div class="um m-12">60</div>
-      <div class="um m-14" style="color: #757575;">70</div>
-      <div class="um m-16">80</div>
-      <div class="um m-18" style="color: #757575;">90</div>
-      <div class="um m-20">100</div>
+      <div class="um q5">{{prediction.q5}}</div>
+      <div class="um q4">{{prediction.q4}}</div>
+      <div class="um q3">{{prediction.q3}}</div>
+      <div class="um q2">{{prediction.q2}}</div>
+      <div class="um q1">{{prediction.q1}}</div>
       <div class="umeter-ticks">
-        <div class="utick" style="justify-content: space-between;"><span>.</span>.</div>
-        <div class="utick">.</div>
-        <div class="utick">.</div>
-        <div class="utick">.</div>
-        <div class="utick">.</div>
-        <div class="utick">.</div>
-        <div class="utick">.</div>
-        <div class="utick">.</div>
-        <div class="utick">.</div>
-        <div class="utick">.</div>
+        <div class="utick tick1">.</div>
+        <div class="utick tick2">.</div>
+        <div class="utick tick3">.</div>
+        <div class="utick tick4">.</div>
+        <div class="utick tick5">.</div>
+        <div class="utick tick6">.</div>
+        <div class="utick tick7">.</div>
+        <div class="utick tick8">.</div>
       </div>
       <div class="udots-container">
-        <div class="udots" style="left: {{prediction.a1}}px;">
+        <!-- <div class="udots" style="left: {{prediction.a1}}px;">
           <div class="ua1 udot" ></div>
         </div>
         <div class="udots" style="left: {{prediction.a2}}px;">
           <div class="ua2 udot"></div>
           <div class="ua2 udot"></div>
-        </div>
-        <div class="udots" style="left: {{prediction.a3}}px;">
+        </div> -->
+        <!-- <div class="udots" style="left: {{prediction.a3}}px;">
           <div class="ua3 udot"></div>
           <div class="ua3 udot"></div>
           <div class="ua3 udot"></div>
-        </div>
-        <div class="udots" style="left: {{prediction.a4}}px;">
+        </div> -->
+        <!-- <div class="udots" style="left: {{prediction.a4}}px;">
           <div class="ua4 udot"></div>
           <div class="ua4 udot"></div>
           <div class="ua4 udot"></div>
@@ -61,17 +53,15 @@
           <div class="ua5 udot"></div>
           <div class="ua5 udot"></div>
           <div class="ua5 udot"></div>
-        </div>
+        </div> -->
         <div class="udots" style="left: {{prediction.a6}}px;">
           <div class="ua6 udot"></div>
           <div class="ua6 udot"></div>
           <div class="ua6 udot"></div>
           <div class="ua6 udot"></div>
-          <div class="dots-value" style="left: {{prediction.a6}}px;">
-            <div style="background: white;">{{prediction.text}}</div>
-          </div>
+          <div class="dots-value" style="left: {{prediction.a6}}px;">{{prediction.text}}</div>
         </div>
-        <div class="udots" style="left: {{prediction.a7}}px;">
+        <!-- <div class="udots" style="left: {{prediction.a7}}px;">
           <div class="ua7 udot"></div>
           <div class="ua7 udot"></div>
           <div class="ua7 udot"></div>
@@ -93,7 +83,7 @@
         </div>
         <div class="udots" style="left: {{prediction.a11}}px;">
           <div class="ua11 udot"></div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="dotplot-legend">Stock Price,&nbsp;<span>12 Month Forecast</span></div>
