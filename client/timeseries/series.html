@@ -28,14 +28,14 @@
         <h1 style="text-align: right; margin-top: 0px;"><i class="fa fa-caret-left"></i> Last 12 Months&nbsp;</h1>
       </div>
       <div class="series-viz-content">
-        <h1 style="text-align: right;">Forecast</h1>
+        <h1 style="text-align: right; border-left: 1px solid #d1d1d1;">Forecast</h1>
         <div id="forecast-{{stock.name}}" class="chart-forecast">
           <svg style="width:100px; height: 100px;">
             <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.y}}%" stroke="#717171" stroke-width="1"/>
           </svg>
-          <div class="prediction-axis" style="top:{{prediction.y}}%;">
+          <div class="prediction-axis">
             <!-- <div class="pred high">${{this.high}}</div> -->
-            <div class="pred mid">${{prediction.value}}</div>
+            <div class="pred mid" style="top:{{prediction.y}}%;">${{prediction.value}}</div>
             <!-- <div class="pred low" >${{this.low}} </div> -->
           </div>
         </div>

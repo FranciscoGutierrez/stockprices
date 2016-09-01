@@ -10,6 +10,7 @@
 
 .highcharts-container svg {
   overflow: visible !important;
+  border-left: 1px solid #d1d1d1;
 }
 
 .chart {
@@ -23,8 +24,12 @@
   height: 100px;
   overflow: visible !important;
   background: #f1f1f1;
-  border-left: 1px solid #d1d1d1;
+  border: 1px solid #d1d1d1;
   position: relative;
+}
+
+.chart-forecast svg {
+  position: absolute;
 }
 
 .highcharts-legend { display: none; }
@@ -85,11 +90,18 @@
   justify-content: space-around;
   font-family: Roboto, sans-serif;
   font-size: 11px;
-  right: -33%;
+  top: 0;
+  right: -42%;
   color: #424242;
   font-weight: 500;
+  height: 100%;
+  /*background: red;*/
+  overflow: hidden;
+  z-index: 1;
+  width: 40px;
 }
 
 .prediction-axis .pred {
-  width: 30px;
+  width: 40px;
+  position: absolute;
 }

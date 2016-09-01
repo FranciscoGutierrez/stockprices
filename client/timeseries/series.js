@@ -79,6 +79,9 @@ Template.series.helpers({
     var lwr1 = 0;
     var lwr2 = 0;
     var show = false;
+
+    var start = Number(this.start);
+    var close = Number(this.close);
     // Get the value of each slider and adjust it to decimals.
     var sldr1 = Session.get("slider1")/100;
     var sldr2 = Session.get("slider2")/100;
@@ -114,6 +117,9 @@ Template.series.helpers({
     y = 100 - (((advice + news + media + index)/n)*100);
     v = (stock.max * (1 - (y/100))).toFixed(2);
 
+    difference = ((v - close)/close)*100;
+    y =  start - difference;
+
     if(y < 0) y = 0;
     if(c < 0) c = 0;
     if(v < 0) v = 0;
@@ -121,7 +127,8 @@ Template.series.helpers({
     if(c > 100) c = 100;
     return {
       value: v, // Actual predicted value;
-      y: y, // Uses percentages
+      y: y.toFixed(2), // Uses percentages
+      diff: difference,
       show: show
     }
   }
