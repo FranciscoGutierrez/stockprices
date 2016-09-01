@@ -18,17 +18,25 @@
   overflow: visible !important;
 }
 
+.chart-forecast {
+  width:  100px;
+  height: 100px;
+  overflow: visible !important;
+  background: #f1f1f1;
+  border-left: 1px solid #d1d1d1;
+  position: relative;
+}
+
 .highcharts-legend { display: none; }
 .highcharts-axis   { display: none; }
 /*.highcharts-tooltip{ display: none; }*/
-.highcharts-yaxis-title { display: none; }
-.highcharts-xaxis-labels{ display: none; }
+.highcharts-yaxis-title  { display: none; }
+.highcharts-xaxis-labels { display: none; }
+.highcharts-yaxis-labels { display: none; }
 .highcharts-container svg text   { display:  none; }
 .highcharts-container svg g text { display:  block; }
 .highcharts-background { display: none; }
 /*.highcharts-tracker { stroke: #a1a1a1; }*/
-
-.highcharts-yaxis-labels { font-size: 10px;}
 
 .subtitle {
   margin-top: 5px;
@@ -38,4 +46,50 @@
   justify-content: space-between;
   color: #a1a1a1;
   font-weight: 500;
+}
+
+.y-axis {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  font-family: Roboto, sans-serif;
+  font-size: 11px;
+  left: -25px;
+  color: #a1a1a1;
+}
+
+.y-axis .yaxis {
+  text-align: right;
+}
+
+.now-legend {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: Roboto, sans-serif;
+  font-size: 11px;
+  left: 65%;
+  top: 45%;
+  color: #424242;
+  font-weight: 500;
+  z-index: 1;
+}
+
+.prediction-axis {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: Roboto, sans-serif;
+  font-size: 11px;
+  right: -33%;
+  color: #424242;
+  font-weight: 500;
+}
+
+.prediction-axis .pred {
+  width: 30px;
 }

@@ -73,7 +73,7 @@ Router.route('/:_id', {
                 if (hashName !== '') {
                   var hash = window.location.hash;
                   if (hash === '') {
-                    alert('Warning, if you press back button, you will lose your progress...');
+                    alert('Warning! \nIf you press the back button again you will lose your progress.');
                   }
                 }
               });

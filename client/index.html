@@ -53,14 +53,14 @@
 
 <template name="timeseries">
   <div class="visualisations-row">
-    {{>series name="dis"  title="Disney"    close="97.82" diff="1.00"  prcnt="1.02"}}
-    {{>series name="msft" title="Microsoft" close="51.16" diff="0.33"  prcnt="0.35"}}
-    {{>series name="aapl" title="Apple"     close="95.58" diff="0.33"  prcnt="0.35"}}
+    {{>series name="dis"  title="Disney"    close="97.82" diff="1.00"  prcnt="1.02" high="125" mid="100" low="75" top="30" start="55"}}
+    {{>series name="msft" title="Microsoft" close="51.16" diff="0.33"  prcnt="0.35" high="60"  mid="50"  low="40" top="16" start="48"}}
+    {{>series name="aapl" title="Apple"     close="95.58" diff="0.33"  prcnt="0.35" high="150" mid="100" low="50" top="30" start="53"}}
   </div>
   <div class="visualisations-row">
-    {{>series name="ko"  title="Coca-Cola" close="45.33"  diff="-0.20" prcnt="-0.44"}}
-    {{>series name="ibm" title="IBM"       close="151.78" diff="2.27"  prcnt="1.5"}}
-    {{>series name="nke" title="Nike"      close="55.2"   diff="-0.43" prcnt="-0.78"}}
+    {{>series name="ko"  title="Coca-Cola" close="45.33"  diff="-0.20" prcnt="-0.44" high="50"  mid="40"  low="30"  top="16" start="23"}}
+    {{>series name="ibm" title="IBM"       close="151.78" diff="2.27"  prcnt="1.5"   high="200" mid="150" low="100" top="35" start="49"}}
+    {{>series name="nke" title="Nike"      close="55.2"   diff="-0.43" prcnt="-0.78" high="200" mid="100" low="0"   top="54" start="73"}}
   </div>
 </template>
 

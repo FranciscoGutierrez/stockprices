@@ -4,7 +4,7 @@
   font-family: 'Raleway', sans-serif;
   display: flex;
   flex-direction: column;
-  width: 270px;
+  width: 250px;
   margin-top: 25px;
   height: 63px;
 }
@@ -33,7 +33,7 @@
   font-weight: 400;
   font-size: 11px;
   color: #a1a1a1;
-  width: 240px;
+  width: 218px;
 }
 
 .slider-head {
@@ -42,7 +42,7 @@
   font-size: 18px;
   color: #424242;
   justify-content: space-between;
-  width: 243px;
+  width: 220px;
   align-items: center;
   height: 20px;
 }

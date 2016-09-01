@@ -70,6 +70,12 @@ Template.dotplot.helpers({
     y = 100 - (((advice + news + media + index)/n)*100);
     v = (stock.max * (1 - (y/100))).toFixed(2);
 
+    if(y < 0) y = 0;
+    if(c < 0) c = 0;
+    if(v < 0) v = 0;
+    if(y > 100) y = 100;
+    if(c > 100) c = 100
+
     /*
     if($(".health").attr("checked")) {
       sum_c.push(weather);

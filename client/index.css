@@ -18,7 +18,7 @@ body {
 .content-left {
   background: #fafafa;
   padding-left: 20px;
-  height: 900px;
+  /*height: 900px;*/
   position: relative;
   border: 1px solid #efefef;
 }
@@ -39,8 +39,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  max-width: 700px;
-  min-width: 700px;
+  max-width: 820px;
+  min-width: 820px;
 }
 
 .visualisations .visualisations-row {

@@ -49,7 +49,7 @@
       <line class="uline" x1="0%"          x2="100%"         y1="{{pred.y}}%" y2="{{pred.y}}%" stroke="#6e6e6e" stroke-width="1"/>
       <line class="sline" x1="{{pred.c}}%" x2="{{pred.c}}%"  y1="10%"          y2="100%"        stroke="#6e6e6e" stroke-width="1"/>
       <circle class="main-circle" cx="{{pred.c}}%" cy="{{pred.y}}%" r="3" fill="#4d4d4d"/>
-      <text class="svg-text" x="103%" y="{{pred.y}}%"  fill="#808080">{{pred.value}}</text>
+      <text class="svg-text" x="103%" y="{{pred.y}}%"  fill="#808080">${{pred.value}}</text>
       {{/if}}
       <!-- <path class="uline animated fadeIn"   d="M0 {{pred.lwr}} L150 {{pred.upr}}" stroke="#6e6e6e"  stroke-width="2"/> -->
     </svg>
@@ -61,7 +61,7 @@
       <text x="57%" y="107%" fill="#808080">60</text>
       <text x="77%" y="107%" fill="#808080">80</text>
       <text x="95%" y="107%" fill="#808080">100</text>
-      <text x="-24%"  y="6.5%" fill="#808080">{{pred.q1}}</text>
+      <text x="-28%"  y="6.5%" fill="#808080">${{pred.q1}}</text>
       <text x="-24%"  y="27%"  fill="#808080">{{pred.q2}}</text>
       <text x="-24%"  y="52%"  fill="#808080">{{pred.q3}}</text>
       <text x="-24%"  y="77%"  fill="#808080">{{pred.q4}}</text>

@@ -84,7 +84,7 @@ Template.lifequality.helpers({
       q3: q3,
       q4: q4,
       q5: q5,
-      show: show,
+      show: show
       /*
       ra1: 0   + 150-((x*150)/10),      ra2:  0  + 150-(((y*100)+x)*150)/10,
       a1: r_lwr1   + 150-((x*150)/10),  a2: r_lwr2  + 150-(((y*100)+x)*150)/10,
