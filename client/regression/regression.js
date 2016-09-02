@@ -38,12 +38,17 @@ Template.lifequality.helpers({
     var upr_max = 0;
     var upr_min = 0;
 
+    var fit_lwr = 0;
+    var fit_upr = 0;
+
     if(Session.get("slider1-on")) {
       advice = (stock.a_m1 * sldr1) + stock.a_m2;
       lwr_max += stock.a_lwr_max;
       lwr_min += stock.a_lwr_min;
       upr_max += stock.a_upr_max;
       upr_min += stock.a_upr_min;
+      fit_lwr += stock.a_fit_max;
+      fit_upr += stock.a_fit_min;
       n = n+1;
       show = true;
     }
@@ -53,6 +58,8 @@ Template.lifequality.helpers({
       lwr_min += stock.n_lwr_min;
       upr_max += stock.n_upr_max;
       upr_min += stock.n_upr_min;
+      fit_lwr += stock.n_fit_max;
+      fit_upr += stock.n_fit_min;
       n = n+1;
       show = true;
     }
@@ -62,6 +69,8 @@ Template.lifequality.helpers({
       lwr_min += stock.m_lwr_min;
       upr_max += stock.m_upr_max;
       upr_min += stock.m_upr_min;
+      fit_lwr += stock.m_fit_max;
+      fit_upr += stock.m_fit_min;
       n = n+1;
       show = true;
     }
@@ -71,6 +80,8 @@ Template.lifequality.helpers({
       lwr_min += stock.i_lwr_min;
       upr_max += stock.i_upr_max;
       upr_min += stock.i_upr_min;
+      fit_lwr += stock.i_fit_max;
+      fit_upr += stock.i_fit_min;
       n = n+1;
       show = true;
     }
@@ -85,6 +96,9 @@ Template.lifequality.helpers({
     lwr_min = 150-((lwr_min/n)*150);
     upr_max = 150-((upr_max/n)*150);
     upr_min = 150-((upr_min/n)*150);
+
+    fit_lwr = 150-((fit_lwr/n)*150);
+    fit_upr = 150-((fit_upr/n)*150);
 
     var r_lwr1 = lwr_min/5;
     var r_lwr2 = lwr_max/5;
@@ -103,8 +117,8 @@ Template.lifequality.helpers({
     return {
       value: v, // Actual predicted value;
       y: y, // Uses percentages
-      //upr:  150-(((y*100)+x)*150)/10, // Frome here, everything uses pixels!
-      //lwr:  150-((x*150)/10),
+      upr:  fit_upr, // Frome here, everything uses pixels!
+      lwr:  fit_lwr,
       upr1: upr_min,
       upr2: upr_max,
       lwr1: lwr_min,

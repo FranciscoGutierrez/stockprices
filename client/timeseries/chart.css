@@ -37,7 +37,7 @@
 /*.highcharts-tooltip{ display: none; }*/
 .highcharts-yaxis-title  { display: none; }
 .highcharts-xaxis-labels { display: none; }
-.highcharts-yaxis-labels { display: none; }
+/*.highcharts-yaxis-labels { display: none; }*/
 .highcharts-container svg text   { display:  none; }
 .highcharts-container svg g text { display:  block; }
 .highcharts-background { display: none; }

@@ -19,11 +19,11 @@
         <div id="chart-{{stock.name}}" class="chart">
           {{createChart}}
         </div>
-        <div class="y-axis">
+        <!-- <div class="y-axis">
           <div class="yaxis high">${{this.high}}</div>
           <div class="yaxis mid"> {{this.mid}}</div>
           <div class="yaxis low"> {{this.low}}</div>
-        </div>
+        </div> -->
         <div class="now-legend" style="top: {{this.top}}%">${{this.close}}</div>
         <h1 style="text-align: right; margin-top: 0px;"><i class="fa fa-caret-left"></i> Last 12 Months&nbsp;</h1>
       </div>
@@ -31,12 +31,18 @@
         <h1 style="text-align: right; border-left: 1px solid #d1d1d1;">Forecast</h1>
         <div id="forecast-{{stock.name}}" class="chart-forecast">
           <svg style="width:100px; height: 100px;">
-            <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.y}}%" stroke="#717171" stroke-width="1"/>
+            {{#if prediction.show}}
+            <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.upr}}%" stroke="#a1a1a1" stroke-width="1" stroke-dasharray="1,2"/>
+            <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.y}}%"   stroke="#717171" stroke-width="1"/>
+            <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.lwr}}%" stroke="#a1a1a1" stroke-width="1" stroke-dasharray="1,2"/>
+            {{/if}}
           </svg>
           <div class="prediction-axis">
+            {{#if prediction.show}}
             <!-- <div class="pred high">${{this.high}}</div> -->
             <div class="pred mid" style="top:{{prediction.y}}%;">${{prediction.value}}</div>
             <!-- <div class="pred low" >${{this.low}} </div> -->
+            {{/if}}
           </div>
         </div>
         <h1 style="text-align: left; border-left: 1px solid #d1d1d1; margin-top: 0px;">&nbsp;Next 12 Months <i class="fa fa-caret-right"></i></h1>

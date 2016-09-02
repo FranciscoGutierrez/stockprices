@@ -51,7 +51,7 @@
       <circle class="main-circle" cx="{{pred.c}}%" cy="{{pred.y}}%" r="3" fill="#4d4d4d"/>
       <text class="svg-text" x="103%" y="{{pred.y}}%"  fill="#808080">${{pred.value}}</text>
       {{/if}}
-      <!-- <path class="uline animated fadeIn"   d="M0 {{pred.lwr}} L150 {{pred.upr}}" stroke="#6e6e6e"  stroke-width="2"/> -->
+      <path class="uline animated fadeIn"   d="M0 {{pred.upr}} L150 {{pred.lwr}}" stroke="#6e6e6e"  stroke-width="2"/>
     </svg>
 
     <svg class="svgbig"  style="overflow: visible;">

@@ -37,11 +37,12 @@ Template.series.helpers({
           offset: -15,
           minPadding: 0,
           tickLength: 0,
-          ceiling: max,
-          floor: min,
-          max: max,
-          min: min,
-          minRange: min
+          //ceiling: 150,
+          max: 180,
+          //floor: 0,
+          min: 0,
+          minRange: min,
+          tickAmount: 4,
         },
         colors: ['#717171'],
         series: [{
@@ -129,7 +130,9 @@ Template.series.helpers({
       value: v, // Actual predicted value;
       y: y.toFixed(2), // Uses percentages
       diff: difference,
-      show: show
+      show: show,
+      lwr: (y*1.3).toFixed(2),
+      upr: (y*0.7).toFixed(2)
     }
   }
 });
