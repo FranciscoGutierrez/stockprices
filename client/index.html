@@ -41,38 +41,38 @@
 <template name="regression">
   <div class="visualisations-row" style="margin-top: -45px;">
     {{>lifequality name="dis"  title="Disney"    close="97.82" diff="1.00"  prcnt="1.02"}}
-    {{>lifequality name="msft" title="Microsoft" close="51.16" diff="0.33"  prcnt="0.35"}}
+    {{>lifequality name="hd"   title="Home Depot" close="51.16" diff="0.33"  prcnt="0.35"}}
     {{>lifequality name="aapl" title="Apple"     close="95.58" diff="0.33"  prcnt="0.35"}}
   </div>
   <div class="visualisations-row" style="margin-top: 0px;">
-    {{>lifequality name="ko"  title="Coca-Cola" close="45.33"  diff="-0.20" prcnt="-0.44"}}
+    {{>lifequality name="cvx" title="Chevron" close="45.33"  diff="-0.20" prcnt="-0.44"}}
     {{>lifequality name="ibm" title="IBM"       close="151.78" diff="2.27"  prcnt="1.5"}}
-    {{>lifequality name="nke" title="Nike"      close="55.2"   diff="-0.43" prcnt="-0.78"}}
+    {{>lifequality name="mcd" title="McDonald's"      close="55.2"   diff="-0.43" prcnt="-0.78"}}
   </div>
 </template>
 
 <template name="timeseries">
   <div class="visualisations-row">
-    {{>series name="dis"  title="Disney"     close="97.82" diff="1.00"  prcnt="1.02" high="125" mid="100" low="75" top="30" start="55"}}
-    {{>series name="hd"   title="Home Depot" close="51.16" diff="0.33"  prcnt="0.35" high="60"  mid="50"  low="40" top="16" start="48"}}
-    {{>series name="aapl" title="Apple"      close="95.58" diff="0.33"  prcnt="0.35" high="150" mid="100" low="50" top="30" start="53"}}
+    {{>series name="dis"  title="Disney"     close="97.82" diff="1.00"  prcnt="1.02" high="125" mid="100" low="75" top="47" start="66"}}
+    {{>series name="hd"   title="Home Depot" close="51.16" diff="0.33"  prcnt="0.35" high="60"  mid="50"  low="40" top="42" start="58"}}
+    {{>series name="aapl" title="Apple"      close="95.58" diff="0.33"  prcnt="0.35" high="150" mid="100" low="50" top="48" start="68"}}
   </div>
   <div class="visualisations-row">
-    {{>series name="cvx" title="Chevron"         close="45.33"  diff="-0.20" prcnt="-0.44" high="50"  mid="40"  low="30"  top="16" start="23"}}
-    {{>series name="ibm" title="IBM"        close="151.78" diff="2.27"  prcnt="1.5"   high="200" mid="150" low="100" top="35" start="49"}}
-    {{>series name="mcd" title="McDonald's" close="55.2"   diff="-0.43" prcnt="-0.78" high="200" mid="100" low="0"   top="54" start="73"}}
+    {{>series name="cvx" title="Chevron"    close="45.33"  diff="-0.20" prcnt="-0.44" high="50"  mid="40"  low="30"  top="50" start="66"}}
+    {{>series name="ibm" title="IBM"        close="151.78" diff="2.27"  prcnt="1.5"   high="200" mid="150" low="100" top="38" start="52"}}
+    {{>series name="mcd" title="McDonald's" close="55.2"   diff="-0.43" prcnt="-0.78" high="200" mid="100" low="0"   top="44" start="60"}}
   </div>
 </template>
 
 <template name="dots">
   <div class="visualisations-row">
-    {{>dotplot name="dis"  title="Disney"    close="97.82" diff="1.00"  prcnt="1.02"}}
-    {{>dotplot name="msft" title="Microsoft" close="51.16" diff="0.33"  prcnt="0.35"}}
-    {{>dotplot name="aapl" title="Apple"     close="95.58" diff="0.33"  prcnt="0.35"}}
+    {{>dotplot name="dis"  title="Disney"     close="97.82" diff="1.00"  prcnt="1.02"}}
+    {{>dotplot name="hd"   title="Home Depot" close="51.16" diff="0.33"  prcnt="0.35"}}
+    {{>dotplot name="aapl" title="Apple"      close="95.58" diff="0.33"  prcnt="0.35"}}
   </div>
   <div class="visualisations-row">
-    {{>dotplot name="ko"  title="Coca-Cola" close="45.33"  diff="-0.20" prcnt="-0.44"}}
-    {{>dotplot name="ibm" title="IBM"       close="151.78" diff="2.27"  prcnt="1.5"}}
-    {{>dotplot name="nke" title="Nike"      close="55.2"   diff="-0.43" prcnt="-0.78"}}
+    {{>dotplot name="cvx" title="Chevron"    close="45.33"  diff="-0.20" prcnt="-0.44"}}
+    {{>dotplot name="ibm" title="IBM"        close="151.78" diff="2.27"  prcnt="1.5"}}
+    {{>dotplot name="mcd" title="McDonald's" close="55.2"   diff="-0.43" prcnt="-0.78"}}
   </div>
 </template>

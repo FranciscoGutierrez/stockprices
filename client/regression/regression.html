@@ -15,7 +15,7 @@
       <div class="legend-z">Next 12 Months Forecast</div>
     </div>
     <svg style="overflow: visible;">
-      <path class="uline animated fadeIn" d="M0  {{pred.a1}}  L150 {{pred.a2}}  L150 {{pred.ra2}}  L0  {{pred.ra1}}  Z" fill="#9e9e9e"/>
+      <!-- <path class="uline animated fadeIn" d="M0  {{pred.a1}}  L150 {{pred.a2}}  L150 {{pred.ra2}}  L0  {{pred.ra1}}  Z" fill="#9e9e9e"/>
       <path class="uline animated fadeIn" d="M0  {{pred.b1}}  L150 {{pred.b2}}  L150 {{pred.rb2}}  L0  {{pred.rb1}}  Z" fill="#bababa"/>
       <path class="uline animated fadeIn" d="M0  {{pred.c1}}  L150 {{pred.c2}}  L150 {{pred.rc2}}  L0  {{pred.rc1}}  Z" fill="#d2d2d2"/>
       <path class="uline animated fadeIn" d="M0  {{pred.d1}}  L150 {{pred.d2}}  L150 {{pred.rd2}}  L0  {{pred.rd1}}  Z" fill="#e5e5e5"/>
@@ -25,7 +25,7 @@
       <path class="uline animated fadeIn" d="M0  {{pred.bb1}} L150 {{pred.bb2}} L150 {{pred.rbb2}} L0  {{pred.rbb1}} Z" fill="#bababa"/>
       <path class="uline animated fadeIn" d="M0  {{pred.cc1}} L150 {{pred.cc2}} L150 {{pred.rcc2}} L0  {{pred.rcc1}} Z" fill="#d2d2d2"/>
       <path class="uline animated fadeIn" d="M0  {{pred.dd1}} L150 {{pred.dd2}} L150 {{pred.rdd2}} L0  {{pred.rdd1}} Z" fill="#e5e5e5"/>
-      <path class="uline animated fadeIn" d="M0  {{pred.ee1}} L150 {{pred.ee2}} L150 {{pred.ree2}} L0  {{pred.ree1}} Z" fill="#f5f5f5"/>
+      <path class="uline animated fadeIn" d="M0  {{pred.ee1}} L150 {{pred.ee2}} L150 {{pred.ree2}} L0  {{pred.ree1}} Z" fill="#f5f5f5"/> -->
 
       <line x1="0%"   x2="0%"   y1="5%" y2="100%" stroke="#bababa" stroke-width="1" />
       <line x1="20%"  x2="20%"  y1="5%" y2="100%" stroke="#bababa" stroke-width="1" stroke-dasharray="1,2"/>
@@ -48,10 +48,10 @@
       {{#if pred.show}}
       <line class="uline" x1="0%"          x2="100%"         y1="{{pred.y}}%" y2="{{pred.y}}%" stroke="#6e6e6e" stroke-width="1"/>
       <line class="sline" x1="{{pred.c}}%" x2="{{pred.c}}%"  y1="10%"          y2="100%"        stroke="#6e6e6e" stroke-width="1"/>
-      <circle class="main-circle" cx="{{pred.c}}%" cy="{{pred.y}}%" r="3" fill="#4d4d4d"/>
       <text class="svg-text" x="103%" y="{{pred.y}}%"  fill="#808080">${{pred.value}}</text>
-      {{/if}}
       <path class="uline animated fadeIn"   d="M0 {{pred.upr}} L150 {{pred.lwr}}" stroke="#6e6e6e"  stroke-width="2"/>
+      <circle class="main-circle" cx="{{pred.c}}%" cy="{{pred.y}}%" r="3" fill="#4d4d4d"/>
+      {{/if}}
     </svg>
 
     <svg class="svgbig"  style="overflow: visible;">

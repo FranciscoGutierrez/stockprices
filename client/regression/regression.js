@@ -15,18 +15,14 @@ Template.lifequality.helpers({
     var x = 0;
     var y = 0;
     var v = 0;
-    var c = Session.get("avg");
+    var c = Session.get("avg")/100;
     var n = 0;
     var upr1 = 0;
     var upr2 = 0;
     var lwr1 = 0;
     var lwr2 = 0;
     var show = false;
-    // Get the value of each slider and adjust it to decimals.
-    var sldr1 = Session.get("slider1")/100;
-    var sldr2 = Session.get("slider2")/100;
-    var sldr3 = Session.get("slider3")/100;
-    var sldr4 = Session.get("slider4")/100;
+
     // Get the prediction given the current value of each slider...
     var advice = 0;
     var news   = 0;
@@ -41,8 +37,12 @@ Template.lifequality.helpers({
     var fit_lwr = 0;
     var fit_upr = 0;
 
+    var m1 = 0;
+    var m2 = 0;
+
     if(Session.get("slider1-on")) {
-      advice = (stock.a_m1 * sldr1) + stock.a_m2;
+      m1 += stock.a_m1;
+      m2 += stock.a_m2;
       lwr_max += stock.a_lwr_max;
       lwr_min += stock.a_lwr_min;
       upr_max += stock.a_upr_max;
@@ -53,7 +53,8 @@ Template.lifequality.helpers({
       show = true;
     }
     if(Session.get("slider2-on")){
-      news = (stock.n_m1 * sldr2) + stock.n_m2;
+      m1 += stock.n_m1;
+      m2 += stock.n_m2;
       lwr_max += stock.n_lwr_max;
       lwr_min += stock.n_lwr_min;
       upr_max += stock.n_upr_max;
@@ -64,7 +65,8 @@ Template.lifequality.helpers({
       show = true;
     }
     if(Session.get("slider3-on")){
-      media = (stock.m_m1 * sldr3) + stock.m_m2;
+      m1 += stock.m_m1;
+      m2 += stock.m_m2;
       lwr_max += stock.m_lwr_max;
       lwr_min += stock.m_lwr_min;
       upr_max += stock.m_upr_max;
@@ -75,7 +77,8 @@ Template.lifequality.helpers({
       show = true;
     }
     if(Session.get("slider4-on")){
-      index = (stock.i_m1 * sldr4) + stock.i_m2;
+      m1 += stock.i_m1;
+      m2 += stock.i_m2;
       lwr_max += stock.i_lwr_max;
       lwr_min += stock.i_lwr_min;
       upr_max += stock.i_upr_max;
@@ -97,62 +100,65 @@ Template.lifequality.helpers({
     upr_max = 150-((upr_max/n)*150);
     upr_min = 150-((upr_min/n)*150);
 
-    fit_lwr = 150-((fit_lwr/n)*150);
-    fit_upr = 150-((fit_upr/n)*150);
+    m1 = m1/n;
+    m2 = m2/n;
+
+    fit_upr = m1;
+    fit_lwr = (m2 * 1) + m1;
 
     var r_lwr1 = lwr_min/5;
     var r_lwr2 = lwr_max/5;
     var r_upr1 = upr_min/5;
     var r_upr2 = upr_max/5;
 
-    y = 100 - (((advice + news + media + index)/n)*100);
-    v = (stock.max * (1 - (y/100))).toFixed(2);
+    y = (m2 * c) + m1;
+    v = (stock.max * y).toFixed(2);
 
     if(y < 0) y = 0;
     if(c < 0) c = 0;
     if(v < 0) v = 0;
     if(y > 100) y = 100;
-    if(c > 100) c = 100;
+    if(c > 1) c = 1;
 
     return {
       value: v, // Actual predicted value;
-      y: y, // Uses percentages
-      upr:  fit_upr, // Frome here, everything uses pixels!
-      lwr:  fit_lwr,
+      y: 100 - (y*100), // Uses percentages
+      upr:  150 - (fit_upr*150), // Frome here, everything uses pixels!
+      lwr:  150 - (fit_lwr*150),
       upr1: upr_min,
       upr2: upr_max,
       lwr1: lwr_min,
       lwr2: lwr_max,
-      c: c,
+      c: c*100,
       q1: q1,
       q2: q2,
       q3: q3,
       q4: q4,
       q5: q5,
-      show: show,
-
-      ra1: 0 + 150-((x*150)),        ra2: 0 + 150-(((y*100)+x)*150),
-      a1:  r_lwr1   + 150-((x*150)),  a2: r_lwr2  + 150-(((y*100)+x)*150),
-      rb1: r_lwr1   + 150-((x*150)), rb2: r_lwr2  + 150-(((y*100)+x)*150),
-      b1:  r_lwr1*2 + 150-((x*150)),  b2: r_lwr2*2 + 150-(((y*100)+x)*150),
-      rc1: r_lwr1*2 + 150-((x*150)), rc2: r_lwr2*2 + 150-(((y*100)+x)*150),
-      c1:  r_lwr1*3 + 150-((x*150)),  c2: r_lwr2*3 + 150-(((y*100)+x)*150),
-      rd1: r_lwr1*3 + 150-((x*150)), rd2: r_lwr2*3 + 150-(((y*100)+x)*150),
-      d1:  r_lwr1*4 + 150-((x*150)),  d2: r_lwr2*4 + 150-(((y*100)+x)*150),
-      re1: r_lwr1*4 + 150-((x*150)), re2: r_lwr2*4 + 150-(((y*100)+x)*150),
-      e1:  r_lwr1*5 + 150-((x*150)),  e2: r_lwr2*5 + 150-(((y*100)+x)*150),
-
-      // Second area
-      raa1: (150-((x*150))) - 0,        raa2: (150-(((y*100)+x)*150)) - 0,
-      aa1:  (150-((x*150))) - r_upr1,    aa2: (150-(((y*100)+x)*150)) - r_upr2,
-      rbb1: (150-((x*150))) - r_upr1,   rbb2: (150-(((y*100)+x)*150)) - r_upr2,
-      bb1:  (150-((x*150))) - r_upr1*2,  bb2: (150-(((y*100)+x)*150)) - r_upr2*2,
-      rcc1: (150-((x*150))) - r_upr1*2, rcc2: (150-(((y*100)+x)*150)) - r_upr2*2,
-      cc1:  (150-((x*150))) - r_upr1*3,  cc2: (150-(((y*100)+x)*150)) - r_upr2*3,
-      rdd1: (150-((x*150))) - r_upr1*3, rdd2: (150-(((y*100)+x)*150)) - r_upr2*3,
-      dd1:  (150-((x*150))) - r_upr1*4,  dd2: (150-(((y*100)+x)*150)) - r_upr2*4,
-      ree1: (150-((x*150))) - r_upr1*4, ree2: (150-(((y*100)+x)*150)) - r_upr2*4,
-      ee1:  (150-((x*150))) - r_upr1*5,  ee2: (150-(((y*100)+x)*150)) - r_upr2*5
+      show: show
+      //
+      // ra1: 0 + 150-((x*150)),        ra2: 0 + 150-(((y*100)+x)*150),
+      // a1:  r_lwr1   + 150-((x*150)),  a2: r_lwr2  + 150-(((y*100)+x)*150),
+      // rb1: r_lwr1   + 150-((x*150)), rb2: r_lwr2  + 150-(((y*100)+x)*150),
+      // b1:  r_lwr1*2 + 150-((x*150)),  b2: r_lwr2*2 + 150-(((y*100)+x)*150),
+      // rc1: r_lwr1*2 + 150-((x*150)), rc2: r_lwr2*2 + 150-(((y*100)+x)*150),
+      // c1:  r_lwr1*3 + 150-((x*150)),  c2: r_lwr2*3 + 150-(((y*100)+x)*150),
+      // rd1: r_lwr1*3 + 150-((x*150)), rd2: r_lwr2*3 + 150-(((y*100)+x)*150),
+      // d1:  r_lwr1*4 + 150-((x*150)),  d2: r_lwr2*4 + 150-(((y*100)+x)*150),
+      // re1: r_lwr1*4 + 150-((x*150)), re2: r_lwr2*4 + 150-(((y*100)+x)*150),
+      // e1:  r_lwr1*5 + 150-((x*150)),  e2: r_lwr2*5 + 150-(((y*100)+x)*150),
+      //
+      // // Second area
+      // raa1: (150-((x*150))) - 0,        raa2: (150-(((y*100)+x)*150)) - 0,
+      // aa1:  (150-((x*150))) - r_upr1,    aa2: (150-(((y*100)+x)*150)) - r_upr2,
+      // rbb1: (150-((x*150))) - r_upr1,   rbb2: (150-(((y*100)+x)*150)) - r_upr2,
+      // bb1:  (150-((x*150))) - r_upr1*2,  bb2: (150-(((y*100)+x)*150)) - r_upr2*2,
+      // rcc1: (150-((x*150))) - r_upr1*2, rcc2: (150-(((y*100)+x)*150)) - r_upr2*2,
+      // cc1:  (150-((x*150))) - r_upr1*3,  cc2: (150-(((y*100)+x)*150)) - r_upr2*3,
+      // rdd1: (150-((x*150))) - r_upr1*3, rdd2: (150-(((y*100)+x)*150)) - r_upr2*3,
+      // dd1:  (150-((x*150))) - r_upr1*4,  dd2: (150-(((y*100)+x)*150)) - r_upr2*4,
+      // ree1: (150-((x*150))) - r_upr1*4, ree2: (150-(((y*100)+x)*150)) - r_upr2*4,
+      // ee1:  (150-((x*150))) - r_upr1*5,  ee2: (150-(((y*100)+x)*150)) - r_upr2*5
     };
   },
   advice() {
