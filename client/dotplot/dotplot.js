@@ -68,7 +68,7 @@ Template.dotplot.helpers({
     }
 
     y = 100 - (((advice + news + media + index)/n)*100);
-    v = (stock.max * (1 - (y/100))).toFixed(2);
+    v = (200 * (1 - (y/100))).toFixed(2);
 
     if(y < 0) y = 0;
     if(c < 0) c = 0;

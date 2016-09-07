@@ -34,7 +34,7 @@ body {
 }
 
 .content-right .visualisations {
-  height: 400px;
+  height: 450px;
   /*border-bottom: 1px solid #f0f0f0;*/
   display: flex;
   flex-direction: column;
@@ -75,5 +75,5 @@ body {
 
 .questions {
   padding-left: 18px;
-  margin-top: 40px;
+  margin-top: 10px;
 }

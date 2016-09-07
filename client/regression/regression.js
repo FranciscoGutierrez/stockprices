@@ -64,6 +64,7 @@ Template.lifequality.helpers({
       n = n+1;
       show = true;
     }
+
     if(Session.get("slider3-on")){
       m1 += stock.m_m1;
       m2 += stock.m_m2;
@@ -76,6 +77,7 @@ Template.lifequality.helpers({
       n = n+1;
       show = true;
     }
+
     if(Session.get("slider4-on")){
       m1 += stock.i_m1;
       m2 += stock.i_m2;
@@ -103,16 +105,20 @@ Template.lifequality.helpers({
     m1 = m1/n;
     m2 = m2/n;
 
-    fit_upr = m1;
-    fit_lwr = (m2 * 1) + m1;
+    fit_upr = (m2 * 1) + m1;
+    fit_lwr = m1;
 
-    var r_lwr1 = lwr_min/5;
-    var r_lwr2 = lwr_max/5;
-    var r_upr1 = upr_min/5;
-    var r_upr2 = upr_max/5;
+    var fit_lwr_pixels = 150-(fit_lwr*150);
+    var fit_upr_pixels = 150-(fit_upr*150);
+
+    var r_lwr1 = (fit_lwr_pixels-lwr_min)/5;
+    var r_lwr2 = (fit_upr_pixels-lwr_max)/5;
+
+    var r_upr1 = (fit_lwr_pixels-upr_min)/5;
+    var r_upr2 = (fit_upr_pixels-upr_max)/5;
 
     y = (m2 * c) + m1;
-    v = (stock.max * y).toFixed(2);
+    v = (200 * y).toFixed(2);
 
     if(y < 0) y = 0;
     if(c < 0) c = 0;
@@ -123,8 +129,8 @@ Template.lifequality.helpers({
     return {
       value: v, // Actual predicted value;
       y: 100 - (y*100), // Uses percentages
-      upr:  150 - (fit_upr*150), // Frome here, everything uses pixels!
-      lwr:  150 - (fit_lwr*150),
+      upr:  fit_upr_pixels, // Frome here, everything uses pixels!
+      lwr:  fit_lwr_pixels,
       upr1: upr_min,
       upr2: upr_max,
       lwr1: lwr_min,
@@ -135,30 +141,28 @@ Template.lifequality.helpers({
       q3: q3,
       q4: q4,
       q5: q5,
-      show: show
-      //
-      // ra1: 0 + 150-((x*150)),        ra2: 0 + 150-(((y*100)+x)*150),
-      // a1:  r_lwr1   + 150-((x*150)),  a2: r_lwr2  + 150-(((y*100)+x)*150),
-      // rb1: r_lwr1   + 150-((x*150)), rb2: r_lwr2  + 150-(((y*100)+x)*150),
-      // b1:  r_lwr1*2 + 150-((x*150)),  b2: r_lwr2*2 + 150-(((y*100)+x)*150),
-      // rc1: r_lwr1*2 + 150-((x*150)), rc2: r_lwr2*2 + 150-(((y*100)+x)*150),
-      // c1:  r_lwr1*3 + 150-((x*150)),  c2: r_lwr2*3 + 150-(((y*100)+x)*150),
-      // rd1: r_lwr1*3 + 150-((x*150)), rd2: r_lwr2*3 + 150-(((y*100)+x)*150),
-      // d1:  r_lwr1*4 + 150-((x*150)),  d2: r_lwr2*4 + 150-(((y*100)+x)*150),
-      // re1: r_lwr1*4 + 150-((x*150)), re2: r_lwr2*4 + 150-(((y*100)+x)*150),
-      // e1:  r_lwr1*5 + 150-((x*150)),  e2: r_lwr2*5 + 150-(((y*100)+x)*150),
-      //
+      show: show,
+      ra1: fit_lwr_pixels,              ra2: fit_upr_pixels,
+       a1: fit_lwr_pixels - r_upr2,      a2: fit_upr_pixels - r_upr1,
+      rb1: fit_lwr_pixels - r_upr2,     rb2: fit_upr_pixels - r_upr1,
+       b1: fit_lwr_pixels - (r_upr2*2),  b2: fit_upr_pixels - (r_upr1*2),
+      rc1: fit_lwr_pixels - (r_upr2*2), rc2: fit_upr_pixels - (r_upr1*2),
+       c1: fit_lwr_pixels - (r_upr2*3),  c2: fit_upr_pixels - (r_upr1*3),
+      rd1: fit_lwr_pixels - (r_upr2*3), rd2: fit_upr_pixels - (r_upr1*3),
+       d1: fit_lwr_pixels - (r_upr2*4),  d2: fit_upr_pixels - (r_upr1*4),
+      re1: fit_lwr_pixels - (r_upr2*4), re2: fit_upr_pixels - (r_upr1*4),
+       e1: fit_lwr_pixels - (r_upr2*5),  e2: fit_upr_pixels - (r_upr1*5),
       // // Second area
-      // raa1: (150-((x*150))) - 0,        raa2: (150-(((y*100)+x)*150)) - 0,
-      // aa1:  (150-((x*150))) - r_upr1,    aa2: (150-(((y*100)+x)*150)) - r_upr2,
-      // rbb1: (150-((x*150))) - r_upr1,   rbb2: (150-(((y*100)+x)*150)) - r_upr2,
-      // bb1:  (150-((x*150))) - r_upr1*2,  bb2: (150-(((y*100)+x)*150)) - r_upr2*2,
-      // rcc1: (150-((x*150))) - r_upr1*2, rcc2: (150-(((y*100)+x)*150)) - r_upr2*2,
-      // cc1:  (150-((x*150))) - r_upr1*3,  cc2: (150-(((y*100)+x)*150)) - r_upr2*3,
-      // rdd1: (150-((x*150))) - r_upr1*3, rdd2: (150-(((y*100)+x)*150)) - r_upr2*3,
-      // dd1:  (150-((x*150))) - r_upr1*4,  dd2: (150-(((y*100)+x)*150)) - r_upr2*4,
-      // ree1: (150-((x*150))) - r_upr1*4, ree2: (150-(((y*100)+x)*150)) - r_upr2*4,
-      // ee1:  (150-((x*150))) - r_upr1*5,  ee2: (150-(((y*100)+x)*150)) - r_upr2*5
+      raa1: fit_lwr_pixels,              raa2: fit_upr_pixels,
+       aa1: fit_lwr_pixels - r_lwr2,      aa2: fit_upr_pixels - r_lwr1,
+      rbb1: fit_lwr_pixels - r_lwr2,     rbb2: fit_upr_pixels - r_lwr1,
+       bb1: fit_lwr_pixels - (r_lwr2*2),  bb2: fit_upr_pixels - (r_lwr2*2),
+      rcc1: fit_lwr_pixels - (r_lwr2*2), rcc2: fit_upr_pixels - (r_lwr2*2),
+       cc1: fit_lwr_pixels - (r_lwr2*3),  cc2: fit_upr_pixels - (r_lwr2*3),
+      rdd1: fit_lwr_pixels - (r_lwr2*3), rdd2: fit_upr_pixels - (r_lwr2*3),
+       dd1: fit_lwr_pixels - (r_lwr2*4),  dd2: fit_upr_pixels - (r_lwr2*4),
+      ree1: fit_lwr_pixels - (r_lwr2*4), ree2: fit_upr_pixels - (r_lwr2*4),
+       ee1: fit_lwr_pixels - (r_lwr2*5),  ee2: fit_upr_pixels - (r_lwr2*5)
     };
   },
   advice() {

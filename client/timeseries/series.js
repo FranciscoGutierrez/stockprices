@@ -116,7 +116,7 @@ Template.series.helpers({
     }
 
     y = 100 - (((advice + news + media + index)/n)*100);
-    v = (stock.max * (1 - (y/100))).toFixed(2);
+    v = (200 * (1 - (y/100))).toFixed(2);
 
     difference = ((v - close)/close)*100;
     y =  start - difference;

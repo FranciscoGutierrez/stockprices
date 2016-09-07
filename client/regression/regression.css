@@ -17,10 +17,11 @@
   font-weight: 300;
   color: #a1a1a1;
   cursor: default;
-  position: absolute;
+  /*position: absolute;*/
   bottom: -30px;
   width: 100%;
   text-align: center;
+  margin-top: 10px;
 }
 
 .lifequality-container .selected-info{
@@ -57,16 +58,19 @@
 
 .lifequality-container {
   font-family: sans-serif;
-  width:  150px;
-  height: 150px;
+  width: 210px;
+  /*height: 150px;*/
   position: relative;
-  margin-top: 80px;
+  /*margin-top: 80px;*/
   cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .lifequality-title {
-  position: absolute;
-  top: -35px;
+  /*position: absolute;
+  top: -35px;*/
   width: 100%;
 }
 
@@ -122,11 +126,12 @@
 
 .lifequality-container svg {
   overflow:  visible;
-  position: absolute;
+  /*position: absolute;
   top:  4px;
-  left: 0;
-  width:  100%;
-  height: 100%;
+  left: 0;*/
+  width:  150px;
+  height: 150px;
+  /*align-self: flex-end;*/
 }
 
 .lifequality-container img {
