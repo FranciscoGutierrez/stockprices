@@ -30,15 +30,23 @@ Template.dotplot.helpers({
     var sum_lwr1 = [];
     var sum_lwr2 = [];
 
-    var sldr1 = Session.get("slider1")/100;
-    var sldr2 = Session.get("slider2")/100;
-    var sldr3 = Session.get("slider3")/100;
-    var sldr4 = Session.get("slider4")/100;
+    var c = Session.get("avg")/100;
 
     var advice = 0;
     var news   = 0;
     var media  = 0;
     var index  = 0;
+
+    var lwr_max = 0;
+    var lwr_min = 0;
+    var upr_max = 0;
+    var upr_min = 0;
+
+    var fit_lwr = 0;
+    var fit_upr = 0;
+
+    var m1 = 0;
+    var m2 = 0;
 
     var q1 = (stock.max).toFixed(2);
     var q2 = (stock.max*0.75).toFixed(2);
@@ -47,28 +55,64 @@ Template.dotplot.helpers({
     var q5 = 0;
 
     if(Session.get("slider1-on")) {
-      advice = (stock.a_m1 * sldr1) + stock.a_m2;
+      m1 += stock.a_m1;
+      m2 += stock.a_m2;
+      lwr_max += stock.a_lwr_max;
+      lwr_min += stock.a_lwr_min;
+      upr_max += stock.a_upr_max;
+      upr_min += stock.a_upr_min;
+      fit_lwr += stock.a_fit_max;
+      fit_upr += stock.a_fit_min;
       n = n+1;
       show = true;
     }
-    if(Session.get("slider2-on")) {
-      news = (stock.n_m1 * sldr2) + stock.n_m2;
-      n = n+1;
-      show = true;
-    }
-    if(Session.get("slider3-on")) {
-      media = (stock.m_m1 * sldr3) + stock.m_m2;
-      n = n+1;
-      show = true;
-    }
-    if(Session.get("slider4-on")) {
-      index = (stock.i_m1 * sldr4) + stock.i_m2;
+    if(Session.get("slider2-on")){
+      m1 += stock.n_m1;
+      m2 += stock.n_m2;
+      lwr_max += stock.n_lwr_max;
+      lwr_min += stock.n_lwr_min;
+      upr_max += stock.n_upr_max;
+      upr_min += stock.n_upr_min;
+      fit_lwr += stock.n_fit_max;
+      fit_upr += stock.n_fit_min;
       n = n+1;
       show = true;
     }
 
-    y = 100 - (((advice + news + media + index)/n)*100);
-    v = (200 * (1 - (y/100))).toFixed(2);
+    if(Session.get("slider3-on")){
+      m1 += stock.m_m1;
+      m2 += stock.m_m2;
+      lwr_max += stock.m_lwr_max;
+      lwr_min += stock.m_lwr_min;
+      upr_max += stock.m_upr_max;
+      upr_min += stock.m_upr_min;
+      fit_lwr += stock.m_fit_max;
+      fit_upr += stock.m_fit_min;
+      n = n+1;
+      show = true;
+    }
+
+    if(Session.get("slider4-on")){
+      m1 += stock.i_m1;
+      m2 += stock.i_m2;
+      lwr_max += stock.i_lwr_max;
+      lwr_min += stock.i_lwr_min;
+      upr_max += stock.i_upr_max;
+      upr_min += stock.i_upr_min;
+      fit_lwr += stock.i_fit_max;
+      fit_upr += stock.i_fit_min;
+      n = n+1;
+      show = true;
+    }
+
+    m1 = m1/n;
+    m2 = m2/n;
+
+    var fit_upr = (m2 * 1) + m1;
+    var fit_lwr = m1;
+
+    y = (m2 * c) + m1;
+    v = (200 * y).toFixed(2);
 
     if(y < 0) y = 0;
     if(c < 0) c = 0;
@@ -77,17 +121,17 @@ Template.dotplot.helpers({
     if(c > 100) c = 100
 
   return {
-    a1: (200-(y*1.0))-14,
-    a2: (200-(y*1.2))-14,
-    a3: (200-(y*1.4))-14,
-    a4: (200-(y*1.6))-14,
-    a5: (200-(y*1.8))-14,
-    a6: (200-(y*2))-14, // This is correct!
-    a7: (200-(y*2.2))-14,
-    a8: (200-(y*2.4))-14,
-    a9: (200-(y*2.6))-14,
-    a10:(200-(y*2.8))-14,
-    a11:(200-(y*3.0))-14,
+    a1: (fit_upr*200)-14,
+    a2: (y*200)-14,
+    a3: (y*200)-14,
+    a4: (y*200)-14,
+    a5: (y*200)-14,
+    a6: (y*200)-14, // This is correct!
+    a7: (y*200)-14,
+    a8: (y*200)-14,
+    a9: (y*200)-14,
+    a10:(y*200)-14,
+    a11:(fit_lwr*200)-14,
     text: v,
     p: 0,
     q1: q1,

@@ -3,14 +3,14 @@
     <div class="dotplot-title">
       <h1> {{this.title}}
         <div class="title-right">
-          <span>${{this.close}}</span> USD
+          <!-- <span>${{prediction.last}}</span> USD -->
         </div>
       </h1>
       <h2> NYSE: {{this.name}}
-        <span style="color: {{stock.color}}">
+        <!-- <span style="color: {{stock.color}}">
           <i class="fa fa-arrow-{{stock.arrow}}"></i>
           {{this.diff}} ({{this.percent}}%)
-        </span>
+        </span> -->
       </h2>
     </div>
     <div class="series-viz">
@@ -24,7 +24,7 @@
           <div class="yaxis mid"> {{this.mid}}</div>
           <div class="yaxis low"> {{this.low}}</div>
         </div> -->
-        <div class="now-legend" style="top: {{this.top}}%">${{this.close}}</div>
+        <div class="now-legend" style="top: {{this.top}}%">${{prediction.last}}</div>
         <h1 style="text-align: right; margin-top: 0px;"><i class="fa fa-caret-left"></i> Last 12 Months&nbsp;</h1>
       </div>
       <div class="series-viz-content">

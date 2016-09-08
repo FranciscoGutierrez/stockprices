@@ -34,15 +34,15 @@ Template.series.helpers({
           followTouchMove: false,
         },
         yAxis: {
-          offset: -15,
+          offset: -13,
           minPadding: 0,
           tickLength: 0,
-          //ceiling: 150,
-          max: 180,
-          //floor: 0,
+          ceiling: 200,
+          max: 200,
+          floor: 0,
           min: 0,
           minRange: min,
-          tickAmount: 4,
+          tickAmount: 3,
         },
         colors: ['#717171'],
         series: [{
@@ -73,7 +73,7 @@ Template.series.helpers({
     var x = 0;
     var y = 0;
     var v = 0;
-    var c = Session.get("avg");
+    var c = Session.get("avg")/100;
     var n = 0;
     var upr1 = 0;
     var upr2 = 0;
@@ -81,58 +81,94 @@ Template.series.helpers({
     var lwr2 = 0;
     var show = false;
 
-    var start = Number(this.start);
-    var close = Number(this.close);
-    // Get the value of each slider and adjust it to decimals.
-    var sldr1 = Session.get("slider1")/100;
-    var sldr2 = Session.get("slider2")/100;
-    var sldr3 = Session.get("slider3")/100;
-    var sldr4 = Session.get("slider4")/100;
-    // Get the prediction given the current value of each slider...
-    var advice = 0;
-    var news   = 0;
-    var media  = 0;
-    var index  = 0;
+    var lwr_max = 0;
+    var lwr_min = 0;
+    var upr_max = 0;
+    var upr_min = 0;
+
+    var fit_lwr = 0;
+    var fit_upr = 0;
+
+    var m1 = 0;
+    var m2 = 0;
 
     if(Session.get("slider1-on")) {
-      advice = (stock.a_m1 * sldr1) + stock.a_m2;
+      m1 += stock.a_m1;
+      m2 += stock.a_m2;
+      lwr_max += stock.a_lwr_max;
+      lwr_min += stock.a_lwr_min;
+      upr_max += stock.a_upr_max;
+      upr_min += stock.a_upr_min;
+      fit_lwr += stock.a_fit_max;
+      fit_upr += stock.a_fit_min;
       n = n+1;
       show = true;
     }
     if(Session.get("slider2-on")){
-      news = (stock.n_m1 * sldr2) + stock.n_m2;
-      n = n+1;
-      show = true;
-    }
-    if(Session.get("slider3-on")){
-      media = (stock.m_m1 * sldr3) + stock.m_m2;
-      n = n+1;
-      show = true;
-    }
-    if(Session.get("slider4-on")){
-      index = (stock.i_m1 * sldr4) + stock.i_m2;
+      m1 += stock.n_m1;
+      m2 += stock.n_m2;
+      lwr_max += stock.n_lwr_max;
+      lwr_min += stock.n_lwr_min;
+      upr_max += stock.n_upr_max;
+      upr_min += stock.n_upr_min;
+      fit_lwr += stock.n_fit_max;
+      fit_upr += stock.n_fit_min;
       n = n+1;
       show = true;
     }
 
-    y = 100 - (((advice + news + media + index)/n)*100);
-    v = (200 * (1 - (y/100))).toFixed(2);
+    if(Session.get("slider3-on")){
+      m1 += stock.m_m1;
+      m2 += stock.m_m2;
+      lwr_max += stock.m_lwr_max;
+      lwr_min += stock.m_lwr_min;
+      upr_max += stock.m_upr_max;
+      upr_min += stock.m_upr_min;
+      fit_lwr += stock.m_fit_max;
+      fit_upr += stock.m_fit_min;
+      n = n+1;
+      show = true;
+    }
+
+    if(Session.get("slider4-on")){
+      m1 += stock.i_m1;
+      m2 += stock.i_m2;
+      lwr_max += stock.i_lwr_max;
+      lwr_min += stock.i_lwr_min;
+      upr_max += stock.i_upr_max;
+      upr_min += stock.i_upr_min;
+      fit_lwr += stock.i_fit_max;
+      fit_upr += stock.i_fit_min;
+      n = n+1;
+      show = true;
+    }
+
+    m1 = m1/n;
+    m2 = m2/n;
+
+    y = (m2 * c) + m1;
+    v = (200 * y).toFixed(2);
+
+    fit_upr = m2 + m1;
+    fit_lwr = m1;
 
     difference = ((v - close)/close)*100;
-    y =  start - difference;
 
     if(y < 0) y = 0;
     if(c < 0) c = 0;
     if(v < 0) v = 0;
     if(y > 100) y = 100;
     if(c > 100) c = 100;
+
     return {
       value: v, // Actual predicted value;
-      y: y.toFixed(2), // Uses percentages
+      y: 100 - (y*100), // Uses percentages
       diff: difference,
       show: show,
-      lwr: (y*1.3).toFixed(2),
-      upr: (y*0.7).toFixed(2)
+      last: (stock.last).toFixed(2),
+      start: 100-((stock.last/200)*100),
+      lwr: (100 - (fit_lwr*100)).toFixed(2),
+      upr: (100 - (fit_upr*100)).toFixed(2)
     }
   }
 });
