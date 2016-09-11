@@ -19,8 +19,7 @@
   cursor: default;
   /*position: absolute;*/
   bottom: -30px;
-  width: 100%;
-  text-align: center;
+  width: 60%;
   margin-top: 10px;
 }
 
@@ -131,7 +130,7 @@
   left: 0;*/
   width:  150px;
   height: 150px;
-  /*align-self: flex-end;*/
+  align-self: flex-start;
 }
 
 .lifequality-container img {

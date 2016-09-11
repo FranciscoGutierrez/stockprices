@@ -108,11 +108,21 @@ Template.dotplot.helpers({
     m1 = m1/n;
     m2 = m2/n;
 
-    var fit_upr = (m2 * 1) + m1;
-    var fit_lwr = m1;
+    lwr_max = lwr_max/n;
+    lwr_min = lwr_min/n;
+    upr_max = upr_max/n;
+    upr_min = upr_min/n;
+    fit_lwr = fit_lwr/n;
+    fit_upr = fit_upr/n;
 
     y = (m2 * c) + m1;
     v = (200 * y).toFixed(2);
+
+    lwr = ((lwr_min) + ((lwr_max - lwr_min) * c));
+    upr = ((upr_min) + ((upr_max - upr_min) * c));
+
+    upr_c = (upr-y)/5;
+    lwr_c = (y-lwr)/5;
 
     if(y < 0) y = 0;
     if(c < 0) c = 0;
@@ -121,17 +131,17 @@ Template.dotplot.helpers({
     if(c > 100) c = 100
 
   return {
-    a1: (fit_upr*200)-14,
-    a2: (y*200)-14,
-    a3: (y*200)-14,
-    a4: (y*200)-14,
-    a5: (y*200)-14,
+    a1: (upr*200)-14,
+    a2: ((y+(upr_c*4))*200)-14,
+    a3: ((y+(upr_c*3))*200)-14,
+    a4: ((y+(upr_c*2))*200)-14,
+    a5: ((y+(upr_c*1))*200)-14,
     a6: (y*200)-14, // This is correct!
-    a7: (y*200)-14,
-    a8: (y*200)-14,
-    a9: (y*200)-14,
-    a10:(y*200)-14,
-    a11:(fit_lwr*200)-14,
+    a7: ((y-(lwr_c*1))*200)-14,
+    a8: ((y-(lwr_c*2))*200)-14,
+    a9: ((y-(lwr_c*3))*200)-14,
+    a10:((y-(lwr_c*4))*200)-14,
+    a11:(lwr*200)-14,
     text: v,
     p: 0,
     q1: q1,

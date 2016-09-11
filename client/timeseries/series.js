@@ -146,8 +146,18 @@ Template.series.helpers({
     m1 = m1/n;
     m2 = m2/n;
 
-    y = (m2 * c) + m1;
+    lwr_max = lwr_max/n;
+    lwr_min = lwr_min/n;
+    upr_max = upr_max/n;
+    upr_min = upr_min/n;
+    fit_lwr = fit_lwr/n;
+    fit_upr = fit_upr/n;
+
+    y = (m2  * c) + m1;
     v = (200 * y).toFixed(2);
+
+    lwr = ((lwr_min) + ((lwr_max - lwr_min) * c));
+    upr = ((upr_min) + ((upr_max - upr_min) * c));
 
     fit_upr = m2 + m1;
     fit_lwr = m1;
@@ -167,8 +177,8 @@ Template.series.helpers({
       show: show,
       last: (stock.last).toFixed(2),
       start: 100-((stock.last/200)*100),
-      lwr: (100 - (fit_lwr*100)).toFixed(2),
-      upr: (100 - (fit_upr*100)).toFixed(2)
+      lwr: 100 - (lwr*100),
+      upr: 100 - (upr*100)
     }
   }
 });

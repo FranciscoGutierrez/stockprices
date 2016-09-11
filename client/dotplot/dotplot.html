@@ -2,23 +2,27 @@
   <div class="dotplot-container animated fadeIn">
     <div class="dotplot-title">
       <h1> {{stock.title}}
-      <div class="title-right">
+      <!-- <div class="title-right">
         <span>{{stock.close}}</span> USD
-      </div>
+      </div> -->
       </h1>
       <h2> NYSE: {{stock.name}}
-           <span style="color: {{stock.color}}">
+           <!-- <span style="color: {{stock.color}}">
              <i class="fa fa-arrow-{{stock.arrow}}"></i>
              {{stock.diff}} ({{stock.percent}}%)
-           </span>
+           </span> -->
       </h2>
     </div>
     <div class="ubar-main"></div>
     <div class="umeter">
-      <div class="um q5">$0.00</div>
-      <div class="um q4">50</div>
-      <div class="um q3">100</div>
-      <div class="um q2">150</div>
+      <div class="um q9">$0.00</div>
+      <div class="um q8">25</div>
+      <div class="um q7">50</div>
+      <div class="um q6">75</div>
+      <div class="um q5">100</div>
+      <div class="um q4">125</div>
+      <div class="um q3">150</div>
+      <div class="um q2">175</div>
       <div class="um q1">200</div>
       <div class="umeter-ticks">
         <div class="utick tick1">.</div>
@@ -30,6 +34,7 @@
         <div class="utick tick7">.</div>
         <!-- <div class="utick tick8">.</div> -->
       </div>
+      {{#if prediction.show}}
       <div class="udots-container">
         <div class="udots" style="left: {{prediction.a1}}px;">
           <div class="ua1 udot" ></div>
@@ -85,6 +90,7 @@
           <div class="ua11 udot"></div>
         </div>
       </div>
+      {{/if}}
     </div>
     <div class="dotplot-legend">Stock Price,&nbsp;<span>12 Month Forecast</span></div>
   </div>

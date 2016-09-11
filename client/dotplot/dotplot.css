@@ -110,10 +110,10 @@ image {
 }
 
 .udot {
-  min-width:  8px;
-  max-width:  8px;
-  min-height: 8px;
-  max-height: 8px;
+  min-width:  7px;
+  max-width:  7px;
+  min-height: 7px;
+  max-height: 7px;
   opacity: 1;
   text-align: center;
   margin: 1px;
@@ -532,11 +532,15 @@ text {
   text-align: center;
 }
 
-.umeter .q1{ position: absolute; left: 185px;}
-.umeter .q2{ position: absolute; left: 135px;}
-.umeter .q3{ position: absolute; left:  85px;}
-.umeter .q4{ position: absolute; left:  35px;}
-.umeter .q5{ position: absolute; left: -15px;}
+.umeter .q1{ position: absolute; left: 185px;} /*200*/
+.umeter .q2{ position: absolute; left: 160px;} /*175*/
+.umeter .q3{ position: absolute; left: 135px;} /*150*/
+.umeter .q4{ position: absolute; left: 110px;} /*145*/
+.umeter .q5{ position: absolute; left:  85px;} /*125*/
+.umeter .q6{ position: absolute; left:  60px;} /*100*/
+.umeter .q7{ position: absolute; left:  35px;} /*75 */
+.umeter .q8{ position: absolute; left:  10px;} /*50 */
+.umeter .q9{ position: absolute; left: -15px;} /*25 */
 
 .dotplot-container .umeter-ticks {
   display: flex;
@@ -556,12 +560,6 @@ text {
   opacity: 0.45;
   position: absolute;
 }
-
-.umeter .q1{ position: absolute; left: 185px;}
-.umeter .q2{ position: absolute; left: 135px;}
-.umeter .q3{ position: absolute; left:  85px;}
-.umeter .q4{ position: absolute; left:  35px;}
-.umeter .q5{ position: absolute; left: -15px;}
 
 .umeter .tick1{ left: 23px;}
 .umeter .tick2{ left: 48px;}
