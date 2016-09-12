@@ -56,7 +56,7 @@ Router.route('/:_id', {
 
           var isChrome = !!window.chrome && !!window.chrome.webstore;
           if(isChrome) {
-            //Blaze.render(Template.welcome,$(".welcome-screen")[0]);
+            Blaze.render(Template.welcome,$(".welcome-screen")[0]);
             if(option == "series") Blaze.render(Template.timeseries, $(".visualisations")[0]);
             if(option ==  "chart") Blaze.render(Template.regression, $(".visualisations")[0]);
             if(option ==   "dots") Blaze.render(Template.dots, $(".visualisations")[0]);

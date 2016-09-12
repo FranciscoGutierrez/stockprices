@@ -32,10 +32,6 @@
       <div id="forecast-{{stock.name}}" class="chart-forecast">
         <svg style="width:100px; height: 100px;">
           {{#if prediction.show}}
-          <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.upr}}%" stroke="white" stroke-width="1" stroke-dasharray="1,2"/>
-          <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.y}}%"   stroke="#717171" stroke-width="1"/>
-          <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.lwr}}%" stroke="white" stroke-width="1" stroke-dasharray="1,2"/>
-
           <path class="uline animated fadeIn" d="M0  {{this.start}}  L100 {{prediction.upr1}}  L100 {{prediction.upr}}   L0 {{this.start}}  Z" fill="#f5f5f5"/>
           <path class="uline animated fadeIn" d="M0  {{this.start}}  L100 {{prediction.upr1}}  L100 {{prediction.upr2}}  L0 {{this.start}}  Z" fill="#e5e5e5"/>
           <path class="uline animated fadeIn" d="M0  {{this.start}}  L100 {{prediction.upr2}}  L100 {{prediction.upr3}}  L0 {{this.start}}  Z" fill="#d2d2d2"/>
@@ -47,6 +43,10 @@
           <path class="uline animated fadeIn" d="M0  {{this.start}}  L100 {{prediction.lwr2}}  L100 {{prediction.lwr3}}  L0 {{this.start}}  Z" fill="#d2d2d2"/>
           <path class="uline animated fadeIn" d="M0  {{this.start}}  L100 {{prediction.lwr3}}  L100 {{prediction.lwr4}}  L0 {{this.start}}  Z" fill="#bababa"/>
           <path class="uline animated fadeIn" d="M0  {{this.start}}  L100 {{prediction.lwr4}}  L100 {{prediction.lwr5}}  L0 {{this.start}}  Z" fill="#9e9e9e"/>
+
+          <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.upr}}%" stroke="white" stroke-width="1" stroke-dasharray="1,2"/>
+          <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.y}}%"   stroke="#717171" stroke-width="2"/>
+          <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.lwr}}%" stroke="white" stroke-width="1" stroke-dasharray="1,2"/>
           {{/if}}
         </svg>
         <div class="prediction-axis">
