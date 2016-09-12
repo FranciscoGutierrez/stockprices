@@ -26,27 +26,26 @@ Router.route('/:_id', {
         $(".loading-screen").fadeOut(function(){
           $(this).remove();
 
-          // Meteor.subscribe("answers");
+          Meteor.subscribe("answers");
           // Session.setDefault("strength-t",100);
           // Session.setDefault("strength-p",100);
           // Session.setDefault("strength-s",100);
           // Session.setDefault("strength-h",100);
-          // Session.setDefault("option",option);
-          // Session.setDefault("qnumber",0);
-
-          // Session.setDefault("gold1",100);
-          // Session.setDefault("gold2",100);
-          // Session.setDefault("gold3",100);
-          // Session.setDefault("gold4",100);
-          // Session.setDefault("actions_sw",0);
-          // Session.setDefault("actions_ss",0);
-          // Session.setDefault("actions_st",0);
-          // Session.setDefault("actions_sa",0);
-          // Session.setDefault("actions_cw",0);
-          // Session.setDefault("actions_cs",0);
-          // Session.setDefault("actions_ct",0);
-          // Session.setDefault("actions_ca",0);
-          // Session.setDefault("ssid",Meteor.default_connection._lastSessionId);
+          Session.setDefault("qnumber",0);
+          Session.setDefault("option",option);
+          Session.setDefault("gold1",100);
+          Session.setDefault("gold2",100);
+          Session.setDefault("gold3",100);
+          Session.setDefault("gold4",100);
+          Session.setDefault("actions_sw",0);
+          Session.setDefault("actions_ss",0);
+          Session.setDefault("actions_st",0);
+          Session.setDefault("actions_sa",0);
+          Session.setDefault("actions_cw",0);
+          Session.setDefault("actions_cs",0);
+          Session.setDefault("actions_ct",0);
+          Session.setDefault("actions_ca",0);
+          Session.setDefault("ssid",Meteor.default_connection._lastSessionId);
 
           a = [1,2,3];
           b = [4,5,6,7,8,9,10,11,12];
