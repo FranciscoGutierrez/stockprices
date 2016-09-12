@@ -163,7 +163,8 @@ Template.series.helpers({
     fit_upr = m2 + m1;
     fit_lwr = m1;
 
-
+    var upr_c = (upr-y)/5;
+    var lwr_c = (y-lwr)/5;
 
     if(y < 0) y = 0;
     if(c < 0) c = 0;
@@ -178,12 +179,22 @@ Template.series.helpers({
     return {
       value: v, // Actual predicted value;
       y: 100 - (y*100), // Uses percentages
-      y2:(100 - (y*100))+11, // Uses percentages
+      y2:(100 - (y*100))-11, // Uses percentages
       diff: difference,
       show: show,
       start: 100-((stock.last/200)*100),
       lwr: 100 - (lwr*100),
       upr: 100 - (upr*100),
+      upr1: (100 - ((upr - upr_c*1)*100)),
+      upr2: (100 - ((upr - upr_c*2)*100)),
+      upr3: (100 - ((upr - upr_c*3)*100)),
+      upr4: (100 - ((upr - upr_c*4)*100)),
+      upr5: (100 - ((upr - upr_c*5)*100)),
+      lwr1: (100 - ((lwr + lwr_c*1)*100)),
+      lwr2: (100 - ((lwr + lwr_c*2)*100)),
+      lwr3: (100 - ((lwr + lwr_c*3)*100)),
+      lwr4: (100 - ((lwr + lwr_c*4)*100)),
+      lwr5: (100 - ((lwr + lwr_c*5)*100)),
       positive: positive
     }
   }
