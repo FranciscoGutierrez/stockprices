@@ -8,47 +8,52 @@
       </h1>
       <h2> NYSE: {{this.name}}
         <!-- <span style="color: {{stock.color}}">
-          <i class="fa fa-arrow-{{stock.arrow}}"></i>
-          {{this.diff}} ({{this.percent}}%)
-        </span> -->
-      </h2>
-    </div>
-    <div class="series-viz">
-      <div class="series-viz-content">
-        <h1>Historical</h1>
-        <div id="chart-{{stock.name}}" class="chart">
-          {{createChart}}
-        </div>
-        <div class="y-axis">
-          <div class="yaxis high">$200</div>
-          <div class="yaxis mid">  100</div>
-          <div class="yaxis low">    0</div>
-        </div>
-        <div class="now-legend" style="top: {{this.top}}%">${{prediction.last}}</div>
-        <h1 style="text-align: right; margin-top: 0px;"><i class="fa fa-caret-left"></i> Last 12 Months&nbsp;</h1>
-      </div>
-      <div class="series-viz-content">
-        <h1 style="text-align: right; border-left: 1px solid #d1d1d1;">Forecast</h1>
-        <div id="forecast-{{stock.name}}" class="chart-forecast">
-          <svg style="width:100px; height: 100px;">
-            {{#if prediction.show}}
-            <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.upr}}%" stroke="#a1a1a1" stroke-width="1" stroke-dasharray="1,2"/>
-            <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.y}}%"   stroke="#717171" stroke-width="1"/>
-            <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.lwr}}%" stroke="#a1a1a1" stroke-width="1" stroke-dasharray="1,2"/>
-            {{/if}}
-          </svg>
-          <div class="prediction-axis">
-            {{#if prediction.show}}
-            <!-- <div class="pred high">${{this.high}}</div> -->
-            <div class="pred mid" style="top:{{prediction.y}}%;">${{prediction.value}}</div>
-            <!-- <div class="pred low" >${{this.low}} </div> -->
-            {{/if}}
-          </div>
-        </div>
-        <h1 style="text-align: left; border-left: 1px solid #d1d1d1; margin-top: 0px;">&nbsp;Next 12 Months <i class="fa fa-caret-right"></i></h1>
-      </div>
-    </div>
-    <div style="display: none">{{avg}}</div>
-
+        <i class="fa fa-arrow-{{stock.arrow}}"></i>
+        {{this.diff}} ({{this.percent}}%)
+      </span> -->
+    </h2>
   </div>
+  <div class="series-viz">
+    <div class="series-viz-content">
+      <h1>Historical</h1>
+      <div id="chart-{{stock.name}}" class="chart">
+        {{createChart}}
+      </div>
+      <div class="y-axis">
+        <div class="yaxis high">$200</div>
+        <div class="yaxis mid">  100</div>
+        <div class="yaxis low">    0</div>
+      </div>
+      <div class="now-legend" style="top: {{this.top}}%">${{this.last}}</div>
+      <h1 style="text-align: right; margin-top: 0px;"><i class="fa fa-caret-left"></i> Last 12 Months&nbsp;</h1>
+    </div>
+    <div class="series-viz-content">
+      <h1 style="text-align: right; border-left: 1px solid #d1d1d1;">Forecast</h1>
+      <div id="forecast-{{stock.name}}" class="chart-forecast">
+        <svg style="width:100px; height: 100px;">
+          {{#if prediction.show}}
+          <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.upr}}%" stroke="#a1a1a1" stroke-width="1" stroke-dasharray="1,2"/>
+          <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.y}}%"   stroke="#717171" stroke-width="1"/>
+          <line x1="0%"  x2="100%"  y1="{{this.start}}%" y2="{{prediction.lwr}}%" stroke="#a1a1a1" stroke-width="1" stroke-dasharray="1,2"/>
+          {{/if}}
+        </svg>
+        <div class="prediction-axis">
+          {{#if prediction.show}}
+          <!-- <div class="pred high">${{this.high}}</div> -->
+          <div class="pred mid" style="top:{{prediction.y}}%;">${{prediction.value}}</div>
+          {{#if prediction.positive}}
+          <div class="pred mid" style="top:{{prediction.y2}}%; color:green;">+{{prediction.diff}}%</div>
+          {{else}}
+          <div class="pred mid" style="top:{{prediction.y2}}%; color:red;">{{prediction.diff}}%</div>
+          {{/if}}
+          <!-- <div class="pred low" >${{this.low}} </div> -->
+          {{/if}}
+        </div>
+      </div>
+      <h1 style="text-align: left; border-left: 1px solid #d1d1d1; margin-top: 0px;">&nbsp;Next 12 Months <i class="fa fa-caret-right"></i></h1>
+    </div>
+  </div>
+  <div style="display: none">{{avg}}</div>
+
+</div>
 </template>

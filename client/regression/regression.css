@@ -144,6 +144,7 @@
   margin-left: 10px;
   font-size:   11px;
   transition: all 500ms ease-out;
+  font-weight: 700;
 }
 
 .lifequality-container .legend-z {

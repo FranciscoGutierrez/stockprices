@@ -22,6 +22,7 @@ Template.lifequality.helpers({
     var lwr1 = 0;
     var lwr2 = 0;
     var show = false;
+    var close = this.close;
 
     // Get the prediction given the current value of each slider...
     var advice = 0;
@@ -126,9 +127,13 @@ Template.lifequality.helpers({
     if(y > 100) y = 100;
     if(c > 1) c = 1;
 
+    var difference = (v - close).toFixed(2);
+    var positive = true;
+    if(difference < 0) positive = false;
     return {
       value: v, // Actual predicted value;
       y: 100 - (y*100), // Uses percentages
+      y2: (100 - (y*100))+8,
       upr:  fit_upr_pixels, // Frome here, everything uses pixels!
       lwr:  fit_lwr_pixels,
       upr1: upr_min,
@@ -141,6 +146,8 @@ Template.lifequality.helpers({
       q3: q3,
       q4: q4,
       q5: q5,
+      positive: positive,
+      diff: Math.abs(difference),
       show: show,
       ra1: fit_lwr_pixels,              ra2: fit_upr_pixels,
        a1: fit_lwr_pixels - r_upr2,      a2: fit_upr_pixels - r_upr1,

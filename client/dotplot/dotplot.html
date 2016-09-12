@@ -64,7 +64,13 @@
           <div class="ua6 udot"></div>
           <div class="ua6 udot"></div>
           <div class="ua6 udot"></div>
-          <div class="dots-value" style="left: {{prediction.a6}}px;">${{prediction.text}} <!-- <span>(1.02%)</span> --></div>
+          <div class="dots-value" style="left: {{prediction.a6}}px;">${{prediction.text}}
+            {{#if prediction.positive}}
+            <span style="color:green;">+{{prediction.diff}}%</span>
+            {{else}}
+            <span style="color:red;">   {{prediction.diff}}%</span>
+            {{/if}}
+          </div>
         </div>
         <div class="udots" style="left: {{prediction.a7}}px;">
           <div class="ua7 udot"></div>

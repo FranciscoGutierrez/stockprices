@@ -16,6 +16,7 @@ Template.dotplot.helpers({
   },
   prediction() {
     var stock = Template.instance().stock.get();
+    var close = this.close;
     var sum_c = [];
     var sum_b = [];
     var sum_x = [];
@@ -128,7 +129,11 @@ Template.dotplot.helpers({
     if(c < 0) c = 0;
     if(v < 0) v = 0;
     if(y > 100) y = 100;
-    if(c > 100) c = 100
+    if(c > 100) c = 100;
+
+    var difference = (v - close).toFixed(2);
+    var positive = true;
+    if(difference < 0) positive = false;
 
   return {
     a1: (upr*200)-14,
@@ -149,7 +154,9 @@ Template.dotplot.helpers({
     q3: q3,
     q4: q4,
     q5: q5,
-    show: show
+    show: show,
+    diff: difference,
+    positive: positive
   }
   }
 });

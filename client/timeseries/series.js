@@ -70,6 +70,7 @@ Template.series.helpers({
   },
   prediction() {
     var stock = Template.instance().stock.get();
+    var close = this.last;
     var x = 0;
     var y = 0;
     var v = 0;
@@ -162,7 +163,7 @@ Template.series.helpers({
     fit_upr = m2 + m1;
     fit_lwr = m1;
 
-    difference = ((v - close)/close)*100;
+
 
     if(y < 0) y = 0;
     if(c < 0) c = 0;
@@ -170,15 +171,20 @@ Template.series.helpers({
     if(y > 100) y = 100;
     if(c > 100) c = 100;
 
+    var positive = true;
+    var difference = (v - close).toFixed(2);
+    if(difference < 0) positive = false;
+
     return {
       value: v, // Actual predicted value;
       y: 100 - (y*100), // Uses percentages
+      y2:(100 - (y*100))+11, // Uses percentages
       diff: difference,
       show: show,
-      last: (stock.last).toFixed(2),
       start: 100-((stock.last/200)*100),
       lwr: 100 - (lwr*100),
-      upr: 100 - (upr*100)
+      upr: 100 - (upr*100),
+      positive: positive
     }
   }
 });

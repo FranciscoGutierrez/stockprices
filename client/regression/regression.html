@@ -50,7 +50,12 @@
 
         <line class="uline" x1="0%"          x2="100%"         y1="{{pred.y}}%" y2="{{pred.y}}%" stroke="#6e6e6e" stroke-width="1"/>
         <line class="sline" x1="{{pred.c}}%" x2="{{pred.c}}%"  y1="0%"          y2="100%"        stroke="#6e6e6e" stroke-width="1"/>
-        <text class="svg-text" x="100%" y="{{pred.y}}%"  fill="#808080">${{pred.value}}</text>
+        <text class="svg-text" x="102%" y="{{pred.y}}%"   fill="#808080">${{pred.value}}</text>
+        {{#if pred.positive}}
+        <text class="svg-text" x="102%" y="{{pred.y2}}%"  fill="green">+{{pred.diff}}%</text>
+        {{else}}
+        <text class="svg-text" x="102%" y="{{pred.y2}}%"  fill="red">-{{pred.diff}}%</text>
+        {{/if}}
         <path class="uline animated fadeIn"   d="M0 {{pred.lwr}} L150 {{pred.upr}}" stroke="#6e6e6e"  stroke-width="2"/>
         <circle class="main-circle" cx="{{pred.c}}%" cy="{{pred.y}}%" r="3" fill="#4d4d4d"/>
         {{/if}}
