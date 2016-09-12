@@ -104,4 +104,5 @@
 .prediction-axis .pred {
   width: 40px;
   position: absolute;
+  font-weight: 700;
 }
