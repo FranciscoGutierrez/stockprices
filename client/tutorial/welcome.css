@@ -1,0 +1,128 @@
+
+paper-button {
+  border: 1px solid #A1A1A1;
+  width: 90px;
+  margin-top: 20px;
+}
+
+.welcome-description {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-description paper-button {
+  display: none;
+  text-align: center;
+}
+
+.welcome-content {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 300;
+  color: #424242;
+}
+
+.welcome-content b {
+  font-weight: 500;
+}
+
+.welcome-content h1 {
+  padding: 0;
+  text-align: center;
+  font-size: 36px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+.skip-tutorial {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid #A1A1A1;
+  align-self: flex-end;
+}
+
+.welcome-description paper-input {
+  margin-top: 10px;
+  width: 100%;
+}
+
+#test-slider1 {
+  margin-top: 20px;
+  width: 400px;
+  height: 10px;
+}
+
+#test-slider2 {
+  margin-top: 20px;
+  width: 400px;
+  height: 10px;
+}
+
+#test-slider3 {
+  margin-top: 20px;
+  width: 400px;
+  height: 10px;
+}
+
+.tutorial-test img {
+  align-self: center;
+  margin-bottom: 40px;
+}
+
+.tutorial-test {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: default;
+}
+
+.tutorial-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #27ae60;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.tutorial-success paper-button {
+  color: #424242;
+  display: block;
+}
+
+#test-slider3 .noUi-connect {
+  background: grey;
+}
+
+.slider-container input {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.slider-container label {
+  cursor: pointer;
+}
+.wd-0 {
+  margin: 30px;
+  display: flex;
+  background: #fafafa;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.wb-next-1 {
+  align-self: center;
+}
+
+.slider-container .pips {
+  display: flex;
+  justify-content: space-between;
+  color: #a1a1a1;
+}

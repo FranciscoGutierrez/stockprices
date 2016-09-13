@@ -19,15 +19,23 @@
 
 .question-head {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 20px;
   color: #a7a7ae;
   margin-top: 20px;
 }
 
 .question-body {
-  font-weight: 300;
-  font-size: 26px;
-  color: #424242;
+  font-weight: 100;
+  font-size: 22px;
+  margin: 0px;
+  color: #868686;
+}
+
+.question-footer {
+  margin: 0;
+  font-weight: 500;
+  color: #A1A1A1;
+  font-size: 14px;
 }
 
 .question .answers {
