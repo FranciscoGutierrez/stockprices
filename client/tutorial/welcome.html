@@ -280,65 +280,75 @@
 
     {{#if option.map}}
     <div class="welcome-description wd-2" style="display: none;">
-      <p><b>Quality of life and happiness</b> regarding a certain aspect are encoded in a face’s <b>eyes and mouth:</b></p>
+      <div style="background: #fafafa; padding: 10px; border-radius: 5px;">
+      <p>
+          The visualisation shows you
+          a prediction of the <b>stock price</b> for the next 12 months
+          and how widely it differs according to some <b>stock factors</b>.
+      </p>
       <img src="/tutorial/map1.png" style="height: 200px;"/>
+      </div>
       <paper-button class="wb-next-2">Next</paper-button>
     </div>
 
     <div class="welcome-description wd-3" style="display: none;">
-      <p>When you <b>change an aspect</b>, you will often see a
-        <b>change regarding the predicted quality of life or happiness</b> in a city.</p>
+      <div style="background: #fafafa; padding: 10px; border-radius: 5px;">
+      <p>When you <b>change a factor</b>, you will often see a
+        <b>change regarding the predicted stock price</b>.</p>
+        </div>
         <img src="/tutorial/map2.png" style="height: 200px;"/>
-        <p><b>But pay attention:</b> Sometimes, if you change the importance of an aspect,
-          <b>the quality of life may increase while the happiness decreases.</b>
-          This means that the aspect may contribute to a <b>high quality of life</b>,
-          but that people have a <b>negative opinion of it.</b>
+        <div style="background: #fafafa; padding: 10px; border-radius: 5px;">
+        <p><b>But pay attention:</b> Sometimes, if you change the importance of a factor,
+          <b>the predicted stock price may increase.</b>
+          This means that the factor may contribute to a <b>high stock price</b>.
         </p>
+        </div>
         <paper-button class="wb-next-3">Next</paper-button>
       </div>
 
       <div class="welcome-description wd-4" style="display: none;">
+        <div style="background: #fafafa; padding: 10px; border-radius: 5px;">
         <p>
-          You can also read the happiness of people from the <b>black</b> number
-          next to each face. The small <b>grey numbers</b>,
-          <b>together with the height of the bar,</b> show you how widely
-          <b>opinions differ.</b>
+          You can read the predicted value from the horizontal line. It shows you how widely
+          <b>predictions differ.</b>
         </p>
-        <p>
-          A <b>high bar</b> with a large range means that <b>opinions differ widely</b>.
-          A <b>small bar</b> with a small range means <b>opinions are largely the same</b>.
-        </p>
+        </div>
         <img src="/tutorial/map3.png" style="height: 200px;"/>
+        <div style="background: #fafafa; padding: 10px; border-radius: 5px;">
+        <p>
+          A <b>big spread</b> means that <b>predictions differ widely</b>.
+          A <b>small spread</b> means <b>predictions are largely the same</b>.
+        </p>
+        </div>
         <paper-button class="wb-next-4">Next</paper-button>
       </div>
-      <!-- SHORT TEST -->
-      <!-- SHORT TEST -->
-      <!-- SHORT TEST -->
+      <!-- map SHORT TEST -->
+      <!-- map SHORT TEST -->
+      <!-- map SHORT TEST -->
       <div class="welcome-description wd-5" style="display: none;">
         <div class="tutorial-test test-1">
-          <div style="display: flex; align-items: flex-end;">
+          <div style="display: flex; align-items: flex-end; align-self:center;">
             <img src="/tutorial/mt1.png" height="200px"/>
-            <img src="/tutorial/mtx.png" height="100px" style="align-self: flex-end;"/>
           </div>
-          <div class="question-intro"  style="margin: 0;">Given to the visualisation,</div>
-          <div class="question-body"   style="margin: 0; font-size: 20px;">What is the value of Happinness?</div>
-          <div class="question-footer" style="margin: 0; font-size: 12px;">Adjust the slider to the corresponding value.</div>
+          <div class="question-intro" >Given to the visualisation,</div>
+          <div class="question-body"  >What is the predicted Stock Price?</div>
+          <div class="question-footer">Adjust the slider to the corresponding value.</div>
           <div class="slider-container">
             <div id="test-slider1" style="background: grey;"></div>
             <div class="pips">
               <span class="slider-zero">0</span>
               <div  class="slider-tooltip" style="color: {{qone.color}}; left: {{simpleslider.x}}%">{{simpleslider.a}}</div>
-              <span class="slider-hound"   style="visibility:hidden;">100</span>
+              <span class="slider-hound"   style="visibility:hidden;">200</span>
             </div>
           </div>
           {{#if qone.display}}
           <div class="tutorial-success">
-            <p>That's correct! The Happinness value is <b>44</b></p>
-            <paper-button class="wb-next-5-2" style="display: block;">Next</paper-button>
+            <p>That's correct! The forecast Stock Price is <b>131</b></p>
+            <paper-button class="wb-next-5-3" style="display: block;">Next</paper-button>
           </div>
           {{/if}}
         </div>
-        <div class="tutorial-test test-2" style="display: none;">
+        <!-- <div class="tutorial-test test-2" style="display: none;">
           <div style="display: flex; align-items: flex-end; margin-bottom: 20px;">
             <img src="/tutorial/mt2.png" height="200px"/>
             <img src="/tutorial/mtx.png" height="100px" style="align-self: flex-end;"/>
@@ -356,25 +366,25 @@
             <p>That's correct! The Quality of Life value is <b>High</b></p>
             <paper-button class="wb-next-5-3" style="display: block;">Next</paper-button>
           </div>
-        </div>
+        </div> -->
 
         <div class="tutorial-test test-3" style="display: none;">
-          <img src="/tutorial/mt3.png" height="200px"/>
-          <div class="question-intro"  style="margin: 0;">Given the visualisation,</div>
-          <div class="question-body"   style="margin: 0; font-size: 20px;">The value of Happiness is between...</div>
-          <div class="question-footer" style="margin: 0; font-size: 12px;">Adjust the sliders to the corresponding values.</div>
+          <img src="/tutorial/mt2.png" height="200px"/>
+          <div class="question-intro" >Given the visualisation,</div>
+          <div class="question-body"  >The predicted Stock Price is between...</div>
+          <div class="question-footer">Adjust the sliders to the corresponding values.</div>
           <div class="slider-container">
             <div id="test-slider3"></div>
             <div class="pips">
               <span class="slider-zero">0</span>
               <div  class="slider-tooltip tooltip1" style="color: {{qthree.color1}}; left: {{doubleslider.x}}%">{{doubleslider.a}}</div>
               <div  class="slider-tooltip tooltip2" style="color: {{qthree.color2}}; left: {{doubleslider.y}}%">{{doubleslider.b}}</div>
-              <span class="slider-hound">100</span>
+              <span class="slider-hound">200</span>
             </div>
           </div>
           {{#if qthree.display}}
           <div class="tutorial-success">
-            <p>That's correct! The Stock Price is between <b>25</b> and <b>75</b></p>
+            <p>That's correct! The Stock Price is between <b>75</b> and <b>150</b></p>
             <paper-button class="wb-next-5">Ok</paper-button>
           </div>
           {{/if}}

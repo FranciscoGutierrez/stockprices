@@ -6,9 +6,9 @@ Template.welcome.helpers({
     var dots  = false;
     var chart = false;
 
-    if(option == "map")   map   = true;
-    if(option == "dots")  dots  = true;
-    if(option == "chart") chart = true;
+    if(option == "series") map   = true;
+    if(option == "dots")   dots  = true;
+    if(option == "chart")  chart = true;
 
     return {chart: chart, dots: dots, map: map};
   },
@@ -148,15 +148,6 @@ Template.welcome.rendered = function () {
   }).on('slide', function (ev, val) {
     Session.set("test1",Number(val));
   });
-
-  // $("#test-slider2").noUiSlider({
-  //   start: 100,
-  //   step: 1,
-  //   connect: "lower",
-  //   range: { 'min': 0, 'max': 100 }
-  // }).on('slide', function (ev, val) {
-  //   Session.set("test1",Number(val));
-  // });
 
   $("#test-slider3").noUiSlider({
     start: [0,200],
