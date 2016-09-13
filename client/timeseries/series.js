@@ -42,7 +42,7 @@ Template.series.helpers({
           floor: 0,
           min: 0,
           minRange: min,
-          tickAmount: 3,
+          tickAmount: 5,
         },
         colors: ['#717171'],
         series: [{
