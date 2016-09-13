@@ -14,7 +14,7 @@
       <b>gold price</b>, <b>wordwide news</b>, <b>stock index</b> and <b>consumer trust</b> in a 12 month forecast of <b>Stock Prices</b>.
     </p>
     <p>
-      We will show you a <b>visualisation</b> of these factors and 6 <b>U.S companies</b>.
+      We will show you a <b>visualisation</b> of these factors about 6 U.S companies.
       Then, we will give you a set of tasks in which we will ask you to answer
       <b>simple questions</b> or to describe similarities and differences.
     </p>
@@ -33,7 +33,7 @@
           that <b>determine the stock price</b>.
         </p>
         <p>
-          You can <b>activate</b> and <b>deactivate</b> them, so that they will
+          You can <b>activate</b> and <b>deactivate</b> them so that they will
           be considered (or) not in the prediction
           of the <b>stock price</b> in all companies.
         </p>
@@ -86,49 +86,49 @@
       When you <b>change a factor</b>, you will often see a
       change regarding the <b>predicted stock</b> price.
     </p>
-    <img src="/tutorial/dots3.png" height="250px"/>
-    <p style="background: #E1E1E1; padding: 8px;">
+    <img src="/tutorial/dots3.png" height="200px"/>
+    <p style="background: #f1f1f1; padding: 8px;">
       <b>Pay attention:</b> Sometimes, if you change the importance of a factor,
       <b>the stock price may increase</b>.
       This means that the factor may contribute to a <b>high stock price</b>.
     </p>
     <paper-button class="wb-next-4">Ok</paper-button>
   </div>
-  <!-- SHORT TEST -->
-  <!-- SHORT TEST -->
-  <!-- SHORT TEST -->
+  <!-- DOTS SHORT TEST -->
+  <!-- DOTS SHORT TEST -->
+  <!-- DOTS SHORT TEST -->
   <div class="welcome-description wd-5" style="display: none;">
     <div class="tutorial-test test-1">
       <img src="/tutorial/dt1.png" height="200px"/>
-      <div class="question-intro"  style="margin: 0;">Given to the visualisation,</div>
-      <div class="question-body"   >What is the value of the Stock Price?</div>
-      <div class="question-footer" style="">Adjust the slider to the corresponding value.</div>
+      <div class="question-intro" >Given to the visualisation,</div>
+      <div class="question-body"  >What is the value of the Stock Price?</div>
+      <div class="question-footer">Adjust the slider to the corresponding value.</div>
       <div class="slider-container">
-        <br>
-        <paper-slider min="0" max="200" value="200" class="slider-grey" id="test-slider1" pin="true" expand="true"></paper-slider>
+        <div id="test-slider1" style="background: grey;"></div>
         <div class="pips">
-          <span class="slider-zero"  style="margin-left: 15px;">0</span>
-          <span class="slider-hound" style="margin-right: 15px;">200</span>
+          <span class="slider-zero">0</span>
+          <div  class="slider-tooltip" style="color: {{qone.color}}; left: {{simpleslider.x}}%">{{simpleslider.a}}</div>
+          <span class="slider-hound"   style="visibility:hidden;">200</span>
         </div>
       </div>
       {{#if qone.display}}
       <div class="tutorial-success">
-        <p>That's correct! The Stock Price value is <b>131</b></p>
-        <paper-button class="wb-next-5-2" style="display: block;">Next</paper-button>
+        <p>That's correct! The Stock Price is <b>131.00</b></p>
+        <paper-button class="wb-next-5-3" style="display: block;">Next</paper-button>
       </div>
       {{/if}}
     </div>
-    <div class="tutorial-test test-2" style="display: none;">
+    <!-- <div class="tutorial-test test-2" style="display: none;">
       <img src="/tutorial/dt2.png" height="200px"/>
-      <div class="question-intro"  style="margin: 0;">Given the visualisation,</div>
-      <div class="question-body"   style="margin: 0; font-size: 20px;">What is the value of Quality of Life?</div>
-      <div class="question-footer" style="margin: 0; font-size: 12px;">Adjust the slider to the corresponding value.</div>
+      <div class="question-intro" >Given the visualisation,</div>
+      <div class="question-body"  >What is the value of Quality of Life?</div>
+      <div class="question-footer">Adjust the slider to the corresponding value.</div>
       <div class="slider-container">
         <div id="test-slider2" style="background: grey;"></div>
         <div class="pips">
           <span class="slider-zero">0</span>
           <div  class="slider-tooltip" style="color: {{qtwo.color}}; left: {{simpleslider.x}}%">{{simpleslider.a}}</div>
-          <span class="slider-hound">100</span>
+          <span class="slider-hound"   style="visibility:hidden;">100</span>
         </div>
       </div>
       {{#if qtwo.display}}
@@ -137,89 +137,104 @@
         <paper-button class="wb-next-5-3" style="display: block;">Next</paper-button>
       </div>
       {{/if}}
-    </div>
+    </div> -->
     <div class="tutorial-test test-3" style="display: none;">
-      <img src="/tutorial/dt3.png" height="200px"/>
-      <div class="question-intro"  style="margin: 0;">Given the visualisation,</div>
-      <div class="question-body"   style="margin: 0; font-size: 20px;">The value of Happiness is between...</div>
-      <div class="question-footer" style="margin: 0; font-size: 12px;">Adjust the sliders to the corresponding values.</div>
-      <paper-slider min="0" max="100" value="100" class="slider-blue"></paper-slider>
+      <img src="/tutorial/dt2.png" height="200px"/>
+      <div class="question-intro"  >Given the visualisation,</div>
+      <div class="question-body"   >The Stock Price is between...</div>
+      <div class="question-footer" >Adjust the sliders to the corresponding values.</div>
+      <div class="slider-container">
+        <div id="test-slider3"></div>
+        <div class="pips">
+          <span class="slider-zero">0</span>
+          <div  class="slider-tooltip tooltip1" style="color: {{qthree.color1}}; left: {{doubleslider.x}}%">{{doubleslider.a}}</div>
+          <div  class="slider-tooltip tooltip2" style="color: {{qthree.color2}}; left: {{doubleslider.y}}%">{{doubleslider.b}}</div>
+          <span class="slider-hound">200</span>
+        </div>
+      </div>
       {{#if qthree.display}}
       <div class="tutorial-success">
-        <p>That's correct! Happiness is between <b>25</b> and <b>75</b></p>
+        <p>That's correct! The Stock Price is between <b>75</b> and <b>150</b></p>
         <paper-button class="wb-next-5">Ok</paper-button>
       </div>
       {{/if}}
     </div>
   </div>
   {{/if}}
+  <!-- DOTS end -->
+  <!-- DOTS end -->
+  <!-- DOTS end -->
 
   {{#if option.chart}}
   <div class="welcome-description wd-2" style="display: none;">
-    <p>The visualisation shows you the following things:</p>
-    <p><b>X-axis:</b> The quality of life of a certain aspect. This is incremental from left to right.</p>
-    <img src="/tutorial/chart1.png"/>
+    <div style="background: #fafafa; padding: 10px; border-radius: 5px;">
+      <p>The visualisation shows you the following things:</p>
+      <p><b>X-axis:</b> The opinions from experts about stock prices and factors. This is incremental from left to right.</p>
+    </div>
+    <img src="/tutorial/chart1.png" height="250px"/>
     <paper-button class="wb-next-2">Next</paper-button>
   </div>
 
   <div class="welcome-description wd-3" style="display: none;">
-    <div>
-      <p><b>Y-axis:</b> The spread of opinions regarding a certain aspect:</p>
-      <p>A <b>tall</b> cloud means that people have a very <b>different</b> opinion.</p>
+    <div style="background: #fafafa; padding: 10px; border-radius: 5px;">
+      <p><b>Y-axis:</b> The Stock Price prediction regarding a certain aspect:</p>
+      <p>A <b>big</b>  cloud means that people have a very <b>different</b> opinion.</p>
       <p>A <b>small</b> cloud means people thing roughly the <b>same.</b></p>
     </div>
-    <img src="/tutorial/chart2.png" style="height: 200px;"/>
+    <img src="/tutorial/chart2.png" style="height: 250px;"/>
     <paper-button class="wb-next-3">Next</paper-button>
   </div>
 
   <div class="welcome-description wd-4" style="display: none;">
-    <div>
+    <div style="background: #fafafa; padding: 10px; border-radius: 5px;">
       <p>
-        The <b>thick horizontal grey line</b> shows you the trend between the aspects.
-        It combines the mean value of happiness concerning both aspects.
+        The <b>thick horizontal grey line</b> shows you the predicted <b>Stock Price</b>.
       </p>
       <p>
-        The vertical line shows you the mean <b>quality of life</b>.
+        The vertical line combines the mean value of the <b>stock factors</b> concerning both aspects.
       </p>
       <p>
         When you <b>change an aspect</b>, you will often see a <b>change regarding
-          the predicted quality of life</b> or <b>happiness</b> in a city.
+          the predicted stock price</b>.
         </p>
       </div>
-      <img src="/tutorial/chart3.png"/>
+      <img src="/tutorial/chart3.png" height="200px"/>
+      <div style="background: #fafafa; padding: 10px; border-radius: 5px;">
       <p>
-        <b>But pay attention:</b> Sometimes, if you change the importance of an aspect,
-        <b>the quality of life may increase while the happiness decreases.</b>
-        This means that the aspect may contribute to a <b>high quality of life</b>,
+        <b>Pay attention:</b> Sometimes, if you change the importance of an aspect,
+        <b>the market opinions may increase while the stock price decreases.</b>
+        This means that the aspect may contribute to a <b>high stock price</b>,
         but that people have a <b>negative opinion of it.</b>
       </p>
+      </div>
+      <br>
       <paper-button class="wb-next-4">Ok</paper-button>
     </div>
-    <!-- SHORT TEST -->
-    <!-- SHORT TEST -->
-    <!-- SHORT TEST -->
+    <!-- CHART SHORT TEST -->
+    <!-- CHART SHORT TEST -->
+    <!-- CHART SHORT TEST -->
     <div class="welcome-description wd-5" style="display: none;">
       <div class="tutorial-test test-1">
-        <img src="/tutorial/ct1.png" height="200px"/>
-        <div class="question-intro"  style="margin: 0;">Given to the visualisation,</div>
-        <div class="question-body"   style="margin: 0; font-size: 20px;">What is the value of Happinness?</div>
-        <div class="question-footer" style="margin: 0; font-size: 12px;">Adjust the slider to the corresponding value.</div>
+        <img src="/tutorial/ct1.png" height="250px"/>
+        <div class="question-intro"  >Given to the visualisation,</div>
+        <div class="question-body"   >What is the value of Stock Price?</div>
+        <div class="question-footer" >Adjust the slider to the corresponding value.</div>
         <div class="slider-container">
           <div id="test-slider1" style="background: grey;"></div>
           <div class="pips">
             <span class="slider-zero">0</span>
             <div  class="slider-tooltip" style="color: {{qone.color}}; left: {{simpleslider.x}}%">{{simpleslider.a}}</div>
-            <span class="slider-hound"   style="visibility:hidden;">100</span>
+            <span class="slider-hound"   style="visibility:hidden;">200</span>
           </div>
         </div>
         {{#if qone.display}}
         <div class="tutorial-success">
-          <p>That's correct! The Happinness value is <b>44</b></p>
-          <paper-button class="wb-next-5-2" style="display: block;">Next</paper-button>
+          <p>That's correct! The Stock Price is <b>131.00</b></p>
+          <paper-button class="wb-next-5-3" style="display: block;">Next</paper-button>
         </div>
         {{/if}}
       </div>
-      <div class="tutorial-test test-2" style="display: none;">
+      <!-- <div class="tutorial-test test-2" style="display: none;">
         <img src="/tutorial/ct2.png" height="200px"/>
         <div class="question-intro"  style="margin: 0;">Given the visualisation,</div>
         <div class="question-body"   style="margin: 0; font-size: 20px;">What is the value of Quality of Life?</div>
@@ -238,12 +253,12 @@
           <paper-button class="wb-next-5-3" style="display: block;">Next</paper-button>
         </div>
         {{/if}}
-      </div>
+      </div> -->
       <div class="tutorial-test test-3" style="display: none;">
-        <img src="/tutorial/ct3.png" height="200px"/>
-        <div class="question-intro"  style="margin: 0;">Given the visualisation,</div>
-        <div class="question-body"   style="margin: 0; font-size: 20px;">The value of Happiness is between...</div>
-        <div class="question-footer" style="margin: 0; font-size: 12px;">Adjust the sliders to the corresponding values.</div>
+        <img src="/tutorial/ct2.png" height="250px"/>
+        <div class="question-intro"  >Given the visualisation,</div>
+        <div class="question-body"   >The Stock Price is between...</div>
+        <div class="question-footer" >Adjust the sliders to the corresponding values.</div>
         <div class="slider-container">
           <div id="test-slider3"></div>
           <div class="pips">
@@ -255,7 +270,7 @@
         </div>
         {{#if qthree.display}}
         <div class="tutorial-success">
-          <p>That's correct! Happiness is between <b>25</b> and <b>75</b></p>
+          <p>That's correct! The Stock Price is between <b>75</b> and <b>150</b></p>
           <paper-button class="wb-next-5">Ok</paper-button>
         </div>
         {{/if}}
@@ -359,7 +374,7 @@
           </div>
           {{#if qthree.display}}
           <div class="tutorial-success">
-            <p>That's correct! Happiness is between <b>25</b> and <b>75</b></p>
+            <p>That's correct! The Stock Price is between <b>25</b> and <b>75</b></p>
             <paper-button class="wb-next-5">Ok</paper-button>
           </div>
           {{/if}}
@@ -373,7 +388,7 @@
           Now we will give you a set of tasks to answer using the
           sliders and the visualisation. After that we will ask you some questions.
         </p>
-        <p style="background: #E1E1E1; padding: 8px;">
+        <p style="background: #f1f1f1; padding: 8px;">
           IMPORTANT: We know this test may not be easy. However,
           <b>we will reward you more, the better you do</b>.
           Here is the reward you can expect:

@@ -16,6 +16,9 @@ Router.route('/:_id', {
     Session.setDefault("slider3",100);
     Session.setDefault("slider4",100);
     //
+    Session.setDefault("test1",200);
+    Session.setDefault("test2",200);
+    //
     Session.setDefault("slider1-on",true);
     Session.setDefault("slider2-on",true);
     Session.setDefault("slider3-on",true);

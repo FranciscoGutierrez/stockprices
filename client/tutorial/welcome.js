@@ -1,3 +1,4 @@
+
 Template.welcome.helpers({
   option() {
     var option = Session.get("option");
@@ -13,31 +14,31 @@ Template.welcome.helpers({
   },
   simpleslider() {
     var val = 100;
-    val = Number(Session.get("slider1"));
-    if(val<5) { $(".slider-zero").css("visibility","hidden");  } else { $(".slider-zero").css("visibility","visible"); }
-    if(val>95){ $(".slider-hound").css("visibility","hidden"); } else { $(".slider-hound").css("visibility","visible"); }
-    return {a: Math.round(val), x: val-3};
+    val = Number(Session.get("test1"));
+    if(val<15) { $(".slider-zero").css("visibility","hidden");  } else { $(".slider-zero").css("visibility","visible"); }
+    if(val>180){ $(".slider-hound").css("visibility","hidden"); } else { $(".slider-hound").css("visibility","visible"); }
+    return {a: Math.round(val), x: (val-8)/2};
   },
   doubleslider() {
-    var val1 = 20;
-    var val2 = 80;
-    val1 = Number(Session.get("slider1"));
-    val2 = Number(Session.get("slider2"));
-    if(val1<5) { $(".slider-zero").css("visibility","hidden");  } else { $(".slider-zero").css("visibility","visible");  }
-    if(val2>95){ $(".slider-hound").css("visibility","hidden"); } else { $(".slider-hound").css("visibility","visible"); }
-    return {a: Math.round(val1), b: Math.round(val2), x: val1-2, y: val2-2};
+    var val1 = 0;
+    var val2 = 200;
+    val1 = Number(Session.get("test1"));
+    val2 = Number(Session.get("test2"));
+    if(val1<15) { $(".slider-zero").css("visibility","hidden");  } else { $(".slider-zero").css("visibility","visible");  }
+    if(val2>180){ $(".slider-hound").css("visibility","hidden"); } else { $(".slider-hound").css("visibility","visible"); }
+    return {a: Math.round(val1), b: Math.round(val2), x: (val1-8)/2, y: (val2-8)/2};
   },
   qone(){
     var show   = false;
     var tcolor = "#A1A1A1";
-    if(Number(Session.get("slider1")) == 44) show = true;
+    if(Number(Session.get("test1")) == 131) show = true;
     if(show) tcolor =  "#27ae60";
     return {display: show, color: tcolor};
   },
   qtwo(){
     var show   = false;
     var tcolor = "#A1A1A1";
-    if(Number(Session.get("slider1")) == 89) show = true;
+    if(Number(Session.get("test1")) == 89) show = true;
     if(show) tcolor =  "#27ae60";
     return {display: show, color: tcolor};
   },
@@ -46,8 +47,8 @@ Template.welcome.helpers({
     var show2 = false;
     var c1 = "#A1A1A1";
     var c2 = "#A1A1A1";
-    if(Number(Session.get("slider1")) == 25) show1 = true;
-    if(Number(Session.get("slider2")) == 75) show2 = true;
+    if(Number(Session.get("test1")) == 75)  show1 = true;
+    if(Number(Session.get("test2")) == 150) show2 = true;
     if(show1) c1 =  "#27ae60";
     if(show2) c2 =  "#27ae60";
     return {display: show1*show2, color1: c1, color2: c2};
@@ -88,7 +89,7 @@ Template.welcome.events({
     });
   },
   "click .wb-next-3" (event, instance) {
-    $(".wd-3").fadeOut(function(){
+    $(".wd-3").fadeOut(function(){ // Fixing this for Stock prices version
       $(".wd-4").fadeIn(function(){
         $(".wb-next-4").fadeIn();
       });
@@ -111,21 +112,20 @@ Template.welcome.events({
     });
   },
   "click .wb-next-5-2" (event, instance) {
-    $(".test-1").fadeOut(function(){
-      Session.set("slider1",100);
-      Session.set("slider2",100);
+    $(".test-1").fadeOut(function(){ //nOT USED...
+      Session.set("test1",100);
+      Session.set("test2",100);
       $(".test-2").fadeIn();
     });
   },
   "click .wb-next-5-3" (event, instance) {
-    $(".test-2").fadeOut(function(){
-      Session.set("slider1",20);
-      Session.set("slider2",80);
+    $(".test-1").fadeOut(function(){ //Fixed for stockprices
+      Session.set("test1",0);
+      Session.set("test2",200);
       $(".test-3").fadeIn();
     });
   },
   "click .wb-next-end" (event, instance) {
-    Session.set("username",$(".welcome-input").val());
     $(".welcome-screen").fadeOut(function(){
       $(this).remove();
       Session.set("qnumber",0);
@@ -141,33 +141,33 @@ Template.welcome.events({
 Template.welcome.rendered = function () {
 
   $("#test-slider1").noUiSlider({
-    start: 100,
+    start: 200,
     step: 1,
     connect: "lower",
-    range: { 'min': 0, 'max': 100 }
+    range: { 'min': 0, 'max': 200 }
   }).on('slide', function (ev, val) {
-    Session.set("slider1",Number(val));
+    Session.set("test1",Number(val));
   });
 
-  $("#test-slider2").noUiSlider({
-    start: 100,
-    step: 1,
-    connect: "lower",
-    range: { 'min': 0, 'max': 100 }
-  }).on('slide', function (ev, val) {
-    Session.set("slider1",Number(val));
-  });
+  // $("#test-slider2").noUiSlider({
+  //   start: 100,
+  //   step: 1,
+  //   connect: "lower",
+  //   range: { 'min': 0, 'max': 100 }
+  // }).on('slide', function (ev, val) {
+  //   Session.set("test1",Number(val));
+  // });
 
   $("#test-slider3").noUiSlider({
-    start: [20,80],
+    start: [0,200],
     animate: true,
     step: 1,
     tooltips: true,
     connect:  true,
-    range: {'min': 0, 'max': 100}
+    range: {'min': 0, 'max': 200}
   }).on('slide', function (ev, val) {
-    Session.set("slider1",Number(val[0]));
-    Session.set("slider2",Number(val[1]));
+    Session.set("test1",Number(val[0]));
+    Session.set("test2",Number(val[1]));
   });
 
 };

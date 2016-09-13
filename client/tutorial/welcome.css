@@ -33,6 +33,7 @@ paper-button {
 
 .welcome-content h1 {
   padding: 0;
+  margin: 0;
   text-align: center;
   font-size: 36px;
   font-family: 'Roboto', sans-serif;
@@ -119,10 +120,4 @@ paper-button {
 
 .wb-next-1 {
   align-self: center;
-}
-
-.slider-container .pips {
-  display: flex;
-  justify-content: space-between;
-  color: #a1a1a1;
 }

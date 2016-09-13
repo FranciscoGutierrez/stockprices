@@ -57,6 +57,7 @@ observe-sequence@1.0.12
 ordered-dict@1.0.8
 promise@0.8.4
 random@1.0.10
+rcy:nouislider@7.0.7_2
 reactive-dict@1.1.8
 reactive-var@1.0.10
 reload@1.1.10
