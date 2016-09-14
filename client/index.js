@@ -19,13 +19,5 @@ Template.body.helpers({
 
 Template.body.events({
   'click .start-questions'(event, instance) {
-    var option = Session.get("option");
-    $(".start-questions").fadeOut(function(){
-      Blaze.render(Template.sidebar, $(".content-left")[0]);
-      if(option == "series") Blaze.render(Template.timeseries, $(".visualisations")[0]);
-      if(option ==  "chart") Blaze.render(Template.regression, $(".visualisations")[0]);
-      if(option ==   "dots") Blaze.render(Template.dots, $(".visualisations")[0]);
-      $(".answers").fadeIn();
-    });
   }
 });

@@ -26,6 +26,7 @@ Template.slider.events({
   },
   'click paper-checkbox'(event, instance) {
     var status = Session.get(instance.data.tag+"-on");
+    $(".question-answers").css("visibility","visible");
     Session.set(instance.data.tag, 100);
     Template.instance().slider.set(100);
     if(status) {

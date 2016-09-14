@@ -16,13 +16,14 @@ Router.route('/:_id', {
     Session.setDefault("slider3",100);
     Session.setDefault("slider4",100);
     //
+    Session.setDefault("avg",0);
     Session.setDefault("test1",200);
     Session.setDefault("test2",200);
     //
-    Session.setDefault("slider1-on",true);
-    Session.setDefault("slider2-on",true);
-    Session.setDefault("slider3-on",true);
-    Session.setDefault("slider4-on",true);
+    Session.setDefault("slider1-on",false);
+    Session.setDefault("slider2-on",false);
+    Session.setDefault("slider3-on",false);
+    Session.setDefault("slider4-on",false);
 
     Meteor.subscribe("stocks", function(){
       //Meteor.subscribe("series", function(){
@@ -34,6 +35,7 @@ Router.route('/:_id', {
           // Session.setDefault("strength-p",100);
           // Session.setDefault("strength-s",100);
           // Session.setDefault("strength-h",100);
+
           Session.setDefault("qnumber",0);
           Session.setDefault("option",option);
           Session.setDefault("gold1",100);
