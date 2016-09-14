@@ -21,6 +21,8 @@ body {
   /*height: 900px;*/
   position: relative;
   border: 1px solid #efefef;
+  min-width: 250px;
+  max-width: 250px;
 }
 
 .content-right {
@@ -76,4 +78,9 @@ body {
 .questions {
   padding-left: 18px;
   margin-top: 10px;
+}
+
+.start-questions {
+  position: absolute;
+  align-self: center;
 }

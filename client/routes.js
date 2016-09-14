@@ -59,9 +59,6 @@ Router.route('/:_id', {
           var isChrome = !!window.chrome && !!window.chrome.webstore;
           if(isChrome) {
             Blaze.render(Template.welcome,$(".welcome-screen")[0]);
-            if(option == "series") Blaze.render(Template.timeseries, $(".visualisations")[0]);
-            if(option ==  "chart") Blaze.render(Template.regression, $(".visualisations")[0]);
-            if(option ==   "dots") Blaze.render(Template.dots, $(".visualisations")[0]);
           } else {
             $(".welcome-screen").text("This evaluation is only available in Google Chrome. 1.0 - 48 or above.");
           }
