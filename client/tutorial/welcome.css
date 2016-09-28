@@ -118,6 +118,10 @@ paper-button {
   border-radius: 5px;
 }
 
+.wd-0 p {
+  margin: 10px 0 10px 0;
+}
+
 .wb-next-1 {
   align-self: center;
 }
