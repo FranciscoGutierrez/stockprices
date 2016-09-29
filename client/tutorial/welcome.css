@@ -113,7 +113,7 @@ paper-button {
 .wd-0 {
   margin: 30px;
   display: flex;
-  background: #fafafa;
+  /*background: #fafafa;*/
   padding: 10px;
   border-radius: 5px;
 }

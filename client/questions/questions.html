@@ -10,7 +10,7 @@
       <div class="question-body">
         Which stock loses more than any other?
       </div>
-      <div class="question-answers">
+      <div class="question-answers" style="visibility: hidden;">
         <label><input type="radio" name="cities" value="newyork" class="radio-button city-radio rb-newyork">Disney    </label>
         <label><input type="radio" name="cities" value="angeles" class="radio-button city-radio rb-angeles">Home Depot</label>
         <label><input type="radio" name="cities" value="houston" class="radio-button city-radio rb-houston">Apple     </label>
@@ -19,7 +19,7 @@
         <label><input type="radio" name="cities" value="seattle" class="radio-button city-radio rb-seattle">McDonald's</label>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-next">Sumbit</paper-button>
+        <paper-button class="big-next">Submit</paper-button>
       </div>
     </div>
 
@@ -27,28 +27,30 @@
       <div class="question-intro"></div>
       <div class="question-body">You expect a very good <b>Consumer Trust</b> (100%) and a very bad <b>Dow Jones Index</b> (0%)</div>
       <div class="question-answers">
-        <select class="form-control control-a-4" style="width: 200px;">
-          <option></option>
-          <option>Disney</option>
-          <option>Home Depot</option>
-          <option>Apple</option>
-          <option>Chevron</option>
-          <option>IBM</option>
-          <option>McDonald's</option>
-        </select>
-        loses more than
-        <select class="form-control control-b-4" style="width: 200px;">
-          <option></option>
-          <option>Disney</option>
-          <option>Home Depot</option>
-          <option>Apple</option>
-          <option>Chevron</option>
-          <option>IBM</option>
-          <option>McDonald's</option>
-        </select>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <select class="form-control control-a-4" style="width: 100px;">
+            <option></option>
+            <option>Disney</option>
+            <option>Home Depot</option>
+            <option>Apple</option>
+            <option>Chevron</option>
+            <option>IBM</option>
+            <option>McDonald's</option>
+          </select>
+          &nbsp; loses more than &nbsp;
+          <select class="form-control control-b-4" style="width: 100px;">
+            <option></option>
+            <option>Disney</option>
+            <option>Home Depot</option>
+            <option>Apple</option>
+            <option>Chevron</option>
+            <option>IBM</option>
+            <option>McDonald's</option>
+          </select>
+        </div>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-next">Sumbit</paper-button>
+        <paper-button class="big-next">Submit</paper-button>
       </div>
     </div>
 
@@ -68,7 +70,7 @@
         <label><input type="radio" name="cities" value="seattle" class="radio-button city-radio rb-seattle">McDonald's</label>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-next">Sumbit</paper-button>
+        <paper-button class="big-next">Submit</paper-button>
       </div>
     </div>
 
@@ -83,8 +85,8 @@
       </div>
       <div class="question-answers">
         <div style="width: 100%;">
-          <div id="question-slider1" style="height: 10px; background: grey;"></div>
-          <div class="pips">
+          <div id="question-slider2" style="height: 10px; background: grey;"></div>
+          <div class="pips" style="position: absolute;">
             <span class="slider-zero">0</span>
             <div  class="slider-tooltip tooltip1" style="left: {{slider.x}}%">{{slider.a}}</div>
             <span class="slider-hound">100</span>
@@ -92,7 +94,7 @@
         </div>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-next">Sumbit</paper-button>
+        <paper-button class="big-next">Submit</paper-button>
       </div>
     </div>
 
@@ -105,42 +107,42 @@
         Which stocks are expected to grow more than 5%?
       </div>
       <div class="question-answers">
-        <select class="form-control control-a-4" style="width: 200px;">
-          <option></option>
-          <option>Disney</option>
-          <option>Home Depot</option>
-          <option>Apple</option>
-          <option>Chevron</option>
-          <option>IBM</option>
-          <option>McDonald's</option>
-        </select>
-        and
-        <select class="form-control control-b-4" style="width: 200px;">
-          <option></option>
-          <option>Disney</option>
-          <option>Home Depot</option>
-          <option>Apple</option>
-          <option>Chevron</option>
-          <option>IBM</option>
-          <option>McDonald's</option>
-        </select>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <select class="form-control control-a-4" style="width: 100px;">
+            <option></option>
+            <option>Disney</option>
+            <option>Home Depot</option>
+            <option>Apple</option>
+            <option>Chevron</option>
+            <option>IBM</option>
+            <option>McDonald's</option>
+          </select>
+          &nbsp; and &nbsp;
+          <select class="form-control control-b-4" style="width: 100px;">
+            <option></option>
+            <option>Disney</option>
+            <option>Home Depot</option>
+            <option>Apple</option>
+            <option>Chevron</option>
+            <option>IBM</option>
+            <option>McDonald's</option>
+          </select>
+        </div>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-next">Sumbit</paper-button>
+        <paper-button class="big-next">Submit</paper-button>
       </div>
     </div>
 
     <div class="question-container question-5-1 golden" style="display: none;">
-      <div class="question-intro">
-        If <b>Traffic</b> and <b>Weather</b> are important to you,
-      </div>
+      <div class="question-intro"></div>
       <div class="question-body">
         How much is 50 plus 10?
       </div>
       <div class="question-answers" style="visibility: visible;">
         <div style="width: 100%;">
-          <div id="question-slider1" style="height: 10px; background: grey;"></div>
-          <div class="pips">
+          <div id="question-slider2" style="height: 10px; background: grey;"></div>
+          <div class="pips" style="position: absolute;">
             <span class="slider-zero">0</span>
             <div  class="slider-tooltip tooltip1" style="left: {{slider.x}}%">{{slider.a}}</div>
             <span class="slider-hound">100</span>
@@ -148,7 +150,7 @@
         </div>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-golden">Sumbit</paper-button>
+        <paper-button class="big-golden">Submit</paper-button>
       </div>
     </div>
 
@@ -168,7 +170,7 @@
         <label><input type="radio" name="cities" value="seattle" class="radio-button city-radio rb-seattle">McDonald's</label>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-next">Sumbit</paper-button>
+        <paper-button class="big-next">Submit</paper-button>
       </div>
     </div>
 
@@ -180,42 +182,42 @@
         Which 2 companies have the highest predicted stock value?
       </div>
       <div class="question-answers">
-        <select class="form-control control-a-4" style="width: 200px;">
-          <option></option>
-          <option>Disney</option>
-          <option>Home Depot</option>
-          <option>Apple</option>
-          <option>Chevron</option>
-          <option>IBM</option>
-          <option>McDonald's</option>
-        </select>
-        and
-        <select class="form-control control-b-4" style="width: 200px;">
-          <option></option>
-          <option>Disney</option>
-          <option>Home Depot</option>
-          <option>Apple</option>
-          <option>Chevron</option>
-          <option>IBM</option>
-          <option>McDonald's</option>
-        </select>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <select class="form-control control-a-4" style="width: 100px;">
+            <option></option>
+            <option>Disney</option>
+            <option>Home Depot</option>
+            <option>Apple</option>
+            <option>Chevron</option>
+            <option>IBM</option>
+            <option>McDonald's</option>
+          </select>
+          &nbsp; and &nbsp;
+          <select class="form-control control-b-4" style="width: 100px;">
+            <option></option>
+            <option>Disney</option>
+            <option>Home Depot</option>
+            <option>Apple</option>
+            <option>Chevron</option>
+            <option>IBM</option>
+            <option>McDonald's</option>
+          </select>
+        </div>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-next">Sumbit</paper-button>
+        <paper-button class="big-next">Submit</paper-button>
       </div>
     </div>
 
     <div class="question-container question-7-1 golden" style="display: none;">
-      <div class="question-intro">
-        If <b>Air Quality</b> and <b>Traffic</b> are important to you,
-      </div>
+      <div class="question-intro"></div>
       <div class="question-body">
         How much is 30 plus 5?
       </div>
       <div class="question-answers" style="visibility: visible;">
         <div style="width: 100%;">
           <div id="question-slider2" style="height: 10px; background: grey;"></div>
-          <div class="pips">
+          <div class="pips" style="position: absolute;">
             <span class="slider-zero">0</span>
             <div  class="slider-tooltip tooltip1" style="left: {{slider.x}}%">{{slider.a}}</div>
             <span class="slider-hound">100</span>
@@ -223,7 +225,7 @@
         </div>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-golden">Sumbit</paper-button>
+        <paper-button class="big-golden">Submit</paper-button>
       </div>
     </div>
 
@@ -243,17 +245,19 @@
         <label><input type="radio" name="cities" value="seattle" class="radio-button city-radio rb-seattle">McDonald's</label>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-next">Sumbit</paper-button>
+        <paper-button class="big-next">Submit</paper-button>
       </div>
     </div>
 
     <div class="question-container question-9" style="display: none;">
       <div class="question-intro">
-        You have very precise expectations, <b>Consumer Trust</b> at 39%, <b>Worldwide News</b> at 68%, <b>Economic Growth</b> at 38% and the <b>Dow Jones Index</b> at 62%.
+        You have very precise expectations,
       </div>
-      <div class="question-body"></div>
+      <div class="question-body">
+        <b>Consumer Trust</b> at 39%, <b>Worldwide News</b> at 68%, <b>Economic Growth</b> at 38% and the <b>Dow Jones Index</b> at 62%.
+      </div>
       <div class="question-answers">
-        <select class="form-control control-b-4" style="width: 200px;">
+        <select class="form-control control-b-4" style="width: 100px;">
           <option></option>
           <option>Disney</option>
           <option>Home Depot</option>
@@ -262,8 +266,8 @@
           <option>IBM</option>
           <option>McDonald's</option>
         </select>
-        is expected to gain more than
-        <select class="form-control control-b-4" style="width: 200px;">
+        &nbsp; gains more than &nbsp;
+        <select class="form-control control-b-4" style="width: 100px;">
           <option></option>
           <option>Disney</option>
           <option>Home Depot</option>
@@ -272,8 +276,8 @@
           <option>IBM</option>
           <option>McDonald's</option>
         </select>
-        but less than
-        <select class="form-control control-b-4" style="width: 200px;">
+        &nbsp; but less than &nbsp;
+        <select class="form-control control-b-4" style="width: 100px;">
           <option></option>
           <option>Disney</option>
           <option>Home Depot</option>
@@ -284,21 +288,19 @@
         </select>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-next">Sumbit</paper-button>
+        <paper-button class="big-next">Submit</paper-button>
       </div>
     </div>
 
     <div class="question-container question-9-1 golden" style="display: none;">
-      <div class="question-intro">
-        If <b>Weather</b> and <b>Air Quality</b> are important to you,
-      </div>
+      <div class="question-intro"></div>
       <div class="question-body">
         How much is 24 plus 1?
       </div>
       <div class="question-answers" style="visibility: visible;">
         <div style="width: 100%;">
-          <div id="question-slider3" style="height: 10px; background: grey;"></div>
-          <div class="pips">
+          <div id="question-slider2" style="height: 10px; background: grey;"></div>
+          <div class="pips" style="position: absolute;">
             <span class="slider-zero">0</span>
             <div  class="slider-tooltip tooltip1" style="left: {{slider.x}}%">{{slider.a}}</div>
             <span class="slider-hound">100</span>
@@ -306,7 +308,7 @@
         </div>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-golden">Sumbit</paper-button>
+        <paper-button class="big-golden">Submit</paper-button>
       </div>
     </div>
 
@@ -315,12 +317,12 @@
         <b>Economic Growth</b> and <b>Consumer Trust</b> are moderate (Both 50%),
       </div>
       <div class="question-body">
-        What is the value for <b>Dow Jones Index</b>, when Chevron stock is $110.11?
+        What is the value for <b>Dow Jones Index</b>, when <b>Chevron</b> stock is <b>$110.11</b>?
       </div>
       <div class="question-answers">
         <div style="width: 100%;">
-          <div id="question-slider4" style="height: 10px; background: grey;"></div>
-          <div class="pips">
+          <div id="question-slider2" style="height: 10px; background: grey;"></div>
+          <div class="pips" style="position: absolute;">
             <span class="slider-zero">0</span>
             <div  class="slider-tooltip tooltip1" style="left: {{slider.x}}%">{{slider.a}}</div>
             <span class="slider-hound">100</span>
@@ -328,7 +330,7 @@
         </div>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-next">Sumbit</paper-button>
+        <paper-button class="big-next">Submit</paper-button>
       </div>
     </div>
 
@@ -343,8 +345,8 @@
       </div>
       <div class="question-answers">
         <div style="width: 100%;">
-          <div id="question-slider4" style="height: 10px; background: grey;"></div>
-          <div class="pips">
+          <div id="question-slider2" style="height: 10px; background: grey;"></div>
+          <div class="pips" style="position: absolute;">
             <span class="slider-zero">0</span>
             <div  class="slider-tooltip tooltip1" style="left: {{slider.x}}%">{{slider.a}}</div>
             <span class="slider-hound">100</span>
@@ -352,21 +354,19 @@
         </div>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-next">Sumbit</paper-button>
+        <paper-button class="big-next">Submit</paper-button>
       </div>
     </div>
 
     <div class="question-container question-11-1 golden" style="display: none;">
-      <div class="question-intro">
-        If <b>Traffic</b> and <b>Safety</b> are important to you,
-      </div>
+      <div class="question-intro"></div>
       <div class="question-body">
         How much is 74 plus 1?
       </div>
       <div class="question-answers" style="visibility: visible;">
         <div style="width: 100%;">
-          <div id="question-slider4" style="height: 10px; background: grey;"></div>
-          <div class="pips">
+          <div id="question-slider2" style="height: 10px; background: grey;"></div>
+          <div class="pips" style="position: absolute;">
             <span class="slider-zero">0</span>
             <div  class="slider-tooltip tooltip1" style="left: {{slider.x}}%">{{slider.a}}</div>
             <span class="slider-hound">100</span>
@@ -374,13 +374,13 @@
         </div>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-golden">Sumbit</paper-button>
+        <paper-button class="big-golden">Submit</paper-button>
       </div>
     </div>
 
-    <div class="question-container question-12" style="display: none;">
+    <div class="question-container question-12" style="display:  none;">
       <div class="question-body">
-        Worldwide News has te most influence in the prediction of which stock?
+        <b>Worldwide News</b> has te most influence in the prediction of which stock?
       </div>
       <div class="question-answers">
         <label><input type="radio" name="cities" value="newyork" class="radio-button city-radio rb-newyork">Disney    </label>
@@ -391,7 +391,7 @@
         <label><input type="radio" name="cities" value="seattle" class="radio-button city-radio rb-seattle">McDonald's</label>
       </div>
       <div class="question-buttons">
-        <paper-button class="big-next">Sumbit</paper-button>
+        <paper-button class="big-next">Submit</paper-button>
       </div>
     </div>
 
