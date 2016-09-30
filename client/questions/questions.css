@@ -189,3 +189,7 @@
   left: 600px;
   z-index: 1;
 }
+
+.slider-tooltip {
+  top: 0;
+}

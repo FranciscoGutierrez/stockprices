@@ -488,10 +488,9 @@ Template.question.rendered = function () {
     start: 100,
     step: 1,
     connect: "lower",
-    tooltips: true,
     range: {'min': 0, 'max': 100}
   }).on('slide', function (ev, val) {
-    Session.set("gold1",Number(val));
+    Session.set("gold1",val);
   }).on('set', function(){
     self.$(".question-buttons").css("visibility","visible");
   });
@@ -500,10 +499,9 @@ Template.question.rendered = function () {
     start: 100,
     step: 1,
     connect: "lower",
-    tooltips: true,
     range: {'min': 0, 'max': 100}
   }).on('slide', function (ev, val) {
-    Session.set("gold2",Number(val));
+    Session.set("gold2",val);
   }).on('set', function(){
     self.$(".question-buttons").css("visibility","visible");
   });
@@ -528,6 +526,43 @@ Template.question.rendered = function () {
     range: {'min': 0, 'max': 100}
   }).on('slide', function (ev, val) {
     Session.set("gold4",Number(val));
+  }).on('set', function(){
+    self.$(".question-buttons").css("visibility","visible");
+  });
+
+  /******/
+  //Sliders for answers!!!
+
+  this.$("#question-slider-q10").noUiSlider({
+    start: 100,
+    step: 1,
+    connect: "lower",
+    range: {'min': 0, 'max': 100}
+  }).on('slide', function (ev, val) {
+    Session.set("quesion-10",val);
+  }).on('set', function(){
+    self.$(".question-buttons").css("visibility","visible");
+  });
+
+  this.$("#question-slider-q11").noUiSlider({
+    start: 100,
+    step: 1,
+    connect: "lower",
+    range: {'min': 0, 'max': 100}
+  }).on('slide', function (ev, val) {
+    Session.set("quesion-11",val);
+  }).on('set', function(){
+    self.$(".question-buttons").css("visibility","visible");
+  });
+
+  this.$("#question-slider-q4").noUiSlider({
+    start: 100,
+    step: 1,
+    connect: "lower",
+    tooltips: true,
+    range: {'min': 0, 'max': 100}
+  }).on('slide', function (ev, val) {
+    Session.set("quesion-4",Number(val));
   }).on('set', function(){
     self.$(".question-buttons").css("visibility","visible");
   });
