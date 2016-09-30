@@ -30,15 +30,13 @@ Template.question.helpers({
     });
     return {option: option,number: number};
   },
-  slider() {
-    var val = 100;
-    var q = Number(Session.get("qnumber"));
-    if(q > 4  && q < 6  ) val = Number(Session.get("gold1"));
-    if(q > 6  && q < 8  ) val = Number(Session.get("gold2"));
-    if(q > 8  && q < 10 ) val = Number(Session.get("gold3"));
-    if(q > 10 && q < 12 ) val = Number(Session.get("gold4"));
-    return {a: Math.round(val), x: val-2};
-  }
+  sliderGold1() { return {a: Session.get("gold1") | 0, x: Session.get("gold1")-4}; },
+  sliderGold2() { return {a: Session.get("gold2") | 0, x: Session.get("gold2")-4}; },
+  sliderGold3() { return {a: Session.get("gold3") | 0, x: Session.get("gold3")-4}; },
+  sliderGold4() { return {a: Session.get("gold4") | 0, x: Session.get("gold4")-4}; },
+  sliderQ4()  { return {a: Session.get("question-slider4")  | 0, x: Session.get("question-slider4")  - 4}; },
+  sliderQ10() { return {a: Session.get("question-slider10") | 0, x: Session.get("question-slider10") - 4}; },
+  sliderQ11() { return {a: Session.get("question-slider11") | 0, x: Session.get("question-slider11") - 4}; }
 });
 
 Template.question.events({
@@ -539,7 +537,7 @@ Template.question.rendered = function () {
     connect: "lower",
     range: {'min': 0, 'max': 100}
   }).on('slide', function (ev, val) {
-    Session.set("quesion-10",val);
+    Session.set("question-slider10",val);
   }).on('set', function(){
     self.$(".question-buttons").css("visibility","visible");
   });
@@ -550,7 +548,7 @@ Template.question.rendered = function () {
     connect: "lower",
     range: {'min': 0, 'max': 100}
   }).on('slide', function (ev, val) {
-    Session.set("quesion-11",val);
+    Session.set("question-slider11",val);
   }).on('set', function(){
     self.$(".question-buttons").css("visibility","visible");
   });
@@ -562,7 +560,7 @@ Template.question.rendered = function () {
     tooltips: true,
     range: {'min': 0, 'max': 100}
   }).on('slide', function (ev, val) {
-    Session.set("quesion-4",Number(val));
+    Session.set("question-slider4",Number(val));
   }).on('set', function(){
     self.$(".question-buttons").css("visibility","visible");
   });
