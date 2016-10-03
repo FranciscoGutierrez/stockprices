@@ -34,5 +34,10 @@ Template.slider.events({
     } else {
       Session.set(instance.data.tag+"-on", true);
     }
+
+    var question = Session.get("order")[Number(Session.get("qnumber"))];
+    if (question == 4)  $(".question-buttons").css("visibility","visible");
+    if (question == 10) $(".question-buttons").css("visibility","visible");
+    if (question == 11) $(".question-buttons").css("visibility","visible");
   }
 });

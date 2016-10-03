@@ -31,20 +31,12 @@ Router.route('/:_id', {
           $(this).remove();
 
           Meteor.subscribe("answers");
-          // Session.setDefault("strength-t",100);
-          // Session.setDefault("strength-p",100);
-          // Session.setDefault("strength-s",100);
-          // Session.setDefault("strength-h",100);
-
           Session.setDefault("qnumber",0);
           Session.setDefault("option",option);
           Session.setDefault("gold1",100);
           Session.setDefault("gold2",100);
           Session.setDefault("gold3",100);
           Session.setDefault("gold4",100);
-          Session.setDefault("question-slider4",100);
-          Session.setDefault("question-slider10",100);
-          Session.setDefault("question-slider11",100);
           Session.setDefault("actions_sw",0);
           Session.setDefault("actions_ss",0);
           Session.setDefault("actions_st",0);

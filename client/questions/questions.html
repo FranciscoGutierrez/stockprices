@@ -24,30 +24,19 @@
     </div>
 
     <div class="question-container question-2" style="display: none;">
-      <div class="question-intro"></div>
-      <div class="question-body">You expect a very good <b>Consumer Trust</b> (100%) and a very bad <b>Dow Jones Index</b> (0%)</div>
-      <div class="question-answers">
-        <div style="display: flex; justify-content: center; align-items: center;">
-          <select class="form-control control-a-4" style="width: 100px;">
-            <option></option>
-            <option>Disney</option>
-            <option>Home Depot</option>
-            <option>Apple</option>
-            <option>Chevron</option>
-            <option>IBM</option>
-            <option>McDonald's</option>
-          </select>
-          &nbsp; loses more than &nbsp;
-          <select class="form-control control-b-4" style="width: 100px;">
-            <option></option>
-            <option>Disney</option>
-            <option>Home Depot</option>
-            <option>Apple</option>
-            <option>Chevron</option>
-            <option>IBM</option>
-            <option>McDonald's</option>
-          </select>
-        </div>
+      <div class="question-intro">
+        You expect a very good <b>Consumer Trust (100%)</b> and a very bad <b>Dow Jones Index (0%)</b>,
+      </div>
+      <div class="question-body">
+        McDonald's loses more than...
+      </div>
+      <div class="question-answers" style="visibility: hidden;">
+        <label><input type="radio" name="cities" value="newyork" class="radio-button city-radio rb-newyork">Disney    </label>
+        <label><input type="radio" name="cities" value="angeles" class="radio-button city-radio rb-angeles">Home Depot</label>
+        <label><input type="radio" name="cities" value="houston" class="radio-button city-radio rb-houston">Apple     </label>
+        <label><input type="radio" name="cities" value="denver"  class="radio-button city-radio rb-denver" >Chevron   </label>
+        <label><input type="radio" name="cities" value="atlanta" class="radio-button city-radio rb-atlanta">IBM       </label>
+        <label><input type="radio" name="cities" value="seattle" class="radio-button city-radio rb-seattle">McDonald's</label>
       </div>
       <div class="question-buttons">
         <paper-button class="big-next">Submit</paper-button>
@@ -56,10 +45,10 @@
 
     <div class="question-container question-3" style="display: none;">
       <div class="question-intro">
-        For any value of the indicators,
+        You expect IBM's stock to be exactly $127.91 and you only consider one factor.
       </div>
       <div class="question-body">
-        <b>IBM's stock</b> is most influenced by
+        Which factor needs to be very good (100%) to confirm your expectation?
       </div>
       <div class="question-answers">
         <label><input type="radio" name="cities" value="newyork" class="radio-button city-radio rb-newyork">Consumer Trust </label>
@@ -81,15 +70,8 @@
       <div class="question-body">
         What is the value for the <b>Worldwide News</b>, when <b>Home Depot's</b> stock is <b>$129.99</b>?
       </div>
-      <div class="question-answers">
-        <div style="width: 100%;">
-          <div id="question-slider-q4" style="height: 10px; background: grey;"></div>
-          <div  class="slider-tooltip tooltip1" style="left: {{sliderQ4.x}}%">{{sliderQ4.a}}</div>
-          <div class="pips">
-            <span>0</span>
-            <span>100</span>
-          </div>
-        </div>
+      <div class="question-answers" style="visibility: visible;">
+        Worldwide News: <div style="border-bottom: 2px solid #9c56b8">{{slider2}}</div>
       </div>
       <div class="question-buttons">
         <paper-button class="big-next">Submit</paper-button>
@@ -133,7 +115,9 @@
     </div>
 
     <div class="question-container question-5-1 golden" style="display: none;">
-      <div class="question-intro"></div>
+      <div class="question-intro">
+        If you consider <b>Worldwide News</b> and <b>Consumer Trust</b>,
+      </div>
       <div class="question-body">
         How much is 50 plus 10?
       </div>
@@ -208,7 +192,9 @@
     </div>
 
     <div class="question-container question-7-1 golden" style="display: none;">
-      <div class="question-intro"></div>
+      <div class="question-intro">
+        If you consider <b>Worldwide News</b> and <b>Consumer Trust</b>,
+      </div>
       <div class="question-body">
         How much is 30 plus 5?
       </div>
@@ -291,7 +277,9 @@
     </div>
 
     <div class="question-container question-9-1 golden" style="display: none;">
-      <div class="question-intro"></div>
+      <div class="question-intro">
+        If you consider <b>Worldwide News</b> and <b>Consumer Trust</b>,
+      </div>
       <div class="question-body">
         How much is 24 plus 1?
       </div>
@@ -318,14 +306,7 @@
         What is the value for <b>Dow Jones Index</b>, when <b>Chevron</b> stock is <b>$110.11</b>?
       </div>
       <div class="question-answers">
-        <div style="width: 100%;">
-          <div id="question-slider-q10" style="height: 10px; background: grey;"></div>
-          <div  class="slider-tooltip tooltip1" style="left: {{sliderQ10.x}}%">{{sliderQ10.a}}</div>
-          <div class="pips">
-            <span>0</span>
-            <span>100</span>
-          </div>
-        </div>
+        Dow Jones Index: <div style="border-bottom: 2px solid #2e97de">{{slider4}}</div>
       </div>
       <div class="question-buttons">
         <paper-button class="big-next">Submit</paper-button>
@@ -342,22 +323,17 @@
         the opposite of the growth of <b>IBM</b>?
       </div>
       <div class="question-answers">
-        <div style="width: 100%;">
-          <div id="question-slider-q11" style="height: 10px; background: grey;"></div>
-          <div  class="slider-tooltip tooltip1" style="left: {{sliderQ11.x}}%">{{sliderQ11.a}}</div>
-          <div class="pips">
-            <span>0</span>
-            <span>100</span>
-          </div>
-        </div>
+        Dow Jones Index: <div style="border-bottom: 2px solid #2e97de">{{slider4}}</div>
       </div>
-      <div class="question-buttons">
+      <div class="question-buttons" style="visibility: visible;">
         <paper-button class="big-next">Submit</paper-button>
       </div>
     </div>
 
     <div class="question-container question-11-1 golden" style="display: none;">
-      <div class="question-intro"></div>
+      <div class="question-intro">
+        If you consider <b>Worldwide News</b> and <b>Consumer Trust</b>,
+      </div>
       <div class="question-body">
         How much is 74 plus 1?
       </div>
@@ -381,7 +357,7 @@
         If you discard all other indicators,
       </div>
       <div class="question-body">
-         In which stock does the Worldwide News have the strongest influence?
+         In which stock does the <b>Worldwide News</b> have the strongest influence?
       </div>
       <div class="question-answers">
         <label><input type="radio" name="cities" value="newyork" class="radio-button city-radio rb-newyork">Disney    </label>
