@@ -10,9 +10,9 @@ Template.body.helpers({
   },
   googleform() {
     var url = "";
-    if(Session.get("option") == "dots"  ) url = "http://goo.gl/forms/vLuOpASq7lNY0LA72";
-    if(Session.get("option") == "series") url = "http://goo.gl/forms/O9e0eHP59WHNvukf2";
-    if(Session.get("option") == "chart" ) url = "http://goo.gl/forms/IciXzcWdW6yWgLS02";
+    if(Session.get("option") == "dots"  ) url = "https://goo.gl/forms/o1TwDt4nBkFdXudg2";
+    if(Session.get("option") == "series") url = "https://goo.gl/forms/3gGVfknHgq6u8Zgf1";
+    if(Session.get("option") == "chart" ) url = "https://goo.gl/forms/zkk9zSsL1KsCwEQ83";
     return url;
   }
 });
