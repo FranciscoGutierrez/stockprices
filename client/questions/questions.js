@@ -201,8 +201,8 @@ Template.question.events({
       $("input:radio").removeAttr("checked");
       $("input:checkbox").removeAttr("checked");
 
-      console.log({
-        //Answers.insert({
+      //console.log({
+      Answers.insert({
         userid:    Session.get("ssid"),
         timestart: Session.get("qstart"),
         timeend:   timeend,
@@ -234,7 +234,6 @@ Template.question.events({
       $(".big-thanks").fadeIn();
 
     } else {
-    
       var current  = Number(Session.get("qnumber"));
       var question = Session.get("order")[current];
       var timeend = Date.now();
@@ -360,8 +359,8 @@ Template.question.events({
       $("input:radio").removeAttr("checked");
       $("input:checkbox").removeAttr("checked");
 
-      console.log({
-        //Answers.insert({
+      //console.log({
+      Answers.insert({
         userid:    Session.get("ssid"),
         timestart: Session.get("qstart"),
         timeend:   timeend,
