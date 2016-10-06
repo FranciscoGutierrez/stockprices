@@ -47,8 +47,8 @@ Router.route('/:_id', {
           Session.setDefault("actions_ca",0);
           Session.setDefault("ssid",Meteor.default_connection._lastSessionId);
 
-          a = [1,2,3];
-          b = [4,5,6,7,8,9,10,11,12];
+          a = [1,2,3,4,5];
+          b = [6,7,8,9,10,11,12];
           b = shuffle(b);
           c = Array.prototype.concat.apply([], [a, b]);
           Session.setDefault("order",c);

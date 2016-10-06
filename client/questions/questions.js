@@ -89,11 +89,6 @@ Template.question.events({
       var gold2 = Session.get("gold2");
       var gold3 = Session.get("gold3");
       var gold4 = Session.get("gold4");
-      var trust = 5;
-      if(Number(gold1) != 60  && current > 2) trust = trust - 1;
-      if(Number(gold2) != 35  && current > 3) trust = trust - 1;
-      if(Number(gold3) != 25  && current > 5) trust = trust - 1;
-      if(Number(gold4) != 75  && current > 7) trust = trust - 1;
       var actions_sw = Session.get("actions_sw",0);
       var actions_ss = Session.get("actions_ss",0);
       var actions_st = Session.get("actions_st",0);
@@ -109,100 +104,107 @@ Template.question.events({
       if(traffic == 0) traffic = "0"; if(air    == 0) air    = "0";
 
       if(!Session.get("slider1-on")) weather = false;
-      if(!Session.get("slider1-on")) safety  = false;
-      if(!Session.get("slider1-on")) traffic = false;
-      if(!Session.get("slider1-on")) air     = false;
+      if(!Session.get("slider2-on")) safety  = false;
+      if(!Session.get("slider3-on")) traffic = false;
+      if(!Session.get("slider4-on")) air     = false;
 
       if(question==1) {
+        //"Consumer trust is moderate (50%) and Economic Growth is very good (100%),
+        //Which stock loses more than any other?"
         ans_a = $("input[name=cities]:checked").val();
-        ans_b = "";
-        if(ans_a == "atlanta")  correct = true;
+        if(ans_a == "ibm")  correct = true;
       }
 
       if(question==2) {
-        ans_a = $("input[name=factors]:checked").val();
-        ans_b = "";
-        if(ans_a == "air")  correct = true;
+        //"You expect a very good Consumer Trust (100%) and a very bad Dow Jones Index (0%),
+        //- McDonald's loses more than {select}
+        ans_a = $("input[name=cities]:checked").val();
+        if(ans_a == "disney")  correct = true;
       }
 
       if(question==3) {
-        ans_a = $("input[name=cities]:checked").val();
-        ans_b = "";
-        if(ans_a == "denver")  correct = true;
+        //"You expect IBM's stock to be exactly $127.91 and you only consider one factor.
+        //Which factor needs to be very good (100%) to confirm your expectation?"
+        ans_a = $("input[name=factors]:checked").val();
+        if(ans_a == "dow jones index")  correct = true;
       }
 
       if(question==4) {
-        ans_a = $(".control-a-4 option:selected").text();
-        ans_b = $(".control-b-4 option:selected").text();
-        if(ans_a == "Traffic" && ans_b == "Safety")  correct = true;
-        if(ans_a == "Safety"  && ans_b == "Traffic") correct = true;
+        //"Consumer Trust is moderately bad (25%), Economic Growth and the Dow Jones Index are moderately good (75%).
+        //What is the value for the Worldwide News, when Home Depot's stock is $129.99?"
+        ans_a = Session.get("slider2");
+        if(ans_a == 65)  correct = true;
+        if(ans_a == 64)  correct = true;
+        if(ans_a == 66)  correct = true;
       }
 
       if(question==5) {
-        ans_a = $("input[name=cities]:checked").val();
-        ans_b = "";
-        if(ans_a == "houston")  correct = true;
+        //"If you consider all 4 factors to be moderately good (75%)
+        //Which stocks are expected to grow more than 5%?"
+        ans_a = $("option:selected").text();
+        if(ans_a == "ChevronApple")  correct = true;
+        if(ans_a == "AppleChevron")  correct = true;
       }
 
       if(question==6) {
-        ans_a = "";
-        ans_b = "";
-        if(weather== "0" && !safety && traffic=="0" && air == 100)  correct = true;
+        //"If you consider all 4 factors to be moderate (50%).
+        //Which company has the least certain stock price value?"
+        ans_a = "apple";
+        if(ans_a = "apple")  correct = true;
       }
 
       if(question==7) {
-        ans_a = $("input[name=cities]:checked").val();
-        ans_b = "";
-        if(ans_a == "seattle")  correct = true;
+        //"Worldwide News are very good (100%),
+        //Which 2 companies have the highest predicted stock value?"
+        ans_a = $("option:selected").text();
+        if(ans_a == "Home DepotIBM")  correct = true;
+        if(ans_a == "IBMHome Depot")  correct = true;
       }
 
       if(question==8) {
+        //"If you consider all 4 factor to be very bad (0%),
+        //Which is the most profitable stock to invest?"
         ans_a = $("input[name=cities]:checked").val();
-        ans_b = "";
-        if(ans_a == "angeles")  correct = true
+        if(ans_a == "apple")  correct = true
       }
 
       if(question==9) {
-        ans_a = $("input[name=cities]:checked").val();
-        ans_b = "";
-        if(ans_a == "atlanta")  correct = true
+        //"You have very precise expectations, Consumer Trust at 39%, Worldwide News at 68%, Economic Growth at 38% and the Dow Jones Index at 62%.
+        //The {select} stock is expected to gain more (procentually) than {...} but less than {...}."
+        ans_a = $("option:selected").text();
+        if(ans_a == "ChevronHome DepotApple")  correct = true
       }
 
       if(question==10) {
-        var ans_a = $("input[name=cities]:checked").val();
-        var ans_b = "";
-        if(ans_a == "atlanta")  correct = true;
+        //"Economic Growth and Consumer Trust are moderate (Both 50%),
+        //What is the value for Dow Jones Index, when Chevron stock is $110.11?"
+        var ans_a = Session.get("slider4");
+        if(ans_a == 19)  correct = true;
+        if(ans_a == 20)  correct = true;
+        if(ans_a == 21)  correct = true;
       }
 
       if(question==11) {
-        ans_a = $(".control-a-11 option:selected").text();
-        ans_b = "";
-        var a1 = false;
-        var a2 = false;
-        var a3 = false;
-        var ax = 0;
-        $("input[name=cities]:checked").each(function() {
-          ans_b = ans_b + $(this).attr('value') + "-";
-          if($(this).attr('value') == "denver")  a1 = true;
-          if($(this).attr('value') == "atlanta") a2 = true;
-          if($(this).attr('value') == "seattle") a3 = true;
-        });
-
-        ax = a1 * a2 * a3;
-        if(ans_a == "Traffic" && ax == 1)  correct = true;
+        //"You expect the Economic Growth to be moderate (50%)
+        //How does the Dow Jones index has to be, so that the growth of Apple is exactly the opposite of the growth of IBM?"
+        var ans_a = Session.get("slider4");
+        if(ans_a == 77)  correct = true;
+        if(ans_a == 78)  correct = true;
+        if(ans_a == 79)  correct = true;
       }
 
       if(question==12) {
+        //If you discard all other indicators,
+        //the difference between very bad (0%) and very good (100%) Worldwide News has the strongest effect on {select}.
         var ans_a = $("input[name=cities]:checked").val();
-        var ans_b = "";
-        if(ans_a == "newyork")  correct = true;
+        if(ans_a == "home depot") correct = true;
       }
 
       $("input:radio").removeAttr("checked");
       $("input:checkbox").removeAttr("checked");
-
-      //console.log({
-      Answers.insert({
+      $('select').val('')
+      console.log({
+      //Answers.insert({
         userid:    Session.get("ssid"),
         timestart: Session.get("qstart"),
         timeend:   timeend,
@@ -219,17 +221,15 @@ Template.question.events({
         golden2: gold2,
         golden3: gold3,
         golden4: gold4,
-        trust:   trust,
         actions:  actions,
         question: question,
-        correct: correct,
-        ans_a: ans_a,
-        ans_b: ans_b,
+        correct:  correct,
+        answer:   ans_a,
         viz:      Session.get("option"),
-        weather:  weather,
-        safety:   safety,
-        traffic:  traffic,
-        air:      air
+        slider1:  Session.get("slider1-on"),
+        slider2:  Session.get("slider2-on"),
+        slider3:  Session.get("slider3-on"),
+        slider4:  Session.get("slider4-on")
       });
       $(".big-thanks").fadeIn();
 
@@ -245,19 +245,14 @@ Template.question.events({
       var gold2 = Session.get("gold2");
       var gold3 = Session.get("gold3");
       var gold4 = Session.get("gold4");
-      var trust = 5;
-      if(Number(gold1) != 60  && question > 2) trust = trust - 1;
-      if(Number(gold2) != 35  && question > 3) trust = trust - 1;
-      if(Number(gold3) != 25  && question > 5) trust = trust - 1;
-      if(Number(gold4) != 75  && question > 7) trust = trust - 1;
-      var actions_sw = Session.get("actions_sw",0);
-      var actions_ss = Session.get("actions_ss",0);
-      var actions_st = Session.get("actions_st",0);
-      var actions_sa = Session.get("actions_sa",0);
-      var actions_cw = Session.get("actions_cw",0);
-      var actions_cs = Session.get("actions_cs",0);
-      var actions_ct = Session.get("actions_ct",0);
-      var actions_ca = Session.get("actions_ca",0);
+      var actions_sw = Session.get("actions_sw");
+      var actions_ss = Session.get("actions_ss");
+      var actions_st = Session.get("actions_st");
+      var actions_sa = Session.get("actions_sa");
+      var actions_cw = Session.get("actions_cw");
+      var actions_cs = Session.get("actions_cs");
+      var actions_ct = Session.get("actions_ct");
+      var actions_ca = Session.get("actions_ca");
       var actions = actions_sw + actions_ss + actions_st + actions_sa + actions_cw + actions_cs + actions_ct + actions_ca;
       var correct = false;
       var ans_a = "";
@@ -272,95 +267,102 @@ Template.question.events({
       if(!Session.get("slider4-on")) air     = false;
 
       if(question==1) {
+        //"Consumer trust is moderate (50%) and Economic Growth is very good (100%),
+        //Which stock loses more than any other?"
         ans_a = $("input[name=cities]:checked").val();
-        ans_b = "";
-        if(ans_a == "atlanta")  correct = true;
+        if(ans_a == "ibm")  correct = true;
       }
 
       if(question==2) {
-        ans_a = $("input[name=factors]:checked").val();
-        ans_b = "";
-        if(ans_a == "air")  correct = true;
+        //"You expect a very good Consumer Trust (100%) and a very bad Dow Jones Index (0%),
+        //- McDonald's loses more than {select}
+        ans_a = $("input[name=cities]:checked").val();
+        if(ans_a == "disney")  correct = true;
       }
 
       if(question==3) {
-        ans_a = $("input[name=cities]:checked").val();
-        ans_b = "";
-        if(ans_a == "denver")  correct = true;
+        //"You expect IBM's stock to be exactly $127.91 and you only consider one factor.
+        //Which factor needs to be very good (100%) to confirm your expectation?"
+        ans_a = $("input[name=factors]:checked").val();
+        if(ans_a == "dow jones index")  correct = true;
       }
 
       if(question==4) {
-        ans_a = $(".control-a-4 option:selected").text();
-        ans_b = $(".control-b-4 option:selected").text();
-        if(ans_a == "Traffic" && ans_b == "Safety")  correct = true;
-        if(ans_a == "Safety"  && ans_b == "Traffic") correct = true;
+        //"Consumer Trust is moderately bad (25%), Economic Growth and the Dow Jones Index are moderately good (75%).
+        //What is the value for the Worldwide News, when Home Depot's stock is $129.99?"
+        ans_a = Session.get("slider2");
+        if(ans_a == 65)  correct = true;
+        if(ans_a == 64)  correct = true;
+        if(ans_a == 66)  correct = true;
       }
 
       if(question==5) {
-        ans_a = $("input[name=cities]:checked").val();
-        ans_b = "";
-        if(ans_a == "newyork")  correct = true;
+        //"If you consider all 4 factors to be moderately good (75%)
+        //Which stocks are expected to grow more than 5%?"
+        ans_a = $("option:selected").text();
+        if(ans_a == "ChevronApple")  correct = true;
+        if(ans_a == "AppleChevron")  correct = true;
       }
 
       if(question==6) {
-        ans_a = "";
-        ans_b = "";
-        if(weather== "0" && !safety && traffic=="0" && air == 100)  correct = true;
+        //"If you consider all 4 factors to be moderate (50%).
+        //Which company has the least certain stock price value?"
+        ans_a = "apple";
+        if(ans_a = "apple")  correct = true;
       }
 
       if(question==7) {
-        ans_a = $("input[name=cities]:checked").val();
-        ans_b = "";
-        if(ans_a == "seattle")  correct = true;
+        //"Worldwide News are very good (100%),
+        //Which 2 companies have the highest predicted stock value?"
+        ans_a = $("option:selected").text();
+        if(ans_a == "Home DepotIBM")  correct = true;
+        if(ans_a == "IBMHome Depot")  correct = true;
       }
 
       if(question==8) {
+        //"If you consider all 4 factor to be very bad (0%),
+        //Which is the most profitable stock to invest?"
         ans_a = $("input[name=cities]:checked").val();
-        ans_b = "";
-        if(ans_a == "angeles")  correct = true
+        if(ans_a == "apple")  correct = true
       }
 
       if(question==9) {
-        ans_a = $("input[name=cities]:checked").val();
-        ans_b = "";
-        if(ans_a == "atlanta")  correct = true
+        //"You have very precise expectations, Consumer Trust at 39%, Worldwide News at 68%, Economic Growth at 38% and the Dow Jones Index at 62%.
+        //The {select} stock is expected to gain more (procentually) than {...} but less than {...}."
+        ans_a = $("option:selected").text();
+        if(ans_a == "ChevronHome DepotApple")  correct = true
       }
 
       if(question==10) {
-        var ans_a = $("input[name=cities]:checked").val();
-        var ans_b = "";
-        if(ans_a == "atlanta")  correct = true;
+        //"Economic Growth and Consumer Trust are moderate (Both 50%),
+        //What is the value for Dow Jones Index, when Chevron stock is $110.11?"
+        var ans_a = Session.get("slider4");
+        if(ans_a == 19)  correct = true;
+        if(ans_a == 20)  correct = true;
+        if(ans_a == 21)  correct = true;
       }
 
       if(question==11) {
-        ans_a = $(".control-a-11 option:selected").text();
-        ans_b = "";
-        var a1 = false;
-        var a2 = false;
-        var a3 = false;
-        var ax = 0;
-        $("input[name=cities]:checked").each(function() {
-          ans_b = ans_b + $(this).attr('value') + "-";
-          if($(this).attr('value') == "denver")  a1 = true;
-          if($(this).attr('value') == "atlanta") a2 = true;
-          if($(this).attr('value') == "seattle") a3 = true;
-        });
-
-        ax = a1 * a2 * a3;
-        if(ans_a == "Traffic" && ax == 1)  correct = true;
+        //"You expect the Economic Growth to be moderate (50%)
+        //How does the Dow Jones index has to be, so that the growth of Apple is exactly the opposite of the growth of IBM?"
+        var ans_a = Session.get("slider4");
+        if(ans_a == 77)  correct = true;
+        if(ans_a == 78)  correct = true;
+        if(ans_a == 79)  correct = true;
       }
 
       if(question==12) {
+        //If you discard all other indicators,
+        //the difference between very bad (0%) and very good (100%) Worldwide News has the strongest effect on {select}.
         var ans_a = $("input[name=cities]:checked").val();
-        var ans_b = "";
-        if(ans_a == "newyork")  correct = true;
+        if(ans_a == "home depot") correct = true;
       }
 
       $("input:radio").removeAttr("checked");
       $("input:checkbox").removeAttr("checked");
-
-      //console.log({
-      Answers.insert({
+      $('select').val('')
+      console.log({
+      //Answers.insert({
         userid:    Session.get("ssid"),
         timestart: Session.get("qstart"),
         timeend:   timeend,
@@ -377,17 +379,15 @@ Template.question.events({
         golden2: gold2,
         golden3: gold3,
         golden4: gold4,
-        trust:   trust,
         actions:  actions,
         question: question,
         correct: correct,
-        ans_a: ans_a,
-        ans_b: ans_b,
+        answer: ans_a,
         viz:      Session.get("option"),
-        weather:  weather,
-        safety:   safety,
-        traffic:  traffic,
-        air:      air
+        slider1:  Session.get("slider1-on"),
+        slider2:  Session.get("slider2-on"),
+        slider3:  Session.get("slider3-on"),
+        slider4:  Session.get("slider4-on")
       });
 
       Session.set("actions_sw",0);
@@ -488,7 +488,7 @@ Template.question.rendered = function () {
     connect: "lower",
     range: {'min': 0, 'max': 100}
   }).on('slide', function (ev, val) {
-    Session.set("gold1",val);
+    Session.set("gold1",Number(val));
   }).on('set', function(){
     self.$(".question-buttons").css("visibility","visible");
   });
@@ -499,7 +499,7 @@ Template.question.rendered = function () {
     connect: "lower",
     range: {'min': 0, 'max': 100}
   }).on('slide', function (ev, val) {
-    Session.set("gold2",val);
+    Session.set("gold2",Number(val));
   }).on('set', function(){
     self.$(".question-buttons").css("visibility","visible");
   });
