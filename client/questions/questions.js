@@ -89,15 +89,15 @@ Template.question.events({
       var gold2 = Session.get("gold2");
       var gold3 = Session.get("gold3");
       var gold4 = Session.get("gold4");
-      var actions_sw = Session.get("actions_sw",0);
-      var actions_ss = Session.get("actions_ss",0);
-      var actions_st = Session.get("actions_st",0);
-      var actions_sa = Session.get("actions_sa",0);
-      var actions_cw = Session.get("actions_cw",0);
-      var actions_cs = Session.get("actions_cs",0);
-      var actions_ct = Session.get("actions_ct",0);
-      var actions_ca = Session.get("actions_ca",0);
-      var actions = actions_sw + actions_ss + actions_st + actions_sa + actions_cw + actions_cs + actions_ct + actions_ca;
+      var slider1_click = Session.get("slider1-click",0);
+      var slider2_click = Session.get("slider2-click",0);
+      var slider3_click = Session.get("slider3-click",0);
+      var slider4_click = Session.get("slider4-click",0);
+      var slider1_slide = Session.get("slider1-slide",0);
+      var slider2_slide = Session.get("slider2-slide",0);
+      var slider3_slide = Session.get("slider3-slide",0);
+      var slider4_slide = Session.get("slider4-slide",0);
+      var actions = slider1_click + slider2_click + slider3_click + slider4_click + slider1_slide + slider2_slide + slider3_slide + slider4_slide;
       var correct = false;
 
       if(weather == 0) weather = "0"; if(safety == 0) safety = "0";
@@ -203,20 +203,20 @@ Template.question.events({
       $("input:radio").removeAttr("checked");
       $("input:checkbox").removeAttr("checked");
       $('select').val('')
-      console.log({
-      //Answers.insert({
+      //console.log({
+      Answers.insert({
         userid:    Session.get("ssid"),
         timestart: Session.get("qstart"),
         timeend:   timeend,
         timespent: timeend - Session.get("qstart"),
-        actions_sw: actions_sw,
-        actions_ss: actions_ss,
-        actions_st: actions_st,
-        actions_sa: actions_sa,
-        actions_cw: actions_cw,
-        actions_cs: actions_cs,
-        actions_ct: actions_ct,
-        actions_ca: actions_ca,
+        slider1_click: slider1_click,
+        slider2_click: slider2_click,
+        slider3_click: slider3_click,
+        slider4_click: slider4_click,
+        slider1_slide: slider1_slide,
+        slider2_slide: slider2_slide,
+        slider3_slide: slider3_slide,
+        slider4_slide: slider4_slide,
         golden1: gold1,
         golden2: gold2,
         golden3: gold3,
@@ -245,18 +245,17 @@ Template.question.events({
       var gold2 = Session.get("gold2");
       var gold3 = Session.get("gold3");
       var gold4 = Session.get("gold4");
-      var actions_sw = Session.get("actions_sw");
-      var actions_ss = Session.get("actions_ss");
-      var actions_st = Session.get("actions_st");
-      var actions_sa = Session.get("actions_sa");
-      var actions_cw = Session.get("actions_cw");
-      var actions_cs = Session.get("actions_cs");
-      var actions_ct = Session.get("actions_ct");
-      var actions_ca = Session.get("actions_ca");
-      var actions = actions_sw + actions_ss + actions_st + actions_sa + actions_cw + actions_cs + actions_ct + actions_ca;
+      var slider1_click = Session.get("slider1-click",0);
+      var slider2_click = Session.get("slider2-click",0);
+      var slider3_click = Session.get("slider3-click",0);
+      var slider4_click = Session.get("slider4-click",0);
+      var slider1_slide = Session.get("slider1-slide",0);
+      var slider2_slide = Session.get("slider2-slide",0);
+      var slider3_slide = Session.get("slider3-slide",0);
+      var slider4_slide = Session.get("slider4-slide",0);
+      var actions = slider1_click + slider2_click + slider3_click + slider4_click + slider1_slide + slider2_slide + slider3_slide + slider4_slide;
       var correct = false;
       var ans_a = "";
-      var ans_b = "";
 
       if(weather == 0) weather = "0"; if(safety == 0) safety = "0";
       if(traffic == 0) traffic = "0"; if(air    == 0) air    = "0";
@@ -361,28 +360,28 @@ Template.question.events({
       $("input:radio").removeAttr("checked");
       $("input:checkbox").removeAttr("checked");
       $('select').val('')
-      console.log({
-      //Answers.insert({
+      //console.log({
+      Answers.insert({
         userid:    Session.get("ssid"),
         timestart: Session.get("qstart"),
         timeend:   timeend,
         timespent: timeend - Session.get("qstart"),
-        actions_sw: actions_sw,
-        actions_ss: actions_ss,
-        actions_st: actions_st,
-        actions_sa: actions_sa,
-        actions_cw: actions_cw,
-        actions_cs: actions_cs,
-        actions_ct: actions_ct,
-        actions_ca: actions_ca,
+        slider1_click: slider1_click,
+        slider2_click: slider2_click,
+        slider3_click: slider3_click,
+        slider4_click: slider4_click,
+        slider1_slide: slider1_slide,
+        slider2_slide: slider2_slide,
+        slider3_slide: slider3_slide,
+        slider4_slide: slider4_slide,
         golden1: gold1,
         golden2: gold2,
         golden3: gold3,
         golden4: gold4,
         actions:  actions,
         question: question,
-        correct: correct,
-        answer: ans_a,
+        correct:  correct,
+        answer:   ans_a,
         viz:      Session.get("option"),
         slider1:  Session.get("slider1-on"),
         slider2:  Session.get("slider2-on"),
@@ -390,14 +389,14 @@ Template.question.events({
         slider4:  Session.get("slider4-on")
       });
 
-      Session.set("actions_sw",0);
-      Session.set("actions_ss",0);
-      Session.set("actions_st",0);
-      Session.set("actions_sa",0);
-      Session.set("actions_cw",0);
-      Session.set("actions_cs",0);
-      Session.set("actions_ct",0);
-      Session.set("actions_ca",0);
+      Session.set("slider1-click",0);
+      Session.set("slider2-click",0);
+      Session.set("slider3-click",0);
+      Session.set("slider4-click",0);
+      Session.set("slider1-slide",0);
+      Session.set("slider2-slide",0);
+      Session.set("slider3-slide",0);
+      Session.set("slider4-slide",0);
 
       // Reset the sidebar...
       Session.set("slider1",100);

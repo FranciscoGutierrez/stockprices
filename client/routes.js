@@ -37,14 +37,14 @@ Router.route('/:_id', {
           Session.setDefault("gold2",100);
           Session.setDefault("gold3",100);
           Session.setDefault("gold4",100);
-          Session.setDefault("actions_sw",0);
-          Session.setDefault("actions_ss",0);
-          Session.setDefault("actions_st",0);
-          Session.setDefault("actions_sa",0);
-          Session.setDefault("actions_cw",0);
-          Session.setDefault("actions_cs",0);
-          Session.setDefault("actions_ct",0);
-          Session.setDefault("actions_ca",0);
+          Session.setDefault("slider1-click",0);
+          Session.setDefault("slider2-click",0);
+          Session.setDefault("slider3-click",0);
+          Session.setDefault("slider4-click",0);
+          Session.setDefault("slider1-slide",0);
+          Session.setDefault("slider2-slide",0);
+          Session.setDefault("slider3-slide",0);
+          Session.setDefault("slider4-slide",0);
           Session.setDefault("ssid",Meteor.default_connection._lastSessionId);
 
           a = [1,2,3,4,5];

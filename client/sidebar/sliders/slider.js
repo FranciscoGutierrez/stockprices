@@ -24,7 +24,11 @@ Template.slider.events({
       Session.set(instance.data.tag, instance.slider.get());
     });
   },
+  'click paper-slider'(event, instance){
+    Session.set(instance.data.tag+"-slide", Session.get(instance.data.tag+"-slide")+1);
+  },
   'click paper-checkbox'(event, instance) {
+    Session.set(instance.data.tag+"-click", Session.get(instance.data.tag+"-click")+1);
     var status = Session.get(instance.data.tag+"-on");
     $(".question-answers").css("visibility","visible");
     Session.set(instance.data.tag, 100);
